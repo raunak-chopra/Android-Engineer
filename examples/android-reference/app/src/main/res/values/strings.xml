@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EngineerReference</string>
+    <string name="welcome">Welcome to EngineerReference</string>
+    <string name="step_inspect">Inspect</string>
+    <string name="step_implement">Implement</string>
+    <string name="step_verify">Verify</string>
+    <string name="step_review">Review</string>
+</resources>

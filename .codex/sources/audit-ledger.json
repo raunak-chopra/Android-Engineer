@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "kind": "engineer-source-audit-ledger",
+  "auditedOn": "2026-09-10",
+  "policy": {
+    "pinning": "Every community source is recorded at an exact commit and reviewed before absorption.",
+    "updates": "Upstream changes produce a report first; active guidance is never replaced automatically.",
+    "reviewSeverity": {
+      "blocking": "Wrong path or command, safety bypass, data loss risk, or false confidence",
+      "important": "Materially stale, confusing, duplicated, or under-evidenced guidance",
+      "minor": "Wording, naming, or organization issue without behavior change"
+    }
+  },
+  "entries": [
+    {
+      "sourceId": "dpconde-claude-android-skill",
+      "repository": "https://github.com/dpconde/claude-android-skill",
+      "auditedCommit": "edfca5e36ceb7532708c28fd2fd5215a9f01d105",
+      "auditedTree": "https://github.com/dpconde/claude-android-skill/tree/edfca5e36ceb7532708c28fd2fd5215a9f01d105",
+      "auditDate": "2026-09-10",
+      "reviewMethod": {
+        "mode": "sequential-source-audit",
+        "scope": "Enumerated the pinned tree, read its architecture/testing material and generator, and inspected generated output.",
+        "localChecks": [
+          "Generator compilation and invocation were exercised with UTF-8 console handling.",
+          "Generated output was compared with the documented module and dependency promises."
+        ]
+      },
+      "observations": [
+        {
+          "kind": "strength",
+          "confidence": "observed",
+          "statement": "The source gives a coherent UDF, repository, Compose route/content, fake, and modularization foundation."
+        },
+        {
+          "kind": "risk",
+          "confidence": "observed",
+          "statement": "The repository identifies itself as work in progress and contains dated versions, project-specific names, and generator/documentation mismatches."
+        },
+        {
+          "kind": "platform",
+          "confidence": "observed",
+          "statement": "The generator's emoji console output can fail under a Windows CP1252 console unless output encoding is handled."
+        }
+      ],
+      "decision": {
+        "use": "Absorb architectural principles and the idea of a verified generator.",
+        "exclude": "Do not import pins, names, mandatory offline-first policy, or generator output without rebuilding and compiling it."
+      },
+      "licenseStatus": "verified-mit-root-license-2026-09-11",
+      "nextReview": "Before copying any implementation or when the upstream HEAD differs from the pinned commit.",
+      "lastCheckedAt": "2026-09-10T18:24:35.5930788Z",
+      "lastRemoteSha": "edfca5e36ceb7532708c28fd2fd5215a9f01d105",
+      "lastDriftStatus": "unchanged",
+      "lastDriftDetail": "Remote HEAD resolved successfully.",
+      "trackedRef": "HEAD"
+    },
+    {
+      "sourceId": "rcosteira79-android-skills",
+      "repository": "https://github.com/rcosteira79/android-skills",
+      "auditedCommit": "0cdfc74ad89d5be0141807f6974d5ee37412d6f7",
+      "auditedTree": "https://github.com/rcosteira79/android-skills/tree/0cdfc74ad89d5be0141807f6974d5ee37412d6f7",
+      "auditDate": "2026-09-10",
+      "reviewMethod": {
+        "mode": "sequential-source-audit",
+        "scope": "Enumerated the catalog and read the router, focused skills, references, templates, and maintenance tooling.",
+        "localChecks": [
+          "Catalog structure and focused skill boundaries were inspected.",
+          "Provenance and drift-detector design were compared with the Engineer governance requirements."
+        ]
+      },
+      "observations": [
+        {
+          "kind": "strength",
+          "confidence": "observed",
+          "statement": "The focused-skill organization and brownfield-first routing model are a strong fit for smaller models and selective context loading."
+        },
+        {
+          "kind": "strength",
+          "confidence": "observed",
+          "statement": "The repository contains useful repository-boundary, coroutine ownership, debugging, and test-selection guidance."
+        },
+        {
+          "kind": "qualification",
+          "confidence": "observed",
+          "statement": "Framework-specific recommendations and channel/flow choices are semantics-dependent and must not become universal policy."
+        }
+      ],
+      "decision": {
+        "use": "Adopt the router/specialist shape, provenance ledger, drift workflow, and root-cause/test discipline.",
+        "exclude": "Do not force a DI, networking, persistence, or testing library when the target project uses another valid stack."
+      },
+      "licenseStatus": "verified-mit-root-license-2026-09-11",
+      "nextReview": "Before copying any implementation or when the upstream HEAD differs from the pinned commit.",
+      "lastCheckedAt": "2026-09-10T18:24:36.4499807Z",
+      "lastRemoteSha": "0cdfc74ad89d5be0141807f6974d5ee37412d6f7",
+      "lastDriftStatus": "unchanged",
+      "lastDriftDetail": "Remote HEAD resolved successfully.",
+      "trackedRef": "HEAD"
+    },
+    {
+      "sourceId": "drjacky-claude-android-ninja",
+      "repository": "https://github.com/Drjacky/claude-android-ninja",
+      "auditedCommit": "baa6e883e9355945838a51ae628e3747dbe6c764",
+      "auditedTree": "https://github.com/Drjacky/claude-android-ninja/tree/baa6e883e9355945838a51ae628e3747dbe6c764",
+      "auditDate": "2026-09-10",
+      "reviewMethod": {
+        "mode": "sequential-source-audit",
+        "scope": "Read the context ladder, quick references, indexed deep references, templates, scripts, and safety/release guidance.",
+        "localChecks": [
+          "All five supplied package validators passed: links, index counts, ergonomics, directive voice, and typography.",
+          "Reference indexes and the context-ladder structure were checked against the audited tree."
+        ]
+      },
+      "observations": [
+        {
+          "kind": "strength",
+          "confidence": "observed",
+          "statement": "The context ladder keeps a broad production handbook usable by loading only the relevant depth."
+        },
+        {
+          "kind": "strength",
+          "confidence": "observed",
+          "statement": "Accessibility, localization, release, security, performance, and deterministic testing are treated as explicit gates."
+        },
+        {
+          "kind": "qualification",
+          "confidence": "observed",
+          "statement": "Validators establish package mechanics but do not prove that every Android API claim or template compiles in combination."
+        }
+      ],
+      "decision": {
+        "use": "Mine production checklists, context loading, and safety boundaries into small Engineer skills.",
+        "exclude": "Do not activate the full handbook at once or preserve fixed platform/version opinions without current verification."
+      },
+      "licenseStatus": "verified-apache-2.0-root-license-md-2026-09-11",
+      "nextReview": "Before copying any implementation or when the upstream HEAD differs from the pinned commit.",
+      "lastCheckedAt": "2026-09-10T18:24:37.2900685Z",
+      "lastRemoteSha": "baa6e883e9355945838a51ae628e3747dbe6c764",
+      "lastDriftStatus": "unchanged",
+      "lastDriftDetail": "Remote HEAD resolved successfully.",
+      "trackedRef": "HEAD"
+    },
+    {
+      "sourceId": "ceorkm-mobile-app-ui-design",
+      "repository": "https://github.com/ceorkm/mobile-app-ui-design",
+      "auditedCommit": "4c67a0e71727b6afaaafbcbb1b11c7660de5fac9",
+      "auditedTree": "https://github.com/ceorkm/mobile-app-ui-design/tree/4c67a0e71727b6afaaafbcbb1b11c7660de5fac9",
+      "auditDate": "2026-09-10",
+      "reviewMethod": {
+        "mode": "sequential-source-audit",
+        "scope": "Read the product-design skill and industry-conventions reference end to end.",
+        "localChecks": [
+          "The workflow was compared with Android Material, adaptive-layout, and accessibility requirements.",
+          "The README licensing claim was compared with tracked files in the audited snapshot."
+        ]
+      },
+      "observations": [
+        {
+          "kind": "strength",
+          "confidence": "observed",
+          "statement": "The source usefully puts user goals, task flow, states, completion, and feedback before visual polish."
+        },
+        {
+          "kind": "qualification",
+          "confidence": "observed",
+          "statement": "Ratios, breakpoints, reading patterns, and palette conventions are heuristics, not Android requirements."
+        },
+        {
+          "kind": "license",
+          "confidence": "observed",
+          "statement": "The README claims MIT licensing, but the audited snapshot has no tracked LICENSE file; copying requires clarification."
+        }
+      ],
+      "decision": {
+        "use": "Create original product-design routing grounded in user goals, states, Material guidance, and accessibility.",
+        "exclude": "Do not copy prose or present unsourced design heuristics and engagement claims as facts."
+      },
+      "licenseStatus": "claim-conflict-needs-review",
+      "nextReview": "Confirm licensing and validate heuristics with design and accessibility evidence before any update.",
+      "lastCheckedAt": "2026-09-10T18:24:38.2808809Z",
+      "lastRemoteSha": "4c67a0e71727b6afaaafbcbb1b11c7660de5fac9",
+      "lastDriftStatus": "unchanged",
+      "lastDriftDetail": "Remote HEAD resolved successfully.",
+      "trackedRef": "HEAD"
+    }
+  ],
+  "lastCheckedAt": "2026-09-10T18:24:38.3196217Z"
+}

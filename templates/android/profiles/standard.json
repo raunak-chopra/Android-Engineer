@@ -1,0 +1,7 @@
+{
+  "name": "standard",
+  "description": "Default product structure with model and feature boundaries.",
+  "modules": [":app", ":core:model", ":feature:home"],
+  "conventionPlugins": false
+}
+

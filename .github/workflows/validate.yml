@@ -1,0 +1,103 @@
+name: Validate Engineer
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+jobs:
+  library:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: gradle/actions/setup-gradle@0b6dd653ba04f4f93bf581ec31e66cbd7dcb644d # v4
+      - uses: android-actions/setup-android@9fc6c4e9069bf8d3d10b2204b1fb8f6ef7065407 # v3
+      - name: Install Android SDK
+        shell: pwsh
+        run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
+      - name: Validate skill library and source records
+        shell: pwsh
+        run: ./scripts/validate-engineer.ps1 -RequireSkills
+      - name: Evaluate skill routing
+        shell: pwsh
+        run: ./scripts/test-skill-triggers.ps1
+      - name: Exercise read-only source drift mode
+        shell: pwsh
+        run: ./scripts/check-skill-drift.ps1 -SkipRemote
+      - name: Smoke-generate every Android profile
+        shell: pwsh
+        run: |
+          $destination = Join-Path $env:RUNNER_TEMP "engineer-profiles"
+          foreach ($profile in @("minimal", "standard", "modular")) {
+            ./templates/android/New-EngineerAndroidProject.ps1 `
+              -Name "Engineer$profile" `
+              -PackageName "dev.engineer.$profile" `
+              -Profile $profile `
+              -Destination (Join-Path $destination $profile)
+            Push-Location (Join-Path $destination $profile)
+            try {
+              ./gradlew.bat --no-daemon help :app:testDebugUnitTest :app:assembleDebug
+            } finally {
+              Pop-Location
+            }
+          }
+
+  android-reference:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: gradle/actions/setup-gradle@0b6dd653ba04f4f93bf581ec31e66cbd7dcb644d # v4
+      - uses: android-actions/setup-android@9fc6c4e9069bf8d3d10b2204b1fb8f6ef7065407 # v3
+      - name: Install Android SDK
+        run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
+      - name: Test and build reference app
+        working-directory: examples/android-reference
+        run: ./gradlew --no-daemon :app:testDebugUnitTest :feature:home:testDebugUnitTest :app:assembleDebug :app:assembleRelease
+
+  android-templates:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        profile: [minimal, standard, modular]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: gradle/actions/setup-gradle@0b6dd653ba04f4f93bf581ec31e66cbd7dcb644d # v4
+      - uses: android-actions/setup-android@9fc6c4e9069bf8d3d10b2204b1fb8f6ef7065407 # v3
+      - name: Install Android SDK
+        run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
+      - name: Generate profile
+        shell: pwsh
+        run: |
+          ./templates/android/New-EngineerAndroidProject.ps1 `
+            -Name "Engineer${{ matrix.profile }}" `
+            -PackageName "dev.engineer.${{ matrix.profile }}" `
+            -Profile "${{ matrix.profile }}" `
+            -Destination "${{ runner.temp }}/engineer-${{ matrix.profile }}"
+      - name: Compile profile
+        working-directory: ${{ runner.temp }}/engineer-${{ matrix.profile }}
+        run: |
+          chmod +x ./gradlew
+          ./gradlew --no-daemon help :app:testDebugUnitTest :app:assembleDebug
+
+  dependency-review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/dependency-review-action@2031cfc080254a8a887f58cffee85186f0e49e48 # v4.9.0

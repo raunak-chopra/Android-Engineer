@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "kind": "android-skill-trigger-cases",
+  "auditDate": "2026-09-10",
+  "plannedSkills": [
+    "android-router",
+    "android-project-bootstrap",
+    "android-architecture",
+    "android-compose-ui",
+    "android-data-and-sync",
+    "android-networking",
+    "android-concurrency",
+    "android-navigation-adaptive",
+    "android-testing",
+    "android-debugging-performance",
+    "android-accessibility-i18n",
+    "android-security-release",
+    "mobile-product-design",
+    "kotlin-multiplatform"
+  ],
+  "cases": [
+    {
+      "id": "route-inspect-existing-android-project",
+      "prompt": "Inspect this Android repository, identify whether it is Compose or XML, map modules, and route me to the relevant Android guidance before changing code.",
+      "primarySkill": "android-router",
+      "expectedSkills": ["android-router"],
+      "signals": ["route", "Android"]
+    },
+    {
+      "id": "bootstrap-minimal-android-app",
+      "prompt": "Create a new Android app from the minimal template and verify its Gradle configuration before adding features.",
+      "primarySkill": "android-project-bootstrap",
+      "expectedSkills": ["android-project-bootstrap"],
+      "signals": ["template", "Gradle"]
+    },
+    {
+      "id": "review-android-architecture-boundaries",
+      "prompt": "Review the Android ViewModel, repository boundaries, UDF state, and decide whether a domain layer or additional module is justified.",
+      "primarySkill": "android-architecture",
+      "expectedSkills": ["android-architecture"],
+      "signals": ["boundaries", "domain"]
+    },
+    {
+      "id": "build-compose-material-screen",
+      "prompt": "Build an Android Material 3 Compose screen with previews, semantic state, and route/content separation.",
+      "primarySkill": "android-compose-ui",
+      "expectedSkills": ["android-compose-ui"],
+      "signals": ["Compose", "Material"]
+    },
+    {
+      "id": "add-room-offline-sync",
+      "prompt": "Add Room persistence and offline sync with repository mapping, cache invalidation, and WorkManager on Android.",
+      "primarySkill": "android-data-and-sync",
+      "expectedSkills": ["android-data-and-sync"],
+      "signals": ["Room", "sync"]
+    },
+    {
+      "id": "debug-retrofit-ktor-failures",
+      "prompt": "Debug Android Retrofit or Ktor API serialization, timeouts, retries, and map HTTP failures below the repository boundary.",
+      "primarySkill": "android-networking",
+      "expectedSkills": ["android-networking"],
+      "signals": ["Retrofit", "HTTP"]
+    },
+    {
+      "id": "repair-coroutine-cancellation",
+      "prompt": "Fix an Android coroutine cancellation bug involving lifecycle collection, dispatcher ownership, Flow state, and one-shot effects.",
+      "primarySkill": "android-concurrency",
+      "expectedSkills": ["android-concurrency"],
+      "signals": ["coroutine", "Flow"]
+    },
+    {
+      "id": "design-adaptive-navigation",
+      "prompt": "Design adaptive Android navigation for phones, tablets, and foldables while handling nested routes, deep links, and back behavior.",
+      "primarySkill": "android-navigation-adaptive",
+      "expectedSkills": ["android-navigation-adaptive"],
+      "signals": ["adaptive", "navigation"]
+    },
+    {
+      "id": "test-android-state-branches",
+      "prompt": "Add Android unit, repository, Compose semantics, screenshot, instrumented, and release tests for loading and error states.",
+      "primarySkill": "android-testing",
+      "expectedSkills": ["android-testing"],
+      "signals": ["semantics", "screenshot"]
+    },
+    {
+      "id": "investigate-android-jank",
+      "prompt": "Investigate Android jank and slow startup performance using traces, Baseline Profiles, Macrobenchmark, logs, and root-cause experiments.",
+      "primarySkill": "android-debugging-performance",
+      "expectedSkills": ["android-debugging-performance"],
+      "signals": ["performance", "Macrobenchmark"]
+    },
+    {
+      "id": "audit-talkback-and-rtl",
+      "prompt": "Audit Android accessibility with TalkBack semantics, touch targets, contrast, RTL, plurals, pseudolocale, and localization.",
+      "primarySkill": "android-accessibility-i18n",
+      "expectedSkills": ["android-accessibility-i18n"],
+      "signals": ["accessibility", "TalkBack"]
+    },
+    {
+      "id": "prepare-safe-android-release",
+      "prompt": "Prepare a signed Android security release AAB with R8 mapping retention, secret handling, crash reporting PII review, and staged rollout approval.",
+      "primarySkill": "android-security-release",
+      "expectedSkills": ["android-security-release"],
+      "signals": ["security", "release"]
+    },
+    {
+      "id": "specify-mobile-product-flow",
+      "prompt": "Define the mobile product user, primary task, complete flow, screen states, micro-interactions, and Material 3 design tokens before coding.",
+      "primarySkill": "mobile-product-design",
+      "expectedSkills": ["mobile-product-design"],
+      "signals": ["product", "micro-interactions"]
+    },
+    {
+      "id": "share-kotlin-with-kmp",
+      "prompt": "Share Kotlin domain code across Android and iOS with Kotlin Multiplatform while keeping platform UI and source sets explicit.",
+      "primarySkill": "kotlin-multiplatform",
+      "expectedSkills": ["kotlin-multiplatform"],
+      "signals": ["Kotlin", "Multiplatform"]
+    },
+    {
+      "id": "negative-python-backend",
+      "prompt": "Draft a Python FastAPI endpoint and SQL query for a server-side analytics service.",
+      "expectedSkills": [],
+      "forbidAllPlanned": true
+    },
+    {
+      "id": "negative-react-browser-ui",
+      "prompt": "Write a TypeScript React web component and CSS animation for desktop browsers.",
+      "expectedSkills": [],
+      "forbidAllPlanned": true
+    },
+    {
+      "id": "negative-marketing-presentation",
+      "prompt": "Summarize this quarterly marketing presentation for an executive meeting.",
+      "expectedSkills": [],
+      "forbidAllPlanned": true
+    },
+    {
+      "id": "negative-windows-csv-job",
+      "prompt": "Create a Windows PowerShell backup job for CSV files.",
+      "expectedSkills": [],
+      "forbidAllPlanned": true
+    },
+    {
+      "id": "negative-restaurant-comparison",
+      "prompt": "Compare two vegetarian restaurants for a weekend trip.",
+      "expectedSkills": [],
+      "forbidAllPlanned": true
+    },
+    {
+      "id": "negative-vector-logo-edit",
+      "prompt": "Edit a logo as an SVG with a vector design tool.",
+      "expectedSkills": [],
+      "forbidAllPlanned": true
+    }
+  ]
+}

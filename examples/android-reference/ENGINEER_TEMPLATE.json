@@ -1,0 +1,14 @@
+{
+  "sdk": {
+    "compile": 36,
+    "min": 23,
+    "target": 36
+  },
+  "generatedOn": "2026-09-10",
+  "profile": "standard",
+  "versions": {
+    "kotlin": "2.3.21",
+    "composeBom": "2025.08.00",
+    "agp": "8.13.2"
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "kind": "engineer-source-registry",
+  "auditedOn": "2026-09-10",
+  "sourcePriority": [
+    {
+      "tier": 1,
+      "label": "official",
+      "rule": "Prefer current official Android, Kotlin, and Jetpack documentation and skills."
+    },
+    {
+      "tier": 2,
+      "label": "repository-evidence",
+      "rule": "Prefer conventions, tests, and observed behavior in the target repository."
+    },
+    {
+      "tier": 3,
+      "label": "verified-community",
+      "rule": "Use community techniques only after local verification and with provenance."
+    },
+    {
+      "tier": 4,
+      "label": "design-heuristic",
+      "rule": "Treat product and visual heuristics as hypotheses to validate, never as platform law."
+    }
+  ],
+  "sources": [
+    {
+      "id": "dpconde-claude-android-skill",
+      "repository": "https://github.com/dpconde/claude-android-skill",
+      "auditedTree": "https://github.com/dpconde/claude-android-skill/tree/edfca5e36ceb7532708c28fd2fd5215a9f01d105",
+      "auditedCommit": "edfca5e36ceb7532708c28fd2fd5215a9f01d105",
+      "trackedRef": "HEAD",
+      "auditDate": "2026-09-10",
+      "trust": "community-reference",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "evidence": "The pinned snapshot contains a root LICENSE file with the MIT License and copyright David Perez (2025); rechecked 2026-09-11.",
+        "copyPolicy": "Preserve attribution and the license notice when copying covered source material; Engineer currently uses original synthesis."
+      },
+      "reviewedScope": [
+        "SKILL.md",
+        "architecture guidance",
+        "testing guidance",
+        "feature generation workflow",
+        "supporting references and scripts"
+      ],
+      "absorbedConcepts": [
+        "Route/content separation for previewable Compose UI",
+        "Explicit UI state and unidirectional data flow",
+        "Repository interfaces with internal implementations",
+        "Hand-written fakes as a default test double",
+        "Feature modularization and convention-plugin concepts",
+        "Offline-first as a useful architecture pattern when product requirements justify it"
+      ],
+      "notAdoptedVerbatim": [
+        "Stale Kotlin, Compose, Room, and SDK pins",
+        "Mandatory offline-first storage",
+        "API/implementation module splits for every feature",
+        "NowInAndroid-specific names and aliases",
+        "Generator behavior that does not match all documented output",
+        "Console output that is not safe on every Windows code page"
+      ],
+      "reverification": "Review the pinned tree and run the local template smoke test before absorbing implementation details."
+    },
+    {
+      "id": "rcosteira79-android-skills",
+      "repository": "https://github.com/rcosteira79/android-skills",
+      "auditedTree": "https://github.com/rcosteira79/android-skills/tree/0cdfc74ad89d5be0141807f6974d5ee37412d6f7",
+      "auditedCommit": "0cdfc74ad89d5be0141807f6974d5ee37412d6f7",
+      "trackedRef": "HEAD",
+      "auditDate": "2026-09-10",
+      "trust": "community-reference",
+      "license": {
+        "status": "verified",
+        "spdx": "MIT",
+        "evidence": "The pinned snapshot contains a root LICENSE file with the MIT License and copyright Ricardo Costeira (2026); rechecked 2026-09-11.",
+        "copyPolicy": "Preserve attribution and the license notice when copying covered source material; Engineer currently uses original synthesis."
+      },
+      "reviewedScope": [
+        "android-dev router",
+        "Compose and UI skills",
+        "coroutines and Flow",
+        "networking and persistence",
+        "testing and debugging",
+        "Gradle and migration guidance",
+        "source registry and drift tooling"
+      ],
+      "absorbedConcepts": [
+        "A small router followed by focused specialist skills",
+        "Existing project conventions taking precedence in brownfield work",
+        "Repository boundaries mapping transport and storage failures into domain errors",
+        "Root-cause-first debugging with a three-failed-guesses reassessment rule",
+        "Coroutine ownership, cancellation, and state-versus-effect decisions",
+        "Semantics-first Compose testing and smallest-test-that-proves-the-contract",
+        "Pinned provenance records and drift detection without automatic overwrite"
+      ],
+      "notAdoptedVerbatim": [
+        "Library-specific dependency choices such as Hilt, Koin, Retrofit, or Ktor",
+        "Universal Channel or SharedFlow prescriptions",
+        "An unconditional no-production-code-before-a-failing-test rule",
+        "Bash, gh, and jq as the only maintenance toolchain on Windows"
+      ],
+      "reverification": "Review the pinned catalog and verify any AndroidX or Kotlin claim against current official documentation before use."
+    },
+    {
+      "id": "drjacky-claude-android-ninja",
+      "repository": "https://github.com/Drjacky/claude-android-ninja",
+      "auditedTree": "https://github.com/Drjacky/claude-android-ninja/tree/baa6e883e9355945838a51ae628e3747dbe6c764",
+      "auditedCommit": "baa6e883e9355945838a51ae628e3747dbe6c764",
+      "trackedRef": "HEAD",
+      "auditDate": "2026-09-10",
+      "trust": "community-reference",
+      "license": {
+        "status": "verified",
+        "spdx": "Apache-2.0",
+        "evidence": "The pinned snapshot contains root LICENSE.md with Apache License 2.0; rechecked 2026-09-11.",
+        "copyPolicy": "Preserve required license and notice material when copying covered source material; Engineer currently uses original synthesis."
+      },
+      "reviewedScope": [
+        "context ladder and quick reference",
+        "architecture and modularization",
+        "Compose, navigation, accessibility, and localization",
+        "data, sync, media, permissions, and notifications",
+        "testing, screenshots, performance, and debugging",
+        "security, CI/CD, R8, observability, and release guidance",
+        "reference indexes and validation scripts"
+      ],
+      "absorbedConcepts": [
+        "Context-ladder loading from router to focused reference",
+        "Inspecting Gradle, settings, catalogs, and app configuration before edits",
+        "Explicit authorization for destructive ADB and publishing operations",
+        "Accessibility, internationalization, offline/error-state, and release gates",
+        "Deterministic screenshot and performance measurement practices",
+        "R8 mapping retention, secret boundaries, and rollout safety",
+        "Structural validators for links, indexes, metadata, and entry-skill ergonomics"
+      ],
+      "notAdoptedVerbatim": [
+        "Fixed framework, target-SDK, or dependency selections",
+        "Universal Hilt, Room, Navigation, mock, or coverage thresholds",
+        "The entire large handbook as one activated skill",
+        "Rapidly changing platform claims without a current-date verification"
+      ],
+      "reverification": "Recheck volatile platform claims and compile the generated templates; validators alone do not prove API correctness."
+    },
+    {
+      "id": "ceorkm-mobile-app-ui-design",
+      "repository": "https://github.com/ceorkm/mobile-app-ui-design",
+      "auditedTree": "https://github.com/ceorkm/mobile-app-ui-design/tree/4c67a0e71727b6afaaafbcbb1b11c7660de5fac9",
+      "auditedCommit": "4c67a0e71727b6afaaafbcbb1b11c7660de5fac9",
+      "trackedRef": "HEAD",
+      "auditDate": "2026-09-10",
+      "trust": "design-reference",
+      "license": {
+        "status": "claim-conflict-needs-review",
+        "declaredByRepository": "The README claims MIT licensing.",
+        "evidence": "No tracked LICENSE file was present in the audited snapshot.",
+        "copyPolicy": "Do not copy repository prose or code until the licensing claim is confirmed. Create original guidance from the observed workflow."
+      },
+      "reviewedScope": [
+        "main product-design skill",
+        "industry-conventions reference",
+        "user-goal and primary-action workflow",
+        "screen-state and micro-interaction guidance"
+      ],
+      "absorbedConcepts": [
+        "Define the user, goal, emotional intent, and primary action before implementation",
+        "Map the surrounding task flow before designing a screen",
+        "Design loading, empty, error, success, and completion states",
+        "Separate structural UX decisions from visual styling decisions",
+        "Specify feedback and micro-interactions as part of the product behavior"
+      ],
+      "notAdoptedVerbatim": [
+        "Fixed color ratios, font counts, reading-pattern rules, or placement laws",
+        "A 375px React/Tailwind baseline as an Android layout rule",
+        "Low-contrast visual suggestions that could conflict with accessibility",
+        "Unsourced causal claims about product metrics or engagement"
+      ],
+      "reverification": "Validate design heuristics with Material guidance, accessibility checks, and usability evidence before treating them as requirements."
+    }
+  ]
+}

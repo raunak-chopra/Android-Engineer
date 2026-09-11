@@ -1,0 +1,7 @@
+{
+  "name": "minimal",
+  "description": "Single application module for prototypes and small apps.",
+  "modules": [":app"],
+  "conventionPlugins": false
+}
+

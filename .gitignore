@@ -1,0 +1,13 @@
+# Local application checkouts and generated artifacts
+workspaces/
+artifacts/
+.idea/
+.gradle/
+build/
+local.properties
+*.jks
+*.keystore
+*.env
+.env*
+!.env.example
+

@@ -1,0 +1,7 @@
+{
+  "name": "modular",
+  "description": "Multi-module structure with an included build for convention plugins.",
+  "modules": [":app", ":core:model", ":feature:home"],
+  "conventionPlugins": true
+}
+

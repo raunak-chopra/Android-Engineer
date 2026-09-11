@@ -1,0 +1,5 @@
+<resources>
+    <string name="engineer_reference_title">Engineer reference</string>
+    <string name="no_app_ideas">No app ideas yet</string>
+    <string name="retry">Retry</string>
+</resources>
