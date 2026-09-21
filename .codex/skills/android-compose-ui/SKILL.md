@@ -1,45 +1,35 @@
 ---
 name: android-compose-ui
-description: Implement or review Jetpack Compose UI, Material 3 theming, state hoisting, previews, semantics, and UI behavior across Android form factors. Use for Compose screens and components; do not introduce Compose into an XML project without an explicit migration decision.
+description: Build or review Jetpack Compose and Material 3 screens, state, effects, previews, semantics, and adaptive UI. Exclude Views-only work unless migration is explicit.
 ---
-
-# Overview
-
-Build UI from an agreed user flow and explicit states. Keep rendering deterministic and previewable, keep effects lifecycle-aware, and make semantics and adaptive behavior part of the component contract.
 
 ## When to use
 
-- Creating or changing a Compose screen, component, theme, or preview.
-- Reviewing recomposition, state ownership, side effects, UI events, or Compose performance.
-- Adding semantics, test tags, adaptive layout behavior, or Material 3 design tokens.
+- Use for Compose screens, components, themes, previews, state/effects, recomposition, semantics, or adaptive Material UI.
 
-## When not to use / routing
+## When not to use
 
-- Use `mobile-product-design` when the user goal, flow, primary action, or empty/error states have not been decided.
-- Use `android-architecture` for cross-layer state ownership and `android-concurrency` for coroutine/Flow semantics.
-- Use `android-navigation-adaptive` for route graphs, deep links, back stack, and window-level navigation.
-- Use `android-accessibility-i18n` for a focused accessibility or localization audit; use `android-testing` for test strategy.
-- Do not use for Views/XML-only changes, graphic assets, or a web UI.
+- Route unresolved flows to `mobile-product-design`, cross-layer state to `android-architecture`, concurrency to `android-concurrency`, and route graphs to `android-navigation-adaptive`.
+- Route focused accessibility/localization to `android-accessibility-i18n` and test strategy to `android-testing`.
+- Do not use for Views/XML-only, graphic asset, or web work.
 
-## Evidence-oriented workflow
+## Workflow
 
-1. Inspect the existing Compose version, theme, design tokens, navigation entry points, state holders, resource conventions, and test utilities. Match local patterns before adding a new one.
-2. Define the screen contract: inputs, user intents, rendered states (loading, empty, content, partial, error), retry behavior, and what survives recreation. Keep route/container code responsible for state collection and event wiring; keep content components as stateless as practical.
-3. Hoist state to the lowest owner that must coordinate it. Use saveable state only for small UI state that should survive recreation, and keep durable/business state in an appropriate state holder. Do not mirror the same source of truth in several `remember` values.
-4. Collect observable state with lifecycle awareness appropriate to the project and scope effects to a stable key and lifecycle owner. Avoid work during composition, unbounded launches, global scopes, and effect blocks that silently restart due to unstable keys.
-5. Use the project’s Material 3 theme and semantic tokens. Prefer responsive constraints, slots, and adaptive layout primitives over fixed pixels. Preserve system insets, large text, touch targets, focus order, contrast, and content descriptions; route a full audit to `android-accessibility-i18n`.
-6. Make UI behavior testable through visible semantics. Prefer user-observable roles, labels, state descriptions, and actions over implementation details; add a test tag only when a stable semantic node cannot express the contract.
-7. Verify previews with representative states, unit/state tests for transitions, Compose semantics tests for behavior, and screenshot tests only for a deliberately controlled visual contract. Run the repository’s discovered checks; do not claim a Gradle task exists until the wrapper and task are confirmed.
+1. Inspect Compose versions, theme/tokens, navigation entry points, state holders, resources, and test utilities; match local patterns.
+2. Define inputs, intents, rendered states, retry, and recreation. Keep route/content separation: route or container code wires state/events; content stays previewable.
+3. Hoist state to its lowest coordinator. Keep durable state outside local `remember`; use saveable state only for small UI state that must survive recreation.
+4. Collect state with lifecycle awareness and stable effect keys. Avoid work in composition, global scopes, unbounded launches, and accidental effect restarts.
+5. Use project tokens and adaptive constraints; preserve insets, large text, touch targets, focus, contrast, and descriptions.
+6. Expose user-visible semantics; use test tags only when semantics cannot express a stable contract.
+7. Verify representative previews, state transitions, semantics behavior, and controlled screenshots using discovered tasks.
 
 ## Acceptance criteria
 
-- The screen’s states and events are explicit, and no business or transport logic is hidden in composables.
-- Recreated configuration does not lose required state, duplicate subscriptions, or repeat unsafe effects.
-- The UI follows existing theme/tokens, works within the supported window sizes, and remains usable with accessibility settings.
-- At least one behavior test proves the primary interaction and relevant state branches; visual tests are deterministic if used.
-- The implementation does not add an unrequested toolkit migration, dependency, or production mutation.
+- States/events are explicit and composables hide no business or transport logic.
+- Recreation does not lose required state, duplicate subscriptions, or repeat unsafe effects.
+- UI follows project tokens and remains adaptive and accessible.
+- Behavior tests prove the primary interaction; visual tests are deterministic.
 
 ## Provenance and maintenance
 
-This skill is based on current official [Jetpack Compose](https://developer.android.com/develop/ui/compose), [state](https://developer.android.com/develop/ui/compose/state), [side-effects](https://developer.android.com/develop/ui/compose/side-effects), and [Material 3](https://m3.material.io/) guidance reviewed 2026-09-10. It incorporates route/content separation and semantics-oriented testing patterns audited in `dpconde/claude-android-skill` commit `edfca5e36ceb7532708c28fd2fd5215a9f01d105` and `Drjacky/claude-android-ninja` commit `baa6e883e9355945838a51ae628e3747dbe6c764`, without copying their prose. Re-verify with `Get-ChildItem -Force -Recurse -File | Where-Object { $_.Name -match '^(build\.gradle(\.kts)?|libs\.versions\.toml)$' }` and inspect the actual Compose/theme/test versions before applying version-specific advice.
-
+Sources: [Compose](https://developer.android.com/develop/ui/compose), [state](https://developer.android.com/develop/ui/compose/state), and audited registry IDs (2026-09-10). Re-verify: inspect target build/catalog, theme, state, and test files before version-specific advice.

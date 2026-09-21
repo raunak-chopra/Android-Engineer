@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "kind": "engineer-context-budget",
+  "recordedOn": "2026-09-15",
+  "measurement": "UTF-8 content bytes and Unicode characters are exact; token estimates are bytes divided by four and are not billing measurements.",
+  "allowedPaths": {
+    "instructions": "AGENTS.md",
+    "skillRoot": ".codex/skills"
+  },
+  "baseline": {
+    "agentsBytes": 6358,
+    "skillDescriptionCharacters": 3741,
+    "skillLibraryBytes": 69362,
+    "routerPlusLargestSpecialistBytes": 11955
+  },
+  "ceilings": {
+    "agentsBytes": 4800,
+    "skillDescriptionCharactersEach": 240,
+    "skillDescriptionCharactersTotal": 3200,
+    "routerBytes": 4500,
+    "specialistBytesEach": 4000,
+    "skillLibraryBytes": 52000,
+    "activatedSetBytes": 8500,
+    "minimumSkillLibraryReductionPercent": 25
+  },
+  "activatedSets": [
+    ["android-router", "android-project-bootstrap"],
+    ["android-router", "android-architecture"],
+    ["android-router", "android-compose-ui"],
+    ["android-router", "android-data-and-sync"],
+    ["android-router", "android-networking"],
+    ["android-router", "android-concurrency"],
+    ["android-router", "android-navigation-adaptive"],
+    ["android-router", "android-testing"],
+    ["android-router", "android-debugging-performance"],
+    ["android-router", "android-accessibility-i18n"],
+    ["android-router", "android-security-release"],
+    ["android-router", "mobile-product-design"],
+    ["android-router", "kotlin-multiplatform"]
+  ],
+  "exceptions": []
+}

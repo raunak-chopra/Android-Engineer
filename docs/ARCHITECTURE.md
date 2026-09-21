@@ -57,6 +57,20 @@ Use one home for each durable fact:
 
 Cross-link instead of duplicating facts. If facts conflict, favor explicit owner direction, the target repository's local instructions, and current primary sources in that order.
 
+## Context-loading model
+
+Budget three surfaces separately: root instructions loaded for a run, skill names
+and descriptions exposed for routing, and full entrypoints loaded after a skill
+is selected. Keep enforceable safety and approval rules in `AGENTS.md`; links do
+not substitute for active instructions. Keep descriptions discriminating, skill
+bodies task-specific, and conditional depth in references. Measure UTF-8 bytes
+and characters exactly; label token conversions as estimates.
+
+The canonical limits and baseline live in `evals/context-budget.json`. CI checks
+them together with skill contracts. A reviewed, expiring exception may preserve
+necessary behavior, but compression alone cannot justify removing a safety,
+brownfield, verification, or provenance invariant.
+
 ## Brownfield-first integration
 
 Engineer supports two distinct workflows:

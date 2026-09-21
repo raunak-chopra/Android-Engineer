@@ -1,44 +1,35 @@
 ---
 name: kotlin-multiplatform
-description: Evaluate, design, implement, or test Kotlin Multiplatform shared code with Android and other Kotlin targets, including source-set boundaries, platform APIs, Gradle integration, interoperability, and target-specific verification. Use only when multiple targets or shared-code value is demonstrated.
+description: Evaluate or build Kotlin Multiplatform shared code, source sets, platform APIs, Gradle integration, interop, and target tests when multi-target value exists.
 ---
-
-# Overview
-
-Share code where the behavior and ownership are genuinely common, and keep platform-specific APIs behind clear interfaces or source sets. Treat target availability, toolchain compatibility, and interoperability as constraints to verify—not promises inferred from a sample.
 
 ## When to use
 
-- Adding or changing `commonMain`/platform source sets, shared domain/data code, expect/actual declarations, or KMP module boundaries.
-- Assessing whether an Android feature or library should be shared with iOS or another Kotlin target.
-- Debugging KMP Gradle, source-set, dependency, native interop, or target test failures.
+- Use for demonstrated multi-target sharing, source sets, expect/actual, platform adapters, interop, KMP Gradle, or target failures.
 
-## When not to use / routing
+## When not to use
 
-- Route Android-only work to the Android specialist skills; do not introduce KMP for a single target without a concrete reuse or roadmap requirement.
-- Route Gradle/toolchain setup to `android-project-bootstrap`, shared state boundaries to `android-architecture`, and async semantics to `android-concurrency`.
-- Route Android UI to `android-compose-ui`; do not assume Compose Multiplatform or native UI targets are interchangeable.
-- Do not add an unavailable target, platform dependency, or publishing action based on an unverified example.
+- Route Android-only work to Android specialists; Gradle setup to `android-project-bootstrap`; shared state to `android-architecture`; async semantics to `android-concurrency`; Android UI to `android-compose-ui`.
+- Do not introduce KMP for one target or assume Compose Multiplatform/native UI interchangeability.
+- Do not add unavailable targets, dependencies, or publishing from an unverified example.
 
-## Evidence-oriented workflow
+## Workflow
 
-1. List the actual targets, owners, release cadence, shared behavior, and platform-specific differences. Compare the cost of sharing, testing, and interop with a small duplicated implementation; record the decision and its assumptions.
-2. Inspect settings, KMP plugins, source sets, dependency declarations, compiler/toolchain versions, expect/actual or interface seams, tests, CI matrices, and existing platform adapters. Preserve established topology in brownfield work.
-3. Keep shared modules focused on platform-neutral contracts and logic. Put Android/iOS UI, lifecycle, storage, permissions, threading constraints, and platform SDK types behind interfaces or target-specific implementations. Avoid leaking a platform type through `commonMain` merely to reduce a short-term wrapper.
-4. Choose a dependency only after verifying that it supports every required target and the project’s toolchain. Date volatile Kotlin, plugin, compiler, and library compatibility claims. Keep platform-specific dependency versions and initialization in their target source sets.
-5. Define error, concurrency, memory, serialization, and resource behavior across targets. Check native interop naming, nullability, suspend/Flow consumption, binary compatibility, and cancellation rather than assuming JVM behavior transfers unchanged.
-6. Test shared logic in the common source set and platform adapters on each supported target. Run the project’s confirmed Gradle tasks for the available target matrix; if a target/toolchain is unavailable, report the unverified path and do not claim cross-platform success.
-7. Review packaging, size, startup, debugging, and release implications before publishing a shared artifact. External repository publication, signing, or production changes require `android-security-release` and explicit authorization.
+1. List actual targets, owners, releases, shared behavior, and platform differences; compare sharing/test/interop cost with small duplication.
+2. Inspect settings, plugins, source sets, dependencies, toolchains, expect/actual or interface seams, tests, CI, and adapters; preserve brownfield topology.
+3. Keep shared modules platform-neutral. Put UI, lifecycle, storage, permissions, threading, and SDK types behind target-specific interfaces/implementations.
+4. Verify every dependency and toolchain against each supported target; date volatile compatibility and keep platform setup in target source sets.
+5. Define cross-target error, concurrency, memory, serialization, resource, naming, nullability, Flow/suspend, binary, and cancellation behavior.
+6. Test common logic and each supported target adapter with confirmed tasks; report unavailable targets without claiming success.
+7. Review packaging, size, startup, debugging, and release effects; publishing/signing/production requires security review and explicit approval.
 
 ## Acceptance criteria
 
-- The sharing decision has a demonstrated multi-target benefit and named platform boundaries.
-- `commonMain` contains no accidental platform API leakage, and target adapters have explicit contracts and tests.
-- Toolchain/dependency compatibility is current, dated, and verified for each available target.
-- Common behavior and target-specific behavior are tested independently; unavailable targets are reported.
-- No KMP migration, publication, or release mutation occurs without a reviewed scope and explicit approval.
+- Sharing has demonstrated multi-target benefit and named platform-specific boundaries.
+- `commonMain` avoids platform leakage; adapters have contracts and tests.
+- Compatibility is dated and verified for each available target.
+- Common/target behavior is tested separately; unavailable targets and approval-gated mutations are explicit.
 
 ## Provenance and maintenance
 
-This skill is grounded in current [Kotlin Multiplatform documentation](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform.html) and [Android’s Kotlin Multiplatform guidance](https://developer.android.com/kotlin/multiplatform), reviewed 2026-09-10, with source-set and boundary patterns informed by the audited `rcosteira79/android-skills` commit `0cdfc74ad89d5be0141807f6974d5ee37412d6f7` and `Drjacky/claude-android-ninja` commit `baa6e883e9355945838a51ae628e3747dbe6c764`. Version and target claims remain volatile and community prose is not copied. Re-verify with `Get-ChildItem -Force -Recurse -File | Where-Object { $_.Name -match '(settings\.gradle|build\.gradle|commonMain|androidMain|iosMain|jvmMain|nativeMain|\.def$)' }` and inspect the actual target matrix and toolchain before giving KMP-specific commands.
-
+Sources: [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform.html), [Android KMP](https://developer.android.com/kotlin/multiplatform), and audited registry IDs (2026-09-10). Re-verify: inspect target source sets, adapters, toolchains, CI target matrix, and tests.

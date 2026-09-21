@@ -26,13 +26,14 @@ All milestones use the approval sequence defined in [AGENTS.md](../AGENTS.md): D
 | M4 | Three fresh generated profiles Verified on Windows and root Accepted locally; hosted CI proof pending |
 | M5 | State-model reference app, unit tests, debug build, and unsigned R8 release build Verified and root Accepted locally; target scenarios deferred |
 | M6 | CI definition reviewed and root Accepted as configuration; hosted execution and remaining follow-ups deferred |
+| M7 | Draft implemented on 2026-09-15; context, routing, contract, and inspector checks pass locally; independent review pending |
 
 No milestone is owner-approved or released yet. “Deferred” items need a real application or
 an explicit follow-up package; they are not silently implied by this baseline.
 
 ## Execution allocation and review model
 
-The requested cost-aware implementation allocation uses Terra and Luna at maximum reasoning effort. Assign one as implementer and the other as independent reviewer, then alternate roles across bounded packages. Root acceptance remains a separate decision based on the recorded evidence. The role separation matters more than the model label: no author approves their own work.
+Assign separate implementer and independent-reviewer roles across bounded packages. Model choice is runtime-dependent and does not replace role independence or evidence. Root acceptance remains a separate decision: no author approves their own work.
 
 Each package must identify its acceptance proof before implementation starts. A reviewer may return the work for repair repeatedly; it becomes Verified only after required repairs and checks complete. Do not batch every specialist skill or template into one unreviewable change.
 
@@ -66,10 +67,8 @@ confirmed. Reviewed revisions must remain exact and drift-checkable.
 **Outcome:** a small routing layer and four core skills: project inspection/bootstrap, architecture, Compose UI, and testing-aware delivery.
 
 **Deliverables:** concise, self-contained `SKILL.md` entrypoints, provenance
-sections, and “when not to use” routing. Add focused local reference files only
-when a skill outgrows its activation budget or needs reusable detail; the current
-44–53-line skills intentionally avoid reference indirection without content to
-justify it.
+sections, and “when not to use” routing. Add focused references only when a
+skill outgrows its activation budget or has genuinely conditional detail.
 
 **Acceptance evidence:** trigger scopes do not collide; each skill respects brownfield evidence; no stale Android version pin is presented as universal; commands are verified or labelled unverified; structural validation and independent review pass.
 
@@ -132,6 +131,30 @@ dedicated secret scanning, release-evidence packaging, and R8 mapping artifact
 retention remain named CI follow-ups before a real app release workflow exists.
 
 **Acceptance evidence:** checks run from a clean environment; failure messages are actionable; secrets are not emitted; release controls require explicit inputs; no workflow can upload or promote production artifacts by default.
+
+### M7 — Measured context efficiency
+
+**Outcome:** reduce always-on instructions, skill-catalog metadata, activated
+skill bodies, inspection output, and successful validation output without
+weakening governance or Android decision quality.
+
+**Deliverables:** versioned context budgets and baselines, deterministic budget
+and skill-contract validators, a bounded Android project inspector, compact
+validation output, 32 routing cases including adjacent-skill collisions, and
+compressed governance and skill entrypoints. Exact UTF-8 bytes and Unicode
+characters are the enforceable measures; byte-based token figures are estimates,
+not billing measurements.
+
+**Acceptance evidence:** `AGENTS.md` is at most 4,800 bytes; the 14 descriptions
+total at most 3,200 characters; every entrypoint and router-plus-specialist set
+meets its recorded ceiling; the library is at least 25% smaller than the recorded
+69,362-byte baseline; routing, contracts, links, and JSON pass; inspector output
+matches the reference and generated fixtures; and independent factual, doctrine,
+and usability review records no unresolved blocking or important finding.
+
+**Boundary:** M7 keeps `.codex/skills`, Android dependencies, templates, target
+apps, production systems, and release behavior unchanged. Model tiering and
+default subagent policy remain outside repository guidance.
 
 ## Cross-milestone quality gates
 

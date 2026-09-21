@@ -2,11 +2,11 @@
 
 Engineer is a governed foundation for building a curated, evidence-backed Android engineering library. Its intended outputs are small, routeable Codex skills, verified templates, evaluation cases, and playbooks that help future contributors work safely in both new and existing Android repositories.
 
-The workspace is deliberately policy-first. It now contains a locally verified
-Android skill library, project generator, evaluation corpus, validation tools,
-and reference app. It does not contain an automated production release pipeline
-or a registered target application. Check the working tree and validation
-evidence rather than assuming a roadmap item is available.
+The workspace is deliberately policy-first. It contains an Android skill
+library, project generator, evaluation corpus, validation tools, and reference
+app. The M7 context-efficiency revision is Draft with local deterministic checks
+passing and independent review pending. It does not contain an automated
+production release pipeline or a registered target application.
 
 ## What this repository is for
 
@@ -52,7 +52,7 @@ Every external source adopted into future skills or templates must have a URL, r
 | `standards/` | Repository-wide and Android-specific expectations | Foundation documentation |
 | `playbooks/` | Change, release, and incident controls | Foundation documentation |
 | `catalog/` | Explicit inventory of target applications | Initialized; no app registered |
-| `.codex/skills/` | Fourteen routed Android engineering skills | Verified and root Accepted locally; owner approval pending |
+| `.codex/skills/` | Fourteen routed Android engineering skills | M7 Draft; budgets, contracts, and 32 routing cases pass locally; independent review pending |
 | `.codex/sources/` | Pinned source registry and audit evidence | Implemented; all four audited HEADs rechecked unchanged on 2026-09-10 |
 | `templates/android/` | Minimal, standard, and modular project generator | Verified and root Accepted locally on Windows |
 | `evals/`, `scripts/` | Routing corpus, validation, and drift tooling | Verified and root Accepted locally |

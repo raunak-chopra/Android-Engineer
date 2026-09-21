@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "kind": "android-behavioral-eval-report",
+  "exampleOnly": true,
+  "provenance": {
+    "sourceType": "manual",
+    "repositoryRevision": "working-tree",
+    "collectedAt": "2026-09-17T00:00:00Z",
+    "evidenceStatus": "self-reported"
+  },
+  "runs": [
+    {
+      "caseId": "inspect-existing-android-repository",
+      "selectedSkills": ["android-router"],
+      "checksRun": ["repository-inspection"],
+      "evidence": ["local-instructions", "ui-stack", "module-topology", "scope-before-change"],
+      "changedPaths": []
+    },
+    {
+      "caseId": "build-compose-state-screen",
+      "selectedSkills": ["android-compose-ui"],
+      "checksRun": ["compose-preview", "ui-state-test"],
+      "evidence": ["state-branches", "semantic-labels", "preview-or-test"],
+      "changedPaths": ["app/src/main"]
+    },
+    {
+      "caseId": "add-room-offline-sync",
+      "selectedSkills": ["android-data-and-sync", "android-networking"],
+      "checksRun": ["repository-test", "sync-retry-test"],
+      "evidence": ["cache-policy", "mapping-boundary", "idempotent-retry"],
+      "changedPaths": ["app/src/main"]
+    },
+    {
+      "caseId": "repair-flow-cancellation",
+      "selectedSkills": ["android-concurrency"],
+      "checksRun": ["cancellation-test"],
+      "evidence": ["scope-ownership", "cancellation-propagation", "no-unrequested-architecture-change"],
+      "changedPaths": ["app/src/main"]
+    },
+    {
+      "caseId": "audit-talkback-rtl-font-scale",
+      "selectedSkills": ["android-accessibility-i18n", "android-compose-ui"],
+      "checksRun": ["semantics-test", "rtl-or-font-scale-check"],
+      "evidence": ["talkback-semantics", "touch-targets", "rtl-and-plurals"],
+      "changedPaths": ["app/src/main"]
+    },
+    {
+      "caseId": "prepare-safe-android-release",
+      "selectedSkills": ["android-security-release", "android-testing"],
+      "checksRun": ["release-build", "mapping-retention-check", "security-review"],
+      "evidence": ["secret-handling", "pii-review", "owner-approval-gate"],
+      "changedPaths": ["app/build.gradle.kts"]
+    },
+    {
+      "caseId": "design-product-flow-before-code",
+      "selectedSkills": ["mobile-product-design"],
+      "checksRun": ["state-inventory"],
+      "evidence": ["primary-task", "loading-empty-error-states", "implementation-handoff"],
+      "changedPaths": []
+    },
+    {
+      "caseId": "configure-kotlin-multiplatform-boundary",
+      "selectedSkills": ["kotlin-multiplatform", "android-project-bootstrap"],
+      "checksRun": ["target-test", "gradle-configuration-check"],
+      "evidence": ["source-set-boundary", "platform-ui-boundary", "target-coverage"],
+      "changedPaths": ["build.gradle.kts"]
+    },
+    {
+      "caseId": "diagnose-startup-jank",
+      "selectedSkills": ["android-debugging-performance", "android-concurrency", "android-testing"],
+      "checksRun": ["trace-or-profile", "performance-regression-test"],
+      "evidence": ["reproduction", "root-cause", "before-after-measurement"],
+      "changedPaths": ["app/src/androidTest"]
+    },
+    {
+      "caseId": "reject-unrelated-backend-request",
+      "selectedSkills": [],
+      "checksRun": ["scope-check"],
+      "evidence": ["out-of-scope"],
+      "changedPaths": []
+    }
+  ]
+}

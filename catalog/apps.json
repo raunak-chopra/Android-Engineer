@@ -1,6 +1,25 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-10",
-  "catalogStatus": "initialized",
-  "apps": []
+  "updatedAt": "2026-09-16",
+  "catalogStatus": "active",
+  "apps": [
+    {
+      "id": "synapse-zero-hour",
+      "name": "SYNAPSE: ZERO-HOUR",
+      "status": "active",
+      "platforms": ["godot-4", "mobile-portrait"],
+      "repository": {
+        "location": "synapse_zero_hour",
+        "revision": "local-main"
+      },
+      "ownership": {
+        "role": "lead-engineer"
+      },
+      "production": {
+        "enabled": false,
+        "explicitApprovalRequired": true
+      },
+      "verifiedAt": "2026-09-16"
+    }
+  ]
 }

@@ -118,6 +118,104 @@
       "signals": ["Kotlin", "Multiplatform"]
     },
     {
+      "id": "collision-room-retrofit-offline-sync",
+      "prompt": "Implement Room offline sync backed by Retrofit, with idempotent writes and bounded retry.",
+      "primarySkill": "android-data-and-sync",
+      "expectedSkills": ["android-data-and-sync", "android-networking"],
+      "allowedAdjacentSkills": ["android-networking"],
+      "signals": ["Room", "sync", "Retrofit"],
+      "minimumScore": 1
+    },
+    {
+      "id": "collision-flow-network-cancellation",
+      "prompt": "Fix Ktor retry behavior that turns coroutine Flow cancellation into a generic HTTP error.",
+      "primarySkill": "android-networking",
+      "expectedSkills": ["android-networking", "android-concurrency"],
+      "allowedAdjacentSkills": ["android-concurrency"],
+      "signals": ["Ktor", "HTTP", "Flow"]
+    },
+    {
+      "id": "collision-compose-adaptive-navigation",
+      "prompt": "Build Compose adaptive navigation using window size for a foldable list-detail screen.",
+      "primarySkill": "android-navigation-adaptive",
+      "expectedSkills": ["android-navigation-adaptive", "android-compose-ui"],
+      "allowedAdjacentSkills": ["android-compose-ui"],
+      "signals": ["adaptive", "navigation", "Compose"]
+    },
+    {
+      "id": "collision-kmp-gradle-source-sets",
+      "prompt": "Configure Kotlin Multiplatform Gradle source sets and target tests for Android and iOS.",
+      "primarySkill": "kotlin-multiplatform",
+      "expectedSkills": ["kotlin-multiplatform", "android-project-bootstrap"],
+      "allowedAdjacentSkills": ["android-project-bootstrap"],
+      "signals": ["Kotlin", "Multiplatform", "Gradle"]
+    },
+    {
+      "id": "collision-release-test-evidence",
+      "prompt": "Verify an Android security release with R8 mapping retention, a screenshot test, and explicit signing approval.",
+      "primarySkill": "android-security-release",
+      "expectedSkills": ["android-security-release", "android-testing"],
+      "allowedAdjacentSkills": ["android-testing"],
+      "signals": ["security", "release", "screenshot"]
+    },
+    {
+      "id": "collision-talkback-compose-semantics",
+      "prompt": "Audit TalkBack focus and Compose semantics under RTL and large font scale.",
+      "primarySkill": "android-accessibility-i18n",
+      "expectedSkills": ["android-accessibility-i18n", "android-compose-ui"],
+      "allowedAdjacentSkills": ["android-compose-ui"],
+      "signals": ["TalkBack", "RTL", "Compose"]
+    },
+    {
+      "id": "collision-product-compose-handoff",
+      "prompt": "Define the mobile product flow and micro-interactions, then prepare a Compose implementation handoff.",
+      "primarySkill": "mobile-product-design",
+      "expectedSkills": ["mobile-product-design", "android-compose-ui"],
+      "allowedAdjacentSkills": ["android-compose-ui"],
+      "signals": ["product", "micro-interactions", "Compose"]
+    },
+    {
+      "id": "collision-race-performance-trace",
+      "prompt": "Diagnose an Android coroutine race causing startup performance jank using a trace and reproducible test.",
+      "primarySkill": "android-debugging-performance",
+      "expectedSkills": ["android-debugging-performance", "android-concurrency"],
+      "allowedAdjacentSkills": ["android-concurrency", "android-testing"],
+      "signals": ["performance", "coroutine", "trace"]
+    },
+    {
+      "id": "nearest-datastore-preference",
+      "prompt": "Persist an Android theme preference with DataStore and test its migration.",
+      "primarySkill": "android-data-and-sync",
+      "expectedSkills": ["android-data-and-sync"],
+      "signals": ["DataStore", "migration"]
+    },
+    {
+      "id": "nearest-xml-talkback",
+      "prompt": "Fix TalkBack focus order and touch targets in an Android XML layout without migrating to Compose.",
+      "primarySkill": "android-accessibility-i18n",
+      "expectedSkills": ["android-accessibility-i18n"],
+      "forbiddenSkills": ["android-compose-ui"],
+      "signals": ["TalkBack", "touch targets"],
+      "minimumScore": 2
+    },
+    {
+      "id": "nearest-product-flow-before-code",
+      "prompt": "Review the mobile product onboarding flow, empty state, and micro-interactions before any code changes.",
+      "primarySkill": "mobile-product-design",
+      "expectedSkills": ["mobile-product-design"],
+      "forbiddenSkills": ["android-compose-ui"],
+      "signals": ["product", "micro-interactions"]
+    },
+    {
+      "id": "nearest-flow-cancellation",
+      "prompt": "Repair lifecycle-owned coroutine Flow cancellation and dispatcher behavior without changing app architecture.",
+      "primarySkill": "android-concurrency",
+      "expectedSkills": ["android-concurrency"],
+      "forbiddenSkills": ["android-architecture"],
+      "signals": ["coroutine", "Flow"],
+      "minimumScore": 2
+    },
+    {
       "id": "negative-python-backend",
       "prompt": "Draft a Python FastAPI endpoint and SQL query for a server-side analytics service.",
       "expectedSkills": [],

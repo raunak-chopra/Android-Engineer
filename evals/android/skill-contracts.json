@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "kind": "android-skill-contracts",
+  "auditDate": "2026-09-15",
+  "common": {
+    "workflowSteps": {"minimum": 5, "maximum": 7},
+    "acceptanceConditions": {"minimum": 3, "maximum": 5},
+    "requiredSections": ["When to use", "When not to use", "Workflow", "Acceptance criteria", "Provenance and maintenance"],
+    "requiredConcepts": [
+      {"id": "target-evidence", "anyOf": ["inspect", "repository evidence", "target project"]},
+      {"id": "verification", "anyOf": ["verify", "verification", "test"]},
+      {"id": "reverification", "anyOf": ["Re-verify:"]}
+    ]
+  },
+  "contracts": [
+    {"skill": "android-router", "requiredConcepts": [
+      {"id": "smallest-specialist-set", "anyOf": ["smallest specialist"]},
+      {"id": "unknowns", "anyOf": ["unknown as unknown", "unknowns as unknown"]},
+      {"id": "mutation-stop", "anyOf": ["production, release, device-data", "signing, deletion, upload"]}
+    ]},
+    {"skill": "android-project-bootstrap", "requiredConcepts": [
+      {"id": "greenfield-brownfield", "anyOf": ["greenfield", "brownfield"]},
+      {"id": "smallest-project", "anyOf": ["smallest project", "smallest shape"]},
+      {"id": "no-secret-release", "anyOf": ["signing", "publishing"]}
+    ]},
+    {"skill": "android-architecture", "requiredConcepts": [
+      {"id": "state-owner", "anyOf": ["state owner", "owner for each"]},
+      {"id": "conditional-layers", "anyOf": ["domain layer only", "abstraction has"]},
+      {"id": "migration-seam", "anyOf": ["rollback", "migration"]}
+    ]},
+    {"skill": "android-compose-ui", "requiredConcepts": [
+      {"id": "route-content", "anyOf": ["route/content", "route or container"]},
+      {"id": "lifecycle-effects", "anyOf": ["lifecycle", "effect"]},
+      {"id": "semantics", "anyOf": ["semantics"]}
+    ]},
+    {"skill": "android-data-and-sync", "requiredConcepts": [
+      {"id": "authority", "anyOf": ["authoritative", "source of truth"]},
+      {"id": "migration-safety", "anyOf": ["migration"]},
+      {"id": "idempotent-sync", "anyOf": ["idempotent"]}
+    ]},
+    {"skill": "android-networking", "requiredConcepts": [
+      {"id": "bounded-retry", "anyOf": ["bounded", "bound retries"]},
+      {"id": "redaction", "anyOf": ["redact"]},
+      {"id": "transport-boundary", "anyOf": ["transport boundary", "wire contract"]}
+    ]},
+    {"skill": "android-concurrency", "requiredConcepts": [
+      {"id": "scope-owner", "anyOf": ["coroutine owner", "owner and lifetime"]},
+      {"id": "cancellation", "anyOf": ["cancellation"]},
+      {"id": "delivery-semantics", "anyOf": ["replay", "delivery contract"]}
+    ]},
+    {"skill": "android-navigation-adaptive", "requiredConcepts": [
+      {"id": "route-contract", "anyOf": ["route contract"]},
+      {"id": "restoration", "anyOf": ["restoration", "process death"]},
+      {"id": "window-evidence", "anyOf": ["window size", "window configurations"]}
+    ]},
+    {"skill": "android-testing", "requiredConcepts": [
+      {"id": "smallest-test", "anyOf": ["narrowest test", "smallest deterministic test"]},
+      {"id": "controlled-fixtures", "anyOf": ["control time", "controlled fixtures", "virtual time"]},
+      {"id": "no-coverage-proxy", "anyOf": ["coverage target", "coverage percentage"]}
+    ]},
+    {"skill": "android-debugging-performance", "requiredConcepts": [
+      {"id": "reproduction", "anyOf": ["reproduce", "reproducible"]},
+      {"id": "falsifiable-hypothesis", "anyOf": ["falsifiable"]},
+      {"id": "before-after", "anyOf": ["before and after", "baseline"]}
+    ]},
+    {"skill": "android-accessibility-i18n", "requiredConcepts": [
+      {"id": "assistive-tech", "anyOf": ["TalkBack", "assistive"]},
+      {"id": "rtl-pseudolocale", "anyOf": ["pseudolocale"], "allOf": ["RTL"]},
+      {"id": "font-scale", "anyOf": ["font scale", "large text"]}
+    ]},
+    {"skill": "android-security-release", "requiredConcepts": [
+      {"id": "no-secrets", "anyOf": ["Never commit secrets", "no secrets"]},
+      {"id": "mapping", "anyOf": ["mapping"]},
+      {"id": "explicit-approval", "anyOf": ["explicit approval"]}
+    ]},
+    {"skill": "mobile-product-design", "requiredConcepts": [
+      {"id": "primary-task", "anyOf": ["primary task", "primary action"]},
+      {"id": "state-coverage", "anyOf": ["loading, empty", "meaningful states"]},
+      {"id": "handoff", "anyOf": ["handoff"]}
+    ]},
+    {"skill": "kotlin-multiplatform", "requiredConcepts": [
+      {"id": "demonstrated-sharing", "anyOf": ["demonstrated multi-target", "actual targets"]},
+      {"id": "platform-boundary", "anyOf": ["platform-specific"]},
+      {"id": "target-verification", "anyOf": ["each supported target", "target matrix"]}
+    ]}
+  ]
+}

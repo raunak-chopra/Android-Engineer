@@ -1,0 +1,633 @@
+{
+  "project": "SYNAPSE: ZERO-HOUR",
+  "version": "1.0.0",
+  "theme": "Cyberpunk Lo-Fi / Retro-Vector Terminal",
+  "asset_license": "CC0 1.0 Universal (Public Domain)",
+  "resolution_target": "1080x1920 (Mobile Portrait)",
+  "assets": [
+    {
+      "category": "Audio/BGM",
+      "name": "ambient_bunker_loop",
+      "path": "audio/bgm/ambient_bunker_loop.ogg",
+      "dimensions": "Audio",
+      "format": "OGG",
+      "description": "Low-drone industrial hum with periodic distant resonance"
+    },
+    {
+      "category": "Audio/BGM",
+      "name": "combat_adrenaline_loop",
+      "path": "audio/bgm/combat_adrenaline_loop.ogg",
+      "dimensions": "Audio",
+      "format": "OGG",
+      "description": "140+ BPM tactical cyberpunk combat drum & synth loop"
+    },
+    {
+      "category": "Audio/SFX",
+      "name": "reroll_terminal_clack",
+      "path": "audio/sfx/reroll_terminal_clack.ogg",
+      "dimensions": "Audio",
+      "format": "OGG",
+      "description": "Mechanical keyboard key-down sound with high tactile feedback"
+    },
+    {
+      "category": "Audio/SFX",
+      "name": "reroll_success_ping",
+      "path": "audio/sfx/reroll_success_ping.ogg",
+      "dimensions": "Audio",
+      "format": "OGG",
+      "description": "High-frequency digital chime (slot machine jackpot tone)"
+    },
+    {
+      "category": "Audio/SFX",
+      "name": "zero_hour_alarm",
+      "path": "audio/sfx/zero_hour_alarm.ogg",
+      "dimensions": "Audio",
+      "format": "OGG",
+      "description": "Harsh, pulsating klaxon buzzer denoting time-limited expiration"
+    },
+    {
+      "category": "Audio/SFX",
+      "name": "unit_overclock_discharge",
+      "path": "audio/sfx/unit_overclock_discharge.ogg",
+      "dimensions": "Audio",
+      "format": "OGG",
+      "description": "Heavy sub-bass drop followed by electric arcing sound"
+    },
+    {
+      "category": "Audio/SFX",
+      "name": "sfx_laser_fire",
+      "path": "audio/sfx/sfx_laser_fire.ogg",
+      "dimensions": "Audio",
+      "format": "OGG",
+      "description": "Tactical energy weapon shot"
+    },
+    {
+      "category": "Audio/SFX",
+      "name": "sfx_metal_impact",
+      "path": "audio/sfx/sfx_metal_impact.ogg",
+      "dimensions": "Audio",
+      "format": "OGG",
+      "description": "Heavy armor hit impact"
+    },
+    {
+      "category": "Audio/SFX",
+      "name": "sfx_glitch_flatline",
+      "path": "audio/sfx/sfx_glitch_flatline.ogg",
+      "dimensions": "Audio",
+      "format": "OGG",
+      "description": "Glitch noise burst on unit flatline"
+    },
+    {
+      "category": "Grid",
+      "name": "tile_normal",
+      "path": "sprites/grid/tile_normal.png",
+      "dimensions": "256x256",
+      "format": "PNG",
+      "description": "Standard tactical terminal grid cell with phosphor wireframe"
+    },
+    {
+      "category": "Grid",
+      "name": "tile_highlight",
+      "path": "sprites/grid/tile_highlight.png",
+      "dimensions": "256x256",
+      "format": "PNG",
+      "description": "Valid unit placement tile with glowing green phosphor border"
+    },
+    {
+      "category": "Grid",
+      "name": "tile_danger",
+      "path": "sprites/grid/tile_danger.png",
+      "dimensions": "256x256",
+      "format": "PNG",
+      "description": "Threat / danger zone tile with warning hazard indicators"
+    },
+    {
+      "category": "Grid",
+      "name": "tile_synergy",
+      "path": "sprites/grid/tile_synergy.png",
+      "dimensions": "256x256",
+      "format": "PNG",
+      "description": "Synergized aura tile with cyan/magenta neon circuit glow"
+    },
+    {
+      "category": "Gear",
+      "name": "node_processor_common.png",
+      "path": "sprites/gear/node_processor_common.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Common tier Neural Node: Processor (CPU)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_processor_uncommon.png",
+      "path": "sprites/gear/node_processor_uncommon.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Uncommon tier Neural Node: Processor (CPU)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_processor_rare.png",
+      "path": "sprites/gear/node_processor_rare.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Rare tier Neural Node: Processor (CPU)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_processor_epic.png",
+      "path": "sprites/gear/node_processor_epic.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Epic tier Neural Node: Processor (CPU)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_processor_glitch.png",
+      "path": "sprites/gear/node_processor_glitch.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Glitch tier Neural Node: Processor (CPU)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_heatsink_common.png",
+      "path": "sprites/gear/node_heatsink_common.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Common tier Neural Node: Heatsink (FAN)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_heatsink_uncommon.png",
+      "path": "sprites/gear/node_heatsink_uncommon.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Uncommon tier Neural Node: Heatsink (FAN)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_heatsink_rare.png",
+      "path": "sprites/gear/node_heatsink_rare.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Rare tier Neural Node: Heatsink (FAN)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_heatsink_epic.png",
+      "path": "sprites/gear/node_heatsink_epic.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Epic tier Neural Node: Heatsink (FAN)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_heatsink_glitch.png",
+      "path": "sprites/gear/node_heatsink_glitch.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Glitch tier Neural Node: Heatsink (FAN)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_memory_common.png",
+      "path": "sprites/gear/node_memory_common.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Common tier Neural Node: Memory (RAM)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_memory_uncommon.png",
+      "path": "sprites/gear/node_memory_uncommon.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Uncommon tier Neural Node: Memory (RAM)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_memory_rare.png",
+      "path": "sprites/gear/node_memory_rare.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Rare tier Neural Node: Memory (RAM)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_memory_epic.png",
+      "path": "sprites/gear/node_memory_epic.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Epic tier Neural Node: Memory (RAM)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_memory_glitch.png",
+      "path": "sprites/gear/node_memory_glitch.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Glitch tier Neural Node: Memory (RAM)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_powerbus_common.png",
+      "path": "sprites/gear/node_powerbus_common.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Common tier Neural Node: Powerbus (PWR)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_powerbus_uncommon.png",
+      "path": "sprites/gear/node_powerbus_uncommon.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Uncommon tier Neural Node: Powerbus (PWR)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_powerbus_rare.png",
+      "path": "sprites/gear/node_powerbus_rare.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Rare tier Neural Node: Powerbus (PWR)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_powerbus_epic.png",
+      "path": "sprites/gear/node_powerbus_epic.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Epic tier Neural Node: Powerbus (PWR)"
+    },
+    {
+      "category": "Gear",
+      "name": "node_powerbus_glitch.png",
+      "path": "sprites/gear/node_powerbus_glitch.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Glitch tier Neural Node: Powerbus (PWR)"
+    },
+    {
+      "category": "UI",
+      "name": "padlock_locked",
+      "path": "sprites/ui/padlock_locked.png",
+      "dimensions": "64x64",
+      "format": "PNG",
+      "description": "Silicon Forge stat-lock active padlock indicator"
+    },
+    {
+      "category": "UI",
+      "name": "padlock_unlocked",
+      "path": "sprites/ui/padlock_unlocked.png",
+      "dimensions": "64x64",
+      "format": "PNG",
+      "description": "Silicon Forge stat-lock unlocked padlock indicator"
+    },
+    {
+      "category": "UI",
+      "name": "health_bar",
+      "path": "sprites/ui/health_bar.png",
+      "dimensions": "256x32",
+      "format": "PNG",
+      "description": "Segmented phosphor green unit health bar gauge"
+    },
+    {
+      "category": "UI",
+      "name": "stamina_bar",
+      "path": "sprites/ui/stamina_bar.png",
+      "dimensions": "256x32",
+      "format": "PNG",
+      "description": "Segmented amber overclock/action gauge bar"
+    },
+    {
+      "category": "UI",
+      "name": "terminal_frame_9slice",
+      "path": "sprites/ui/terminal_frame_9slice.png",
+      "dimensions": "256x256",
+      "format": "PNG",
+      "description": "9-slice phosphor green CRT terminal window frame with corner fasteners"
+    },
+    {
+      "category": "UI",
+      "name": "pull_lever",
+      "path": "sprites/ui/pull_lever.png",
+      "dimensions": "128x256",
+      "format": "PNG",
+      "description": "Zero-Hour Gacha terminal activation lever"
+    },
+    {
+      "category": "UI",
+      "name": "crosshair_reticle",
+      "path": "sprites/ui/crosshair_reticle.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Tactical lane targeting crosshair indicator"
+    },
+    {
+      "category": "UI",
+      "name": "button_cyber_green",
+      "path": "sprites/ui/button_cyber_green.png",
+      "dimensions": "190x49",
+      "format": "PNG",
+      "description": "Tactile phosphor green terminal button"
+    },
+    {
+      "category": "UI",
+      "name": "clock_counter_badge",
+      "path": "sprites/ui/clock_counter_badge.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "30-minute flash-overclock countdown timer HUD badge"
+    },
+    {
+      "category": "Units",
+      "name": "unit_vanguard_sheet",
+      "path": "sprites/units/unit_vanguard/unit_vanguard_sheet.png",
+      "dimensions": "Spritesheet",
+      "format": "PNG",
+      "description": "Aegis-01 Vanguard (Frontline Heavy Mech Tank) main spritesheet"
+    },
+    {
+      "category": "Units",
+      "name": "unit_vanguard_idle",
+      "path": "sprites/units/unit_vanguard/idle.gif",
+      "dimensions": "Animated GIF",
+      "format": "GIF",
+      "description": "Aegis-01 Vanguard idle animation frames"
+    },
+    {
+      "category": "Units",
+      "name": "unit_vanguard_attack",
+      "path": "sprites/units/unit_vanguard/attack.gif",
+      "dimensions": "Animated GIF",
+      "format": "GIF",
+      "description": "Aegis-01 Vanguard attack animation frames"
+    },
+    {
+      "category": "Units",
+      "name": "unit_vanguard_hit",
+      "path": "sprites/units/unit_vanguard/hit.gif",
+      "dimensions": "Animated GIF",
+      "format": "GIF",
+      "description": "Aegis-01 Vanguard hit animation frames"
+    },
+    {
+      "category": "Units",
+      "name": "unit_vanguard_portrait",
+      "path": "sprites/units/unit_vanguard/portrait.png",
+      "dimensions": "Portrait",
+      "format": "PNG",
+      "description": "Aegis-01 Vanguard HUD portrait"
+    },
+    {
+      "category": "Units",
+      "name": "unit_infiltrator_idle",
+      "path": "sprites/units/unit_infiltrator/idle.gif",
+      "dimensions": "Animated GIF",
+      "format": "GIF",
+      "description": "Kage-X Infiltrator idle animation frames"
+    },
+    {
+      "category": "Units",
+      "name": "unit_infiltrator_attack",
+      "path": "sprites/units/unit_infiltrator/attack.gif",
+      "dimensions": "Animated GIF",
+      "format": "GIF",
+      "description": "Kage-X Infiltrator attack animation frames"
+    },
+    {
+      "category": "Units",
+      "name": "unit_infiltrator_hit",
+      "path": "sprites/units/unit_infiltrator/hit.gif",
+      "dimensions": "Animated GIF",
+      "format": "GIF",
+      "description": "Kage-X Infiltrator hit animation frames"
+    },
+    {
+      "category": "Units",
+      "name": "unit_infiltrator_portrait",
+      "path": "sprites/units/unit_infiltrator/portrait.png",
+      "dimensions": "Portrait",
+      "format": "PNG",
+      "description": "Kage-X Infiltrator HUD portrait"
+    },
+    {
+      "category": "Units",
+      "name": "unit_netrunner_sheet",
+      "path": "sprites/units/unit_netrunner/unit_netrunner_sheet.png",
+      "dimensions": "Spritesheet",
+      "format": "PNG",
+      "description": "Cipher-9 Netrunner (Backline Glitch Weaver / Hacker) main spritesheet"
+    },
+    {
+      "category": "Units",
+      "name": "unit_netrunner_idle",
+      "path": "sprites/units/unit_netrunner/idle.gif",
+      "dimensions": "Animated GIF",
+      "format": "GIF",
+      "description": "Cipher-9 Netrunner idle animation frames"
+    },
+    {
+      "category": "Units",
+      "name": "unit_netrunner_attack",
+      "path": "sprites/units/unit_netrunner/attack.gif",
+      "dimensions": "Animated GIF",
+      "format": "GIF",
+      "description": "Cipher-9 Netrunner attack animation frames"
+    },
+    {
+      "category": "Units",
+      "name": "unit_netrunner_hit",
+      "path": "sprites/units/unit_netrunner/hit.gif",
+      "dimensions": "Animated GIF",
+      "format": "GIF",
+      "description": "Cipher-9 Netrunner hit animation frames"
+    },
+    {
+      "category": "Units",
+      "name": "unit_netrunner_portrait",
+      "path": "sprites/units/unit_netrunner/portrait.png",
+      "dimensions": "Portrait",
+      "format": "PNG",
+      "description": "Cipher-9 Netrunner HUD portrait"
+    },
+    {
+      "category": "Units",
+      "name": "unit_medic_idle",
+      "path": "sprites/units/unit_medic/idle.gif",
+      "dimensions": "Animated GIF",
+      "format": "GIF",
+      "description": "Synapse-Core Medic idle animation frames"
+    },
+    {
+      "category": "Units",
+      "name": "unit_medic_attack",
+      "path": "sprites/units/unit_medic/attack.gif",
+      "dimensions": "Animated GIF",
+      "format": "GIF",
+      "description": "Synapse-Core Medic attack animation frames"
+    },
+    {
+      "category": "Units",
+      "name": "unit_medic_hit",
+      "path": "sprites/units/unit_medic/hit.gif",
+      "dimensions": "Animated GIF",
+      "format": "GIF",
+      "description": "Synapse-Core Medic hit animation frames"
+    },
+    {
+      "category": "Units",
+      "name": "unit_medic_portrait",
+      "path": "sprites/units/unit_medic/portrait.png",
+      "dimensions": "Portrait",
+      "format": "PNG",
+      "description": "Synapse-Core Medic HUD portrait"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "bunker_layer_0",
+      "path": "sprites/backgrounds/bunker_command_terminal/layer_0_wall.png",
+      "dimensions": "1080x1920",
+      "format": "PNG",
+      "description": "Bunker Command deep blast wall"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "bunker_layer_1",
+      "path": "sprites/backgrounds/bunker_command_terminal/layer_1_servers.png",
+      "dimensions": "1080x1920",
+      "format": "PNG",
+      "description": "Bunker Command server banks with status LEDs"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "bunker_layer_2",
+      "path": "sprites/backgrounds/bunker_command_terminal/layer_2_console.png",
+      "dimensions": "1080x1920",
+      "format": "PNG",
+      "description": "Bunker Command tactical console desk and overhead cabling"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "server_layer_0",
+      "path": "sprites/backgrounds/corrupted_server_room/layer_0_hall.png",
+      "dimensions": "1080x1920",
+      "format": "PNG",
+      "description": "Corrupted Server Room dark aisle vista with green phosphor haze"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "server_layer_1",
+      "path": "sprites/backgrounds/corrupted_server_room/layer_1_data_streams.png",
+      "dimensions": "1080x1920",
+      "format": "PNG",
+      "description": "Matrix green digital code streaks and corrupted data cascades"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "server_layer_2",
+      "path": "sprites/backgrounds/corrupted_server_room/layer_2_terminals.png",
+      "dimensions": "1080x1920",
+      "format": "PNG",
+      "description": "Foreground power conduits and dangling network lines"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "slums_layer_0",
+      "path": "sprites/backgrounds/neo_voxel_slums/layer_0_skyline.png",
+      "dimensions": "1080x1920",
+      "format": "PNG",
+      "description": "Neo-Voxel dystopian metropolis smog skyline with distant pink/purple neon glow"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "slums_layer_1",
+      "path": "sprites/backgrounds/neo_voxel_slums/layer_1_rooftops.png",
+      "dimensions": "1080x1920",
+      "format": "PNG",
+      "description": "Midground cyber-slum mega-structures with neon outlines"
+    },
+    {
+      "category": "Backgrounds",
+      "name": "slums_layer_2",
+      "path": "sprites/backgrounds/neo_voxel_slums/layer_2_scaffolding.png",
+      "dimensions": "1080x1920",
+      "format": "PNG",
+      "description": "Foreground rusted rebar antennas and holographic wire mesh"
+    },
+    {
+      "category": "Shaders",
+      "name": "crt_screen",
+      "path": "shaders/crt_screen.gdshader",
+      "dimensions": "Code",
+      "format": "GDShader",
+      "description": "Screen-space CRT monitor shader with barrel curvature, scanlines, and RGB split"
+    },
+    {
+      "category": "Shaders",
+      "name": "glitch_effect",
+      "path": "shaders/glitch_effect.gdshader",
+      "dimensions": "Code",
+      "format": "GDShader",
+      "description": "UV displacement glitch and color channel drift for flatlines and crits"
+    },
+    {
+      "category": "Shaders",
+      "name": "holographic_foil",
+      "path": "shaders/holographic_foil.gdshader",
+      "dimensions": "Code",
+      "format": "GDShader",
+      "description": "Iridescent rainbow holographic foil shader for Glitch-Tier legendary cards"
+    },
+    {
+      "category": "UI/Icon",
+      "name": "icon_hack_emp",
+      "path": "sprites/ui/icon_hack_emp.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Tactical Hack: EMP Burst electric pulse icon"
+    },
+    {
+      "category": "UI/Icon",
+      "name": "icon_hack_overclock",
+      "path": "sprites/ui/icon_hack_overclock.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Tactical Hack: Overclock Inject turbo gauge icon"
+    },
+    {
+      "category": "UI/Icon",
+      "name": "icon_hack_firewall",
+      "path": "sprites/ui/icon_hack_firewall.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Tactical Hack: Firewall Patch energy shield icon"
+    },
+    {
+      "category": "UI/Icon",
+      "name": "icon_silicon_nanoflake",
+      "path": "sprites/ui/icon_silicon_nanoflake.png",
+      "dimensions": "128x128",
+      "format": "PNG",
+      "description": "Silicon Nanoflake crafting currency crystal icon"
+    },
+    {
+      "category": "Grid/Tile",
+      "name": "tile_hazard_corrupted",
+      "path": "sprites/grid/tile_hazard_corrupted.png",
+      "dimensions": "256x256",
+      "format": "PNG",
+      "description": "Hazard Tile: Corrupted Cache high attack / self-damage cell"
+    },
+    {
+      "category": "Grid/Tile",
+      "name": "tile_hazard_firewall",
+      "path": "sprites/grid/tile_hazard_firewall.png",
+      "dimensions": "256x256",
+      "format": "PNG",
+      "description": "Hazard Tile: Hardened Firewall defensive bastion grid cell"
+    }
+  ]
+}
