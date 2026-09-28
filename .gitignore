@@ -11,3 +11,8 @@ local.properties
 .env*
 !.env.example
 
+# Local task attachments and generated project checkouts
+/.codex-remote-attachments/
+/scratch/
+/ashfall_prototype/
+/synapse_zero_hour/
