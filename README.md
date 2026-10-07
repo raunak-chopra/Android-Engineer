@@ -46,7 +46,7 @@ Current skill coverage is listed in [docs/CAPABILITIES.md](docs/CAPABILITIES.md)
 | `evals/` | Routing and workflow regression scenarios |
 | `docs/` | Architecture, capabilities, verification record, version history |
 
-Project-specific code, assets and scripts do not belong here. Existing items of that kind (`synapse_zero_hour`, `ashfall_prototype`, and any project-specific scripts) are to be moved to their own repositories and referenced from the catalog.
+Project-specific code, assets and scripts do not belong here. Keep them in the project's own repository and reference the project from the catalog.
 
 ## Using it on a project
 

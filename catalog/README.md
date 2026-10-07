@@ -51,9 +51,9 @@ Never store credentials, tokens, signing details, private customer data, private
 
 Add an entry when the owner names a project to work on, or approves one. Fill only what is known; use `null` for unknown commands and `[To be supplied]` for unknown text. Update `updatedAt` at the top of the file.
 
-## Migrating the existing entry
+## Current state
 
-`synapse-zero-hour` currently points at `synapse_zero_hour` inside this repository. When the project is moved to its own repository, change `path` to the new location, add `type: "game"`, `stack`, `commands` and `contextFiles`, and refresh `verifiedAt`. Do this in the same change as the move so the catalog is never wrong.
+The catalog is empty (schema version 2). The earlier `synapse-zero-hour` entry was removed on 2026-10-07 because that folder was a test and was deleted. Register real projects (for example those under `C:\Users\rauna\Desktop\Games` and `C:\Users\rauna\Desktop\Projects`) when the owner names them.
 
 ## Validation
 
