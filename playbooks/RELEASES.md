@@ -2,7 +2,7 @@
 
 ## Scope and status
 
-This playbook governs any release process later exercised through Engineer. It does not establish an active release pipeline, signing configuration, Google Play account, app, track, credential, or production authority. No application is currently registered in the catalog, so this playbook cannot authorize a release today.
+This playbook governs any release process later exercised through Engineer. It does not establish an active release pipeline, signing configuration, store account (for example Google Play) or hosting account, app, track, credential, or production authority. Registering a project in `catalog/` does not authorize a release. Every release step below is a Tier 3 action in AGENTS.md.
 
 ## Release boundary
 
@@ -11,7 +11,7 @@ Creating a local build, producing a candidate artifact, signing an artifact, upl
 | Action | May be automated by default? | Required authorization |
 | --- | --- | --- |
 | Local debug build and test | Yes, if scoped to local project work | Normal work-package approval |
-| Candidate release build | Only when explicitly configured and no secrets are exposed | Root acceptance of candidate evidence |
+| Candidate release build | Only when explicitly configured and no secrets are exposed | Fresh-context review of candidate evidence |
 | Signing with real credentials | No | Explicit owner authorization for named artifact/target |
 | Upload or submission to distribution service | No | Explicit owner authorization for named artifact/destination |
 | Production promotion, rollout, or rollback | No | Explicit owner approval with rollout and rollback details |
@@ -21,20 +21,20 @@ Creating a local build, producing a candidate artifact, signing an artifact, upl
 Before seeking owner approval for a candidate, assemble evidence appropriate to the target app:
 
 - exact source revision and clean/reproducible build inputs;
-- resolved version name and `versionCode` from the target—not invented values;
+- resolved version identifier (for Android, version name and `versionCode`) from the target—not invented values;
 - debug and release build results;
 - required unit, integration, UI, accessibility, localization, and device evidence;
 - lint/static analysis and dependency/security results;
-- release shrinking/obfuscation evidence where applicable;
+- release shrinking/obfuscation or bundling evidence where applicable;
 - artifact checksum/metadata and storage location;
-- R8/ProGuard mapping file preservation plan;
+- symbol or mapping file preservation plan where applicable (for example R8/ProGuard mapping);
 - known issues, monitoring signals, staged-rollout proposal, and rollback plan.
 
 The release owner must be able to distinguish evidence actually produced from checks that remain unrun.
 
 ## Owner approval request
 
-Request explicit approval only after a candidate is Accepted. The request must include the app, environment, artifact/version, source revision, distribution target, rollout percentage or scope, timing, monitored metrics, rollback condition, rollback owner, and known risks. Do not infer any missing value.
+Request explicit approval only after the candidate has been verified and reviewed. The request must include the app, environment, artifact/version, source revision, distribution target, rollout percentage or scope, timing, monitored metrics, rollback condition, rollback owner, and known risks. Do not infer any missing value.
 
 ## Execution safeguards
 
