@@ -23,7 +23,7 @@ Android: android-testing. Live diagnosis: reliability-observability.
 
 - Record outcomes/omissions; coverage and syntax are not behavior.
 - Preserve target conventions and permission boundaries.
-- Record checks/omissions and obtain independent review.
+- Record checks/omissions; get fresh-context review for Tier 2 changes (AGENTS.md).
 
 ## Provenance and maintenance
 

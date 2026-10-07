@@ -23,7 +23,7 @@ Dependency/CI trust: supply-chain-security. Android release: android-security-re
 
 - Record impact, repair and retest; no third-party attack authority.
 - Preserve target conventions and permission boundaries.
-- Record checks/omissions and obtain independent review.
+- Record checks/omissions; get fresh-context review for Tier 2 changes (AGENTS.md).
 
 ## Provenance and maintenance
 

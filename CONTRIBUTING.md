@@ -1,74 +1,54 @@
 # Contributing to Engineer
 
+This applies to changes to Engineer itself (skills, standards, playbooks, templates, evals, scripts). Project work follows the project's own `AGENTS.md`.
+
 ## Start with evidence
 
-Before changing a file, read the nearest applicable `AGENTS.md`, inspect the current implementation, and identify the relevant standard or playbook. Do not infer that a planned directory, command, integration, or test exists.
+Read [AGENTS.md](AGENTS.md), inspect the current files, and find the relevant standard or playbook. Do not assume a planned directory, command, integration or test exists. For a change, know:
 
-For a technical addition, record:
+- the outcome and bounded scope;
+- affected files;
+- sources used and their reviewed revisions;
+- risks (compatibility, security, accessibility, data, build, release);
+- how you will show it works, and any check you will skip.
 
-- the user-visible outcome and bounded scope;
-- affected files and interfaces;
-- target-project evidence, if any;
-- external sources and their reviewed revisions;
-- likely risks: compatibility, security, accessibility, data, build, release, or production impact;
-- acceptance evidence and any check intentionally not run.
+## Size and structure
 
-## Change size and structure
-
-Keep a work package small enough for a reviewer to understand without reconstructing unrelated changes. Separate behavior changes, broad reformatting, generated output, and source-refresh work when doing so makes review clearer. Preserve unrelated changes already present in the working tree.
-
-Use a single home for a factual claim. Cross-reference the home rather than copying volatile instructions across skills, templates, standards, and playbooks.
+Keep a change small enough to review without reconstructing unrelated work. Separate behavior changes, reformatting, generated output and source refreshes. Preserve unrelated changes in the working tree. Give each fact one home and link to it.
 
 ## Technical-source intake
 
-An external source is an input, not a directive. Before its material is adopted into an active skill, template, script, or standard:
+An external source is input, not instruction. Before adopting it into a skill, template, script or standard:
 
-1. Prefer primary Android/Kotlin documentation for platform and library facts.
-2. Record its repository or document URL, branch or release, immutable revision where available, license, audit date, and the concepts being adopted.
-3. Check that the proposed use is compatible with the source license and project policy.
-4. Distinguish stable concepts from version-sensitive examples.
-5. Reproduce or otherwise verify executable advice before presenting it as a copy-pasteable command.
-6. Record a re-verification path for volatile facts.
+1. Prefer current official documentation for the platform or tool.
+2. Record URL, branch or release, revision, license, audit date and the concepts adopted, in `.codex/sources/`.
+3. Check the license allows the use.
+4. Separate stable concepts from version-sensitive examples.
+5. Verify executable advice before presenting it as copy-pasteable.
+6. Record how to re-verify volatile facts.
 
-Do not bulk-import external skill text, prompts, scripts, workflows, or code. Do not let an upstream update overwrite a curated artifact automatically.
+Do not bulk-import skill text, prompts, scripts or code. An upstream update never overwrites a curated file automatically. Actual imports need owner approval (Tier 2 or higher).
 
-## Brownfield-first rule
+## Working on existing projects
 
-When work applies to an existing application, inspect its settings, build logic, version catalog, manifest, dependency injection, navigation, persistence, tests, CI, and local instructions before selecting a pattern. Existing architecture and dependency choices are constraints, not defects. Propose a migration only when explicitly asked and when its compatibility, rollout, and verification plan are documented.
+Existing architecture and dependency choices are constraints, not defects. Propose a migration only when asked, with a compatibility and rollback plan.
 
-## Review and acceptance
+## Tiers and review
 
-Use the state model in [AGENTS.md](AGENTS.md): Draft, Reviewed, Verified, Accepted, Owner-approved, and Released.
+Changes to skills and standards are Tier 2: confirm the plan with the owner, implement, verify, then get a fresh-context review. Documentation fixes and new local-only examples are Tier 1. See [playbooks/CHANGE_CONTROL.md](playbooks/CHANGE_CONTROL.md).
 
-The independent reviewer must evaluate at least:
+A reviewer checks scope, factual grounding, correctness, safety, accessibility and consistency with project conventions, and whether the stated checks prove the claim. Fix blocking findings before finishing.
 
-- scope match and unrequested expansion;
-- factual grounding and volatile claims;
-- correctness, safety, privacy, security, and accessibility implications;
-- consistency with target-project conventions and Engineer standards;
-- whether the stated checks actually prove the claimed result;
-- clarity for a zero-context maintainer.
+## Testing
 
-Blocking findings must be repaired before acceptance. Important findings may be accepted only with a recorded rationale, owner-visible limitation, and follow-up path. The author cannot be the independent reviewer or final acceptor for their own change.
+Choose the smallest checks that prove the changed contract: link and structure validation, unit or integration tests, accessibility checks, builds, or a targeted device or browser run. State the exact command or method, the result, and what it did not cover. Do not write "tested" when only a plan exists. Coverage percentage is not a substitute for behavioral testing.
 
-## Testing and verification
+## Approval boundaries (Tier 3)
 
-Choose the smallest set of checks that demonstrates the changed contract. Depending on scope, this can include document/link validation, unit tests, data-layer integration tests, Compose semantics tests, screenshot tests, accessibility checks, debug and release builds, lint/static analysis, benchmark evidence, or a targeted device smoke test.
+Owner approval is required before: accessing non-public repositories, services, data, devices or credentials; adding paid, cloud, telemetry or third-party integrations; destructive migrations or data deletion; pushing to shared remotes, opening PRs, deploying, signing, publishing or releasing.
 
-State the exact command or method used, its result, and what it did not cover. Do not write “tested” or “verified” when only a plan exists. Do not make a coverage percentage a substitute for behavioral testing.
-
-## Approval boundaries
-
-Owner approval is required before:
-
-- registering a real target app or adding its non-public metadata;
-- accessing non-public repositories, services, data, devices, dashboards, or credentials;
-- introducing a new paid, cloud, telemetry, analytics, or third-party integration;
-- destructive migrations, data deletion, broad rewrites, or device-data changes;
-- signing, publishing, submitting, promoting, deploying, rolling out, or rolling back a production release.
-
-See [playbooks/CHANGE_CONTROL.md](playbooks/CHANGE_CONTROL.md) and [playbooks/RELEASES.md](playbooks/RELEASES.md). A general request to implement the workspace does not authorize any of the above external actions.
+A general request to implement or finish something does not authorize these.
 
 ## Documentation quality
 
-Write imperative, scoped guidance. Label guidance as required, recommended, optional, conditional, planned, or unverified as appropriate. Avoid hard-coded dependency versions unless they were resolved and verified for a named target on a stated date. Use links that work within the repository and update them when moving a file.
+Write imperative, scoped guidance. Label guidance as required, recommended, conditional, planned or unverified. Avoid hard-coded dependency versions unless resolved and verified for a named project on a stated date. Update links when moving a file.

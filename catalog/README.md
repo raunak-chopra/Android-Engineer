@@ -1,37 +1,33 @@
-# Application catalog
+# Project catalog
 
-`apps.json` is the explicit inventory of applications that Engineer may describe as target projects. It is initialized empty. A missing entry means this workspace has no recorded ownership, repository location, architecture evidence, release authority, or access rights for that application.
+`apps.json` lists the projects Engineer works on and where they live. It is a pointer, not a permission: a catalog entry grants no repository, credential, device, dashboard, hosting or production access. A missing entry means Engineer has no recorded location or status for that project.
 
-## Registration requirements
+## What Engineer does with an entry
 
-Add an application only after the owner explicitly provides or approves:
+1. Resolves the project's `path`.
+2. Reads the project's `AGENTS.md` and `docs/work-status.md`.
+3. Works in that repository, never inside Engineer.
 
-- stable identifier and human-readable name;
-- repository or local path and an appropriate non-secret reference;
-- platform/scope and current lifecycle status;
-- ownership/contact role;
-- evidence boundary: what may be inspected and what remains out of scope;
-- production status and the fact that production approval remains required;
-- verification date for recorded metadata.
-
-Do not store credentials, access tokens, private customer data, signing details, private URLs, or production-control values in the catalog.
-
-## Planned entry shape
-
-Future entries should use this shape after schema validation is implemented:
+## Entry format (schema version 2)
 
 ```json
 {
   "id": "stable-lowercase-id",
   "name": "Human-readable name",
-  "status": "planned | active | archived",
-  "platforms": ["android"],
-  "repository": {
-    "location": "owner-approved, non-secret path or URL",
-    "revision": "verified commit or release reference"
+  "type": "web | android | game | backend | graphics | fullstack",
+  "status": "planned | active | paused | archived",
+  "path": "C:\\Users\\rauna\\Desktop\\Projects\\project-name",
+  "remote": "non-secret repository URL, or null",
+  "stack": ["godot-4", "gdscript"],
+  "platforms": ["android", "web"],
+  "commands": {
+    "build": "verified command, or null",
+    "test": "verified command, or null",
+    "run": "verified command, or null"
   },
-  "ownership": {
-    "role": "owner-approved contact role"
+  "contextFiles": {
+    "agents": "AGENTS.md",
+    "status": "docs/work-status.md"
   },
   "production": {
     "enabled": false,
@@ -41,4 +37,24 @@ Future entries should use this shape after schema validation is implemented:
 }
 ```
 
-The example is illustrative only; it is not an actual registered app or a declaration that the referenced fields are implemented. Registering an app does not authorize access to it or any associated system.
+Field rules:
+
+- `id`, `name`, `type`, `status`, `path`, `production`, `verifiedAt` are required.
+- `commands` hold only commands that have actually been run successfully; otherwise `null`. Do not guess.
+- `production.explicitApprovalRequired` must stay `true`. Deploys, publishing, store uploads, signing and spending always need explicit approval for the exact action.
+- `verifiedAt` is the date the entry was last checked against the real project. Re-check when it is older than 90 days, or when the project is reported as changed.
+- `path` may be anywhere on the machine; projects do not need to move to a common folder.
+
+Never store credentials, tokens, signing details, private customer data, private URLs or production-control values in the catalog.
+
+## Registering a project
+
+Add an entry when the owner names a project to work on, or approves one. Fill only what is known; use `null` for unknown commands and `[To be supplied]` for unknown text. Update `updatedAt` at the top of the file.
+
+## Migrating the existing entry
+
+`synapse-zero-hour` currently points at `synapse_zero_hour` inside this repository. When the project is moved to its own repository, change `path` to the new location, add `type: "game"`, `stack`, `commands` and `contextFiles`, and refresh `verifiedAt`. Do this in the same change as the move so the catalog is never wrong.
+
+## Validation
+
+A validation script should check, on every run: valid JSON; required fields present; `path` exists; `contextFiles` exist at that path; `production.explicitApprovalRequired` is `true`; and `verifiedAt` is not older than 90 days (warning only). `[Script to be written in scripts/]`

@@ -23,7 +23,7 @@ API: backend-api. Android: android-compose-ui. Use Sites skills for Sites projec
 
 - Browser evidence proves behavior; screenshots/scanners alone do not.
 - Preserve target conventions and permission boundaries.
-- Record checks/omissions and obtain independent review.
+- Record checks/omissions; get fresh-context review for Tier 2 changes (AGENTS.md).
 
 ## Provenance and maintenance
 

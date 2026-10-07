@@ -23,7 +23,7 @@ Schema: database-engineering. Topology: system-architecture.
 
 - Integration evidence covers isolation and compatibility; no implicit deployment.
 - Preserve target conventions and permission boundaries.
-- Record checks/omissions and obtain independent review.
+- Record checks/omissions; get fresh-context review for Tier 2 changes (AGENTS.md).
 
 ## Provenance and maintenance
 

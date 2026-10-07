@@ -23,7 +23,7 @@ Known raster generation/edit: installed imagegen directly. UI tokens: visual-des
 
 - Do not convert editable vectors to raster for convenience.
 - Preserve target conventions and permission boundaries.
-- Record checks/omissions and obtain independent review.
+- Record checks/omissions; get fresh-context review for Tier 2 changes (AGENTS.md).
 
 ## Provenance and maintenance
 
