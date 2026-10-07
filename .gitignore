@@ -16,3 +16,6 @@ local.properties
 /scratch/
 /ashfall_prototype/
 /synapse_zero_hour/
+
+# Machine-local staging and emulator snapshots
+/.tmp/
