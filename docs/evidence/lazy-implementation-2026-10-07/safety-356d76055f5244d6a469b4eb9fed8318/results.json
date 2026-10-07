@@ -1,0 +1,47 @@
+[
+  {
+    "case": "contract traversal",
+    "outcome": "rejected",
+    "diagnostic": "Lazy load contract error: Unsafe relative load path."
+  },
+  {
+    "case": "report escape",
+    "outcome": "rejected",
+    "diagnostic": "Lazy load contract error: Report must remain in docs/evidence."
+  },
+  {
+    "case": "stacked coordinators",
+    "outcome": "rejected",
+    "diagnostic": "[FAIL] Stacked coordinators: form-validation"
+  },
+  {
+    "case": "duplicate load",
+    "outcome": "rejected",
+    "diagnostic": "Lazy load contract error: Duplicate requested load."
+  },
+  {
+    "case": "foreign reference",
+    "outcome": "rejected",
+    "diagnostic": "Lazy load contract error: Reference is not owned by a selected skill."
+  },
+  {
+    "case": "reference traversal",
+    "outcome": "rejected",
+    "diagnostic": "Lazy load contract error: Unsafe relative load path."
+  },
+  {
+    "case": "over-budget context",
+    "outcome": "rejected",
+    "diagnostic": "[FAIL] Loaded set over limit: cross-stack"
+  },
+  {
+    "case": "forbidden specialist",
+    "outcome": "rejected",
+    "diagnostic": "[FAIL] Forbidden skill loaded: form-validation"
+  },
+  {
+    "case": "existing report",
+    "outcome": "rejected",
+    "diagnostic": "Lazy load contract error: Report already exists; preserve prior evidence."
+  }
+]

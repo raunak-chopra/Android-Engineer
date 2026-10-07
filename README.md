@@ -52,7 +52,7 @@ Every external source adopted into future skills or templates must have a URL, r
 | `standards/` | Repository-wide and Android-specific expectations | Foundation documentation |
 | `playbooks/` | Change, release, and incident controls | Foundation documentation |
 | `catalog/` | Explicit inventory of target applications | Initialized; no app registered |
-| `.codex/skills/` | Fourteen routed Android engineering skills | M7 Draft; budgets, contracts, and 32 routing cases pass locally; independent review pending |
+| `.codex/skills/` | 27 local Android/full-stack/routing/design skills | [Lazy implementation](docs/LAZY_IMPLEMENTATION.md) Verified and Accepted locally; historical M7 status remains separate |
 | `.codex/sources/` | Pinned source registry and audit evidence | Implemented; all four audited HEADs rechecked unchanged on 2026-09-10 |
 | `templates/android/` | Minimal, standard, and modular project generator | Verified and root Accepted locally on Windows |
 | `evals/`, `scripts/` | Routing corpus, validation, and drift tooling | Verified and root Accepted locally |

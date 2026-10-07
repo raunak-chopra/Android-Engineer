@@ -1,0 +1,3 @@
+# Consequential decisions
+
+Read for architecture migration or new topology. Record context, alternatives, evidence, tradeoffs and reconsideration triggers. Add services, queues/caches or abstractions only for a demonstrated boundary or measured benefit. Define state/business-rule ownership, API/schema compatibility and failure propagation. Queue delivery guarantees do not establish exactly-once business effects. Plan migration seams, observability, rollback/roll-forward and preservation of current consumers before replacement. Consider workload, privacy, reliability, cost and team constraints without inventing benchmarks. Design records confer no deployment authority.

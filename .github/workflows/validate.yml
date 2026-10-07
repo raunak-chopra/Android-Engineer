@@ -28,6 +28,12 @@ jobs:
       - name: Evaluate skill routing
         shell: pwsh
         run: ./scripts/test-skill-triggers.ps1
+      - name: Evaluate full-stack and design routing
+        shell: pwsh
+        run: ./scripts/test-skill-triggers.ps1 -CasesPath evals/fullstack/trigger-cases.json
+      - name: Exercise lazy-load safety regressions
+        shell: pwsh
+        run: ./scripts/test-lazy-load-safety.ps1
       - name: Exercise read-only source drift mode
         shell: pwsh
         run: ./scripts/check-skill-drift.ps1 -SkipRemote

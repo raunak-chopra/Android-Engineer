@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "kind": "android-skill-trigger-cases",
+  "auditDate": "2026-10-07",
+  "plannedSkills": [
+    "fullstack-delivery",
+    "web-frontend",
+    "backend-api",
+    "database-engineering",
+    "application-security",
+    "system-architecture",
+    "engineering-testing",
+    "supply-chain-security",
+    "reliability-observability",
+    "engineering-router",
+    "product-ux-design",
+    "visual-design-system",
+    "graphics-assets"
+  ],
+  "cases": [
+    {
+      "id": "fullstack-delivery",
+      "prompt": "Deliver an end-to-end web feature across UI, services and storage.",
+      "primarySkill": "fullstack-delivery",
+      "expectedSkills": [
+        "fullstack-delivery"
+      ],
+      "signals": [
+        "end-to-end"
+      ]
+    },
+    {
+      "id": "web-frontend",
+      "prompt": "Repair responsive forms and keyboard accessibility in a web frontend.",
+      "primarySkill": "web-frontend",
+      "expectedSkills": [
+        "web-frontend"
+      ],
+      "signals": [
+        "responsive"
+      ]
+    },
+    {
+      "id": "backend-api",
+      "prompt": "Implement server endpoints with background jobs and API contracts.",
+      "primarySkill": "backend-api",
+      "expectedSkills": [
+        "backend-api"
+      ],
+      "signals": [
+        "endpoints"
+      ]
+    },
+    {
+      "id": "database-engineering",
+      "prompt": "Review schema migrations, transactions, indexes and backup recovery.",
+      "primarySkill": "database-engineering",
+      "expectedSkills": [
+        "database-engineering"
+      ],
+      "signals": [
+        "migrations"
+      ]
+    },
+    {
+      "id": "application-security",
+      "prompt": "Threat-model authentication, authorization, sessions and privacy.",
+      "primarySkill": "application-security",
+      "expectedSkills": [
+        "application-security"
+      ],
+      "signals": [
+        "authorization"
+      ]
+    },
+    {
+      "id": "system-architecture",
+      "prompt": "Decide service boundaries, consistency and architecture migrations.",
+      "primarySkill": "system-architecture",
+      "expectedSkills": [
+        "system-architecture"
+      ],
+      "signals": [
+        "boundaries"
+      ]
+    },
+    {
+      "id": "engineering-testing",
+      "prompt": "Design regression, integration, contract and end-to-end behavioral tests.",
+      "primarySkill": "engineering-testing",
+      "expectedSkills": [
+        "engineering-testing"
+      ],
+      "signals": [
+        "regression"
+      ]
+    },
+    {
+      "id": "supply-chain-security",
+      "prompt": "Review third-party agent skills, dependencies, build scripts and CI trust.",
+      "primarySkill": "supply-chain-security",
+      "expectedSkills": [
+        "supply-chain-security"
+      ],
+      "signals": [
+        "third-party"
+      ]
+    },
+    {
+      "id": "reliability-observability",
+      "prompt": "Diagnose service latency and failures using telemetry and recovery evidence.",
+      "primarySkill": "reliability-observability",
+      "expectedSkills": [
+        "reliability-observability"
+      ],
+      "signals": [
+        "latency"
+      ]
+    },
+    {
+      "id": "unrelated-poem",
+      "prompt": "Write a short poem about autumn leaves.",
+      "expectedSkills": [],
+      "forbidAllPlanned": true
+    },
+    {
+      "id": "unfamiliar-mixed",
+      "prompt": "Route unfamiliar mixed-platform work to the responsible specialist.",
+      "primarySkill": "engineering-router",
+      "expectedSkills": [
+        "engineering-router"
+      ],
+      "signals": [
+        "mixed-platform"
+      ]
+    },
+    {
+      "id": "ux-flow",
+      "prompt": "Define user needs, task flows and information hierarchy for checkout.",
+      "primarySkill": "product-ux-design",
+      "expectedSkills": [
+        "product-ux-design"
+      ],
+      "signals": [
+        "user needs"
+      ]
+    },
+    {
+      "id": "visual-tokens",
+      "prompt": "Specify typography, colors, spacing and reusable visual tokens.",
+      "primarySkill": "visual-design-system",
+      "expectedSkills": [
+        "visual-design-system"
+      ],
+      "signals": [
+        "typography"
+      ]
+    },
+    {
+      "id": "editable-vector",
+      "prompt": "Create editable vectors, icons and logos with asset formats and export specs.",
+      "primarySkill": "graphics-assets",
+      "expectedSkills": [
+        "graphics-assets"
+      ],
+      "signals": [
+        "editable"
+      ]
+    },
+    {
+      "id": "approved-spec-code",
+      "prompt": "Implement approved web UI forms, responsive layouts and browser behavior.",
+      "primarySkill": "web-frontend",
+      "expectedSkills": [
+        "web-frontend"
+      ],
+      "signals": [
+        "web UI"
+      ]
+    },
+    {
+      "id": "database-not-visual",
+      "prompt": "Design schemas, queries, transactions and indexes for a database.",
+      "primarySkill": "database-engineering",
+      "expectedSkills": [
+        "database-engineering"
+      ],
+      "signals": [
+        "schemas"
+      ]
+    },
+    {
+      "id": "credential-import",
+      "prompt": "Review a third-party agent skill, dependencies and build scripts before importing it.",
+      "primarySkill": "supply-chain-security",
+      "expectedSkills": [
+        "supply-chain-security"
+      ],
+      "signals": [
+        "third-party"
+      ]
+    }
+  ]
+}

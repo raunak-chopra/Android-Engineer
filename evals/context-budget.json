@@ -36,7 +36,14 @@
     ["android-router", "android-accessibility-i18n"],
     ["android-router", "android-security-release"],
     ["android-router", "mobile-product-design"],
-    ["android-router", "kotlin-multiplatform"]
+    ["android-router", "kotlin-multiplatform"],
+    ["engineering-router", "product-ux-design"],
+    ["engineering-router", "visual-design-system"],
+    ["engineering-router", "graphics-assets"],
+    ["engineering-router", "web-frontend"],
+    ["fullstack-delivery", "web-frontend"],
+    ["fullstack-delivery", "backend-api"],
+    ["fullstack-delivery", "database-engineering"]
   ],
   "exceptions": []
 }

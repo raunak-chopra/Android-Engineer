@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.rauna.sudoku.core.sudoku.PeerCellsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-04T10:18:25.748Z" hostname="HOME-PC" time="0.059">
+  <properties/>
+  <testcase name="rowColumnAndBoxMathIsCorrect" classname="com.rauna.sudoku.core.sudoku.PeerCellsTest" time="0.053"/>
+  <testcase name="peersHaveTwentyUniqueCells" classname="com.rauna.sudoku.core.sudoku.PeerCellsTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

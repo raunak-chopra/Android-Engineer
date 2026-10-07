@@ -282,6 +282,16 @@ $hostExecutable = (Get-Process -Id $PID).Path
 $budgetScript = Join-Path $rootFullPath "scripts\measure-context-budget.ps1"
 $contractScript = Join-Path $rootFullPath "scripts\test-skill-contracts.ps1"
 $behavioralScript = Join-Path $rootFullPath "scripts\test-behavioral-evals.ps1"
+$lazyScript = Join-Path $rootFullPath "scripts\test-lazy-load-contract.ps1"
+if (Test-Path -LiteralPath $lazyScript -PathType Leaf) {
+    $lazyOutput = & $hostExecutable -NoProfile -File $lazyScript -Root $rootFullPath 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        Add-Issue -Severity "Blocking" -Path "evals\lazy\load-contract.json" -Message ("Lazy load contract failed: " + (($lazyOutput | Select-Object -Last 2) -join " "))
+    }
+}
+else {
+    Add-Issue -Severity "Blocking" -Path "scripts\test-lazy-load-contract.ps1" -Message "Lazy load validator is missing."
+}
 if (Test-Path -LiteralPath $budgetScript -PathType Leaf) {
     $budgetOutput = & $hostExecutable -NoProfile -ExecutionPolicy Bypass -File $budgetScript -Root $rootFullPath -Enforce -Format Table 2>&1
     if ($LASTEXITCODE -ne 0) {

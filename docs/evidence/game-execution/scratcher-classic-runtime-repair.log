@@ -1,0 +1,91 @@
+INSTRUMENTATION_STATUS: class=com.rauna.scratcher.LifeFlowTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+com.rauna.scratcher.LifeFlowTest:
+INSTRUMENTATION_STATUS: test=earnBuyRevealCollectAndRestore
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.rauna.scratcher.LifeFlowTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=earnBuyRevealCollectAndRestore
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.rauna.scratcher.LifeStoreTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+com.rauna.scratcher.LifeStoreTest:
+INSTRUMENTATION_STATUS: test=corruptionIsRejectedWithoutDeletingData
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.rauna.scratcher.LifeStoreTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=corruptionIsRejectedWithoutDeletingData
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.rauna.scratcher.LifeStoreTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=migrationPreservesLegacyAndCommittedTicket
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.rauna.scratcher.LifeStoreTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=migrationPreservesLegacyAndCommittedTicket
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.rauna.scratcher.LifeCoatingTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stream=
+com.rauna.scratcher.LifeCoatingTest:
+INSTRUMENTATION_STATUS: test=erasureRollbackAndRestoreReuseBitmapInBothStyles
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.rauna.scratcher.LifeCoatingTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=4
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: expected:<-5722187> but was:<-5393222>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.rauna.scratcher.LifeCoatingTest.erasureRollbackAndRestoreReuseBitmapInBothStyles(LifeCoatingTest.kt:22)
+
+INSTRUMENTATION_STATUS: stream=
+Error in erasureRollbackAndRestoreReuseBitmapInBothStyles(com.rauna.scratcher.LifeCoatingTest):
+java.lang.AssertionError: expected:<-5722187> but was:<-5393222>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.rauna.scratcher.LifeCoatingTest.erasureRollbackAndRestoreReuseBitmapInBothStyles(LifeCoatingTest.kt:22)
+
+INSTRUMENTATION_STATUS: test=erasureRollbackAndRestoreReuseBitmapInBothStyles
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 38.341
+There was 1 failure:
+1) erasureRollbackAndRestoreReuseBitmapInBothStyles(com.rauna.scratcher.LifeCoatingTest)
+java.lang.AssertionError: expected:<-5722187> but was:<-5393222>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.rauna.scratcher.LifeCoatingTest.erasureRollbackAndRestoreReuseBitmapInBothStyles(LifeCoatingTest.kt:22)
+
+FAILURES!!!
+Tests run: 4,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

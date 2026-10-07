@@ -28,6 +28,8 @@ All milestones use the approval sequence defined in [AGENTS.md](../AGENTS.md): D
 | M6 | CI definition reviewed and root Accepted as configuration; hosted execution and remaining follow-ups deferred |
 | M7 | Draft implemented on 2026-09-15; context, routing, contract, and inspector checks pass locally; independent review pending |
 
+The separately authorized local [lazy skill implementation](LAZY_IMPLEMENTATION.md) is Verified and Accepted after independent review/root acceptance on 2026-10-07. This bounded extension does not change historical M7 milestone acceptance or approve future imports.
+
 No milestone is owner-approved or released yet. “Deferred” items need a real application or
 an explicit follow-up package; they are not silently implied by this baseline.
 

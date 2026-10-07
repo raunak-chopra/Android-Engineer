@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "android-skill-contracts",
-  "auditDate": "2026-09-15",
+  "auditDate": "2026-10-07",
   "common": {
     "workflowSteps": {"minimum": 5, "maximum": 7},
     "acceptanceConditions": {"minimum": 3, "maximum": 5},
@@ -13,6 +13,31 @@
     ]
   },
   "contracts": [
+    {"skill": "engineering-router", "requiredConcepts": [
+      {"id": "single-primary", "anyOf": ["one primary"]},
+      {"id": "conditional-load", "anyOf": ["only if"]}
+    ]},
+    {"skill": "product-ux-design", "requiredConcepts": [
+      {"id": "hypotheses", "anyOf": ["hypotheses"]},
+      {"id": "no-fabricated-findings", "anyOf": ["No invented user findings"]}
+    ]},
+    {"skill": "visual-design-system", "requiredConcepts": [
+      {"id": "preserve-visual-choice", "anyOf": ["preserve approved choices"]},
+      {"id": "mockup-boundary", "anyOf": ["not working UI"]}
+    ]},
+    {"skill": "graphics-assets", "requiredConcepts": [
+      {"id": "vector-native", "anyOf": ["vector/code"]},
+      {"id": "import-permission", "anyOf": ["approval before importing"]}
+    ]},
+    {"skill": "fullstack-delivery", "requiredConcepts": []},
+    {"skill": "web-frontend", "requiredConcepts": []},
+    {"skill": "backend-api", "requiredConcepts": []},
+    {"skill": "database-engineering", "requiredConcepts": []},
+    {"skill": "application-security", "requiredConcepts": []},
+    {"skill": "system-architecture", "requiredConcepts": []},
+    {"skill": "engineering-testing", "requiredConcepts": []},
+    {"skill": "supply-chain-security", "requiredConcepts": []},
+    {"skill": "reliability-observability", "requiredConcepts": []},
     {"skill": "android-router", "requiredConcepts": [
       {"id": "smallest-specialist-set", "anyOf": ["smallest specialist"]},
       {"id": "unknowns", "anyOf": ["unknown as unknown", "unknowns as unknown"]},

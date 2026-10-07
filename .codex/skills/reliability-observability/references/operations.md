@@ -1,0 +1,3 @@
+# Telemetry and recovery
+
+Read before changing instrumentation or planning operational recovery. Instrument the smallest useful boundary with existing tools. Define signal ownership, bounded cardinality, retention and access; avoid credentials, personal payloads and sensitive baggage propagation. Prove timeout/retry/cancellation/overload behavior in isolation. Alert on user-visible objectives. Propose containment with blast radius, validation and owner. Live restart/failover/deployment/rollback/data mutation requires exact target authorization; re-test the user flow after authorized repair. Local rehearsal does not prove production recovery. No external telemetry service is enabled implicitly.

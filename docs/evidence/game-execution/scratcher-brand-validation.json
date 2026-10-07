@@ -1,0 +1,271 @@
+{
+  "schema_version": "health-summary.v1",
+  "generated_at": "2026-10-04T16:59:55.711Z",
+  "status": "fail",
+  "scope": "deterministic structure, security, and CLI contracts; excludes live integrations, rendered QA, and independent creative evaluation",
+  "checks_with_diagnostics": [
+    "delivery-template",
+    "workspace"
+  ],
+  "results": [
+    {
+      "name": "check-syntax",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 335,
+      "has_diagnostics": false
+    },
+    {
+      "name": "check-json",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 1288,
+      "has_diagnostics": false
+    },
+    {
+      "name": "secret-self-test",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 152,
+      "has_diagnostics": false
+    },
+    {
+      "name": "secret-scan",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 1495,
+      "has_diagnostics": false
+    },
+    {
+      "name": "skill-routing",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 210,
+      "has_diagnostics": false
+    },
+    {
+      "name": "skill-standard",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 209,
+      "has_diagnostics": false
+    },
+    {
+      "name": "prompt-templates",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 151,
+      "has_diagnostics": false
+    },
+    {
+      "name": "learning-index",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 220,
+      "has_diagnostics": false
+    },
+    {
+      "name": "brand-registry",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 162,
+      "has_diagnostics": false
+    },
+    {
+      "name": "content-template",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 144,
+      "has_diagnostics": false
+    },
+    {
+      "name": "delivery-template",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 159,
+      "has_diagnostics": true,
+      "diagnostics": {
+        "stdout": "",
+        "stderr": "- Warning: name is [To be supplied]\n- Warning: scope.workspace_scope is [To be supplied]\n- Warning: intent.objective is [To be supplied]\n- Warning: intent.audience is [To be supplied]\n- Warning: recovery.last_verified_checkpoint is [To be supplied]\n- Warning: recovery.next_action is [To be supplied]\n",
+        "error": null,
+        "signal": null
+      },
+      "diagnostics_truncated": false
+    },
+    {
+      "name": "creative-route",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 143,
+      "has_diagnostics": false
+    },
+    {
+      "name": "creative-reference",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 207,
+      "has_diagnostics": false
+    },
+    {
+      "name": "creative-intelligence",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 272,
+      "has_diagnostics": false
+    },
+    {
+      "name": "creative-knowledge",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 210,
+      "has_diagnostics": false
+    },
+    {
+      "name": "ab-schema",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 155,
+      "has_diagnostics": false
+    },
+    {
+      "name": "evidence",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 160,
+      "has_diagnostics": false
+    },
+    {
+      "name": "design-system",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 182,
+      "has_diagnostics": false
+    },
+    {
+      "name": "findings",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 154,
+      "has_diagnostics": false
+    },
+    {
+      "name": "presentation",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 173,
+      "has_diagnostics": false
+    },
+    {
+      "name": "static-visual",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 151,
+      "has_diagnostics": false
+    },
+    {
+      "name": "workspace",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 1787,
+      "has_diagnostics": true,
+      "diagnostics": {
+        "stdout": "",
+        "stderr": "Workspace migration/readiness findings:\n- .build/capabilities-official-refresh/validated-internal.pptx: tracked large binary requires asset-policy/provenance record\n- .build/capabilities-official-refresh/validated-usage-internal.pptx: tracked large binary requires asset-policy/provenance record\n- .build/capabilities-redesign/candidate-v5.pptx: tracked large binary requires asset-policy/provenance record\n- .build/variants-refresh/candidate.pptx: tracked large binary requires asset-policy/provenance record\n- AGENTS.md: absolute machine-specific path\n- brands/QuietDiscovery/generated-image-log.md: absolute machine-specific path\n- docs/archive/design-upgrade-source-plan-[redacted-phone].md: absolute machine-specific path\n- docs/capabilities-deck/Brand-Manager-Creative-Capabilities-Deck-INTERNAL.pptx: tracked large binary requires asset-policy/provenance record\n- logs/context-usage/2026-06.md: absolute machine-specific path\n- outputs/Brand Manager Creative/final/agency-demo-cheat-sheet/Brand-Manager-Creative-Agency-Cheat-Sheet.html: final/approved path contains unresolved [To be supplied]\n- outputs/Brand Manager Creative/final/capabilities-and-variants-deck/Brand-Manager-Capabilities-Profiles-and-Command-System-[redacted-phone]-v8.pptx: tracked large binary requires asset-policy/provenance record\n- outputs/Brand Manager Creative/final/capabilities-and-variants-deck/Brand-Manager-Capabilities-Variants-and-Command-System-[redacted-phone]-v7.pptx: tracked large binary requires asset-policy/provenance record\n- outputs/Brand Manager Creative/final/command-cheat-sheet/Brand-Manager-Creative-Command-Cheat-Sheet.html: final/approved path contains unresolved [To be supplied]\n- outputs/Brand Manager Creative/reports/[redacted-phone]-design-repo-audit-and-all-branches-upgrade-plan.md: absolute machine-specific path\n- outputs/Brand-Manager-OS/deep-learning-audit-[redacted-phone].md: broken or stale local link deep-learning-session-plan-[redacted-phone].md\n- outputs/Team Theek Thi/ASSET-MANIFEST.md: legacy asset inventory is not approval; verify each export and placeholder before promotion\n- outputs/Team Theek hai/assets/moodboards/route-c-football-receipt.svg: SVG contains placeholder marker; not a final export\n- outputs/Team Theek hai/assets/moodboards/route-d-department-of-theek-hai.svg: SVG contains placeholder marker; not a final export\n- outputs/Team Theek hai/assets/touchpoints/touchpoint-short-receipt.svg: SVG contains placeholder marker; not a final export\n- shared-reference-library/tools-and-prompts/envato-asset-library-guide.md: absolute machine-specific path\n- tests/forward-test-scorecard.json: unfinished forward tests remain\n- tools/clis/platform-support.json: platform support recheck is overdue; re-verify API contracts before any live platform call\n",
+        "error": null,
+        "signal": null
+      },
+      "diagnostics_truncated": false
+    },
+    {
+      "name": "remediation-ledger",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 245,
+      "has_diagnostics": false
+    },
+    {
+      "name": "files-loaded-fixture",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 193,
+      "has_diagnostics": false
+    },
+    {
+      "name": "design-output",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 231,
+      "has_diagnostics": false
+    },
+    {
+      "name": "intake-map",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 195,
+      "has_diagnostics": false
+    },
+    {
+      "name": "intake-dry-run",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 347,
+      "has_diagnostics": false
+    },
+    {
+      "name": "dashboard-security",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 266,
+      "has_diagnostics": false
+    },
+    {
+      "name": "reference-security",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 280,
+      "has_diagnostics": false
+    },
+    {
+      "name": "repository-controls",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 214,
+      "has_diagnostics": false
+    },
+    {
+      "name": "shared-cli",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 585,
+      "has_diagnostics": false
+    },
+    {
+      "name": "platform-matrix",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 8793,
+      "has_diagnostics": false
+    },
+    {
+      "name": "platform-support",
+      "status": "pass",
+      "exit_code": 0,
+      "duration_ms": 1123,
+      "has_diagnostics": false
+    },
+    {
+      "name": "tests",
+      "status": "fail",
+      "exit_code": 1,
+      "duration_ms": 40630,
+      "has_diagnostics": false,
+      "diagnostics": {
+        "stdout": " chronology, content state, lineage, and brand isolation (2.1762ms)\n✔ distinguishes observed publication from authorized execution and gates metrics (9.8984ms)\n✔ requires prior same-brand evidence and independent content for repeated learning (1.3839ms)\n✔ allows explicit confirmation of a scoped learning and validates files including an empty template (9.8784ms)\n✔ the documented example event satisfies event-shape validation (1.9661ms)\n✔ craft principles file carries the always-on five with source pointers (3.0388ms)\n✔ AGENTS and routing apply craft defaults to every creative output, including quick tasks (1.8041ms)\n✔ every producing skill points to the craft layer (14.1056ms)\n✔ review templates and QA rubric score brand link and continuity (4.1798ms)\n✔ HBG attribution corrections are preserved (5.562ms)\n✔ craft tiers: nano five match AGENTS order and every mini rule has a source pointer (2.2905ms)\n✔ bootstrap preserves existing P1-P9 principles as explicitly bounded prior syntheses (48.6126ms)\n✔ new supplement landing-page question retrieves reusable P5/P6 knowledge and source trail (21.2868ms)\n✔ video extraction contract requires viewing and audio boundaries and every learning dimension (8.1305ms)\n✔ knowledge validation rejects invented repeated patterns without two independent source atoms (4.5307ms)\n✔ import, linked synthesis, and candidate clustering retain source-level evidence (14.2154ms)\n✔ local artifact paths cannot escape the workspace (3.7394ms)\n✔ registering a local image or video stores a hash and relative pointer without copying the source (49.4788ms)\n✔ reference search scores populated values without matching schema field names (33.3817ms)\n✔ rejected references are returned as warnings instead of inspiration (1.1679ms)\n✔ documented creative lessons are attached to matching registry sources (75.992ms)\n✔ clean fixture passes without mutation (53.2108ms)\n✔ intentional exception is reported and file is preserved (5.9442ms)\n✔ failure fixture catches independent production defects deterministically (8.7448ms)\n✔ exceptions cannot waive safety or stale fingerprints (7.4554ms)\n✔ source/legal/supplied punctuation remains untouched (7.6052ms)\n✔ opaque hex contrast calculation and unknown color formats (0.6604ms)\n✔ unsafe paths, malformed arrays and missing manifest fail without writes (1.4944ms)\n✔ HTML entity em-dash is detected; comments are excluded (13.1449ms)\n✔ redesign inventory binds protected actions, legal, claims, SEO and analytics (3.8255ms)\n✔ production sidecar cannot borrow another artifact manifest (357.261ms)\n✔ comp-first binds current map, assets and existing decision record without mutation (35.6639ms)\n✔ comp-first fails when map or assets change after review (55.4644ms)\n✔ comp-first rejects missing review, stale reference and stale decision record (33.2019ms)\n✔ comp-first rejects invalid geometry, duplicate IDs, raster controls and escaping paths (20.0205ms)\n✔ malformed comp plans fail without throwing; code-first retains legacy behavior (13.7898ms)\n✔ accepts a complete record (5.3682ms)\n✔ rejects an output with no record (1.1034ms)\n✔ rejects an unticked core file (2.1783ms)\n✔ an undisclosed skip fails; a disclosed or user-excluded one passes (1.0951ms)\n✔ unticked items need a reason (2.8535ms)\n✔ partial retrieval fails (0.9005ms)\n✔ accepts the canonical finding shape (20.6508ms)\n✔ rejects invalid dates and false resolution state (1.2187ms)\n✔ resolved records require resolved_at (2.9157ms)\n✔ rejects malformed source and action history (1.731ms)\n✔ rejects unknown, oversized, and nested pollution fields (1.0825ms)\n✔ AGENTS carries the Git rules for every AI agent (19.4595ms)\n✔ Claude and Gemini/Antigravity entry files point at AGENTS (1.649ms)\n✔ the GitHub guide names the right remote and branch model (7.2748ms)\n✔ an approved record lands in its destination only, and a re-run changes nothing (399.3109ms)\n✔ hold leaves a record staged and reject closes it (496.7381ms)\n✔ a claim without proof is blocked; with a source it reaches the claim registry (315.0766ms)\n✔ a font without a licence note and a testimonial without permission stay blocked (356.8323ms)\n✔ reference-only material can reach reference-index.md and never a brand fact file (349.158ms)\n✔ unrouted records are blocked until a human routes them in review.md (318.9237ms)\n✔ a route to a file or anchor that is not there is blocked (341.4853ms)\n✔ approved memory survives a different source unless an exact revision is approved (927.9682ms)\n✔ inference, hypotheses and unknown classes are never promoted as fact (1035.1644ms)\n✔ context-index stays compact: values fill placeholders, lists append, hand-written text is untouched (1233.2921ms)\n✔ dry-run promotes nothing (944.4902ms)\n✔ the promotion log records what changed (419.5274ms)\n✔ Confirmed workbook cells arrive pre-approved and promote without extra edits (244.7132ms)\n✔ status reports completion by tier, open conflicts and blocked sources (319.5295ms)\n✔ workbook status is preserved and only a named decision maker turns Confirmed into approval (269.8015ms)\n✔ Confirmed without a named decision maker stays pending (479.6099ms)\n✔ a re-run is idempotent and dry-run writes nothing (321.0171ms)\n✔ human review decisions survive a re-run (377.1505ms)\n✔ duplicates collapse by hash and derivatives link to their master (409.8379ms)\n✔ a fact in two sources with different values is recorded as a conflict, not overwritten (365.3975ms)\n✔ a changed source supersedes the old capture and records the change as a conflict (384.4247ms)\n✔ claims, prices and licences are classed as evidence and flagged without proof (801.5159ms)\n✔ reference-only material never becomes brand fact (1020.7987ms)\n✔ private modes make no network request (834.9889ms)\n✔ public-brand mode excludes the Stakeholders sheet (575.5226ms)\n✔ unreadable sources fail visibly as BLOCKED and are never treated as reviewed (944.3091ms)\n✔ a near-duplicate brand name is refused before anything is created (135.9441ms)\n✔ modes for existing brands refuse a brand that does not exist (119.9047ms)\n✔ invalid mode, research level and missing source are usage errors (100.208ms)\n✔ scan never touches authoritative brand files (282.3848ms)\n✔ every question in the shipped workbook matches the field map (531.3988ms)\n✔ workbook evidence-log rows route by type and keep their evidence links (272.9182ms)\n✔ DOCX headings, lists and tables are read in full with paragraph locators (558.2154ms)\n✔ PPTX slides and speaker notes are read with slide locators (262.6209ms)\n✔ a deck, its PDF export and an HTML master collapse to one source of facts (370.2797ms)\n✔ HTML drops scripts and navigation, reads page metadata, and flags a missing date (387.1032ms)\n✔ encrypted or empty Office files and a DOCX without text are BLOCKED (385.6388ms)\n✔ public-brand fetches explicit URLs and tier-1 auto facts arrive pre-approved for the log (333.4242ms)\n✔ official research crawls a few same-site pages, respects robots.txt and skips cart pages (596.7681ms)\n✔ robots.txt rules honour the longest matching path (0.7593ms)\n✔ private modes fetch nothing unless research is set (815.3611ms)\n✔ source tiers keep official, independent, customer-language and inference distinguishable (1154.6896ms)\n✔ stale, redirected, walled and script-only URLs are BLOCKED with a reason (744.4424ms)\n✔ a fetch failure never crashes the scan and unsafe URLs are refused (1019.3305ms)\n✔ multilingual sources are flagged for translation review and lowered in confidence (272.6661ms)\n✔ rebrand keeps current and proposed identities as separate states (265.9047ms)\n✔ project-delta needs a project, never auto-promotes and cannot reach brand-wide files (335.349ms)\n✔ asset-only keeps asset rights material and drops strategy answers (335.0285ms)\n✔ post-project decisions go to the decision log with their project (280.0909ms)\n✔ reference-only workbooks stay out of brand facts too (316.4751ms)\n✔ the shipped field map passes (117.9956ms)\n✔ the map covers every workbook question (1.9881ms)\n✔ a duplicate id is rejected (144.9579ms)\n✔ an anchor that is not in the template is rejected (33.9061ms)\n✔ a required field cannot be full tier and an optional one cannot be quick (65.6641ms)\n✔ only evidence-class fields name an evidence kind (35.1159ms)\n✔ the brand template ships the intake staging files and ignores them for real brands (2.156ms)\n✔ each tier carries exactly its fields and the sheets it needs (396.1704ms)\n✔ the generated workbook round-trips through scan with no unmatched question (1147.8719ms)\n✔ a filled generated workbook stages candidates with the client's status and decision maker (496.6861ms)\n✔ output is deterministic and the workbook is well-formed for Excel (133.2212ms)\n✔ the workbook never asks for credentials and points access questions at who holds access (51.8508ms)\n✔ the generator writes the workbook, cover note and drop folder, and protects existing answers (215.7384ms)\n✔ generator dry-run writes nothing and bad input is a usage error (133.0343ms)\n✔ parses and indexes only actioned learnings (15.4734ms)\n✔ allows only evidenced low-risk narrow targets into agent application (1.9508ms)\n✔ validation rejects missing status (0.9981ms)\n✔ production deck specs override slide count, dimensions, and selectors (16.2541ms)\n✔ production static specs override the root, ratio, dimensions, and safe area (1.7683ms)\n✔ default render contracts remain available and launcher wrappers resolve PATH output (3.9425ms)\n✔ custom specs fail when required production selectors are missing (0.8174ms)\n✔ required safe areas are structural requirements even without a duplicate selector list (1.1521ms)\n✔ render validators can load the bundled Playwright runtime without a local dependency (2018.279ms)\n✔ custom production specs drive real deck and static render dimensions (8919.685ms)\n✔ live deck count failures block render evidence and use the rendered count (12209.0883ms)\n✔ required static safe areas need positive contained geometry (14411.3978ms)\n✔ every production template has a spec whose size and ratio match the template (80.4095ms)\n✔ unfilled templates fail the placeholder gate (54.5713ms)\n✔ filled template with real image and copy passes structure validation (5.3113ms)\n✔ spec accepts min_font_px and thumbnail_scale and rejects bad scales (7.1331ms)\n✔ new-visual copies template and tokens with a local stylesheet link (58.3759ms)\n✔ accepts a valid draft with explicitly missing inputs (46.1531ms)\n✔ accepts a current revision with a valid fingerprint-bound approval (24.4165ms)\n✔ rejects duplicate IDs and dangling dependencies (40.5341ms)\n✔ rejects circular dependencies (17.1679ms)\n✔ rejects an approval that only covers an older revision (26.6914ms)\n✔ rejects artifact changes without a revision and fingerprint update (15.7837ms)\n✔ changed upstream work reopens only dependent approval and completed project state (46.259ms)\n✔ a correctly reapproved upstream revision invalidates only an old downstream prerequisite snapshot (103.1727ms)\n✔ revoked or superseded approvals cannot keep an approved deliverable current (18.1853ms)\n✔ QA-like completion markers cannot substitute for approval (24.2854ms)\n✔ claimed delivery requires attributable handoff evidence (25.578ms)\n✔ completed projects cannot retain partial requirements (43.8544ms)\n✔ completed projects accept explicit requirement deferrals with a decision (13.2206ms)\n✔ deferred and cancelled requirements need an active decision that targets them (44.1836ms)\n✔ valid multi-target scope decisions satisfy completed deferred requirements (13.667ms)\n✔ empty and superseded scope decisions cannot defer a requirement (33.3997ms)\n✔ malformed link arrays return diagnostics without throwing (330.5622ms)\n✔ malformed link arrays preserve structured CLI JSON (652.4527ms)\n✔ ready launch state cannot hide an unresolved mandatory blocker (12.581ms)\n✔ deferred scope needs a current decision and launch risks need real targets (14.5889ms)\n✔ rejects path traversal (11.771ms)\n✔ rejects directory junction escapes (18.1796ms)\n✔ reports malformed JSON and unsupported contract versions (24.5893ms)\n✔ validator is read-only and emits machine-readable CLI output (342.3438ms)\n✔ catalog has 8-15 valid, discoverable, uniquely aliased templates (10.1527ms)\n✔ natural-language and alias resolution select the intended stable template (28.3308ms)\n✔ unknown templates stop with suggestions instead of fuzzy auto-selection (97.9904ms)\n✔ required example resolves template and predictably reports missing InstaRecipe context (28.0155ms)\n✔ active brand target loads only its exact context pointer (43.6839ms)\n✔ missing blocking inputs remain visible and do not get invented (1.8424ms)\n✔ channel and mode modifiers adapt runtime without mutating the catalog (13.4067ms)\n✔ unsupported use case is rejected by suitability boundary (1.5285ms)\n✔ external action requests stay blocked without explicit authorization (1.5686ms)\n✔ compiled runtime never edits the canonical template (10.6496ms)\n✔ approved single direction is allowed only with source and canonical creative readiness (14.4047ms)\n✔ new supplement visual direction retrieves inspected visual systems (831.1174ms)\n✔ packaging critique retrieves evidence-backed pack principles (231.006ms)\n✔ Amazon hierarchy retrieves first-viewport synthesis and source examples (229.5193ms)\n✔ advertising hooks retrieve campaign-specific learning (478.4374ms)\n✔ landing-page structure retrieves reviewed page modules (230.1191ms)\n✔ colour recommendation retrieves color-system evidence (246.7793ms)\n✔ script critique retrieves campaign premise and exposes unreviewed motion (331.4241ms)\n✔ consumer-insight campaign task retrieves positive behavior reframing (618.1747ms)\n✔ inaccessible and metadata-only sources never enter creative retrieval (244.1059ms)\n✔ partial retrieval always carries named coverage gaps (223.9325ms)\n✔ new supplement direction retrieves category-breakout and ritual evidence (196.1305ms)\n✔ Amazon infographic task retrieves evidence ladder and main-image rule (234.8155ms)\n✔ packaging critique retrieves product-form and range-system evidence (322.0302ms)\n✔ landing-page recommendation uses promise path proof and risk reduction (220.1686ms)\n✔ color-system recommendation returns contrasting supported routes (226.764ms)\n✔ no registered source is left captured but unreviewed (257.2204ms)\n✔ classifies successful, product, and environment outcomes separately (3.3908ms)\n✔ parses the safety-oriented runner flags (1.0093ms)\n✔ assigns stable IDs to all registered worktree roles (0.8995ms)\n✔ an unknown worktree selection fails instead of reporting an empty success (1151.7501ms)\n✖ npm launcher executes through Node on Windows (4.5026ms)\n✔ fingerprint detects edits to a file already marked dirty (16.1732ms)\nℹ tests 231\nℹ suites 0\nℹ pass 230\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms [redacted-phone]\n\n✖ failing tests:\n\ntest at tests\\qa-cross-worktree.test.js:44:1\n✖ npm launcher executes through Node on Windows (4.5026ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  + actual - expected\n  \n  + 'npm.cmd'\n  - 'C:\\\\Users\\\\rauna\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\node\\\\bin\\\\node.exe'\n  \n      at TestContext.<anonymous> (C:\\Users\\rauna\\Desktop\\Bots\\Brand Manager Bot\\Brand-Manager-Creative\\tests\\qa-cross-worktree.test.js:46:44)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)\n      at Test.postRun (node:internal/test_runner/test:1522:19)\n      at Test.run (node:internal/test_runner/test:1447:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: 'npm.cmd',\n    expected: 'C:\\\\Users\\\\rauna\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\node\\\\bin\\\\node.exe',\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n",
+        "stderr": "",
+        "error": null,
+        "signal": null
+      },
+      "diagnostics_truncated": true
+    }
+  ]
+}

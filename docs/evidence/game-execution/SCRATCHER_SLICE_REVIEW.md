@@ -1,0 +1,75 @@
+# Scratcher first slice independent review
+
+Date: 4 October 2026 (India). Reviewer: `review_scratcher_plan`, independent of implementation author. Scope: Game1 LifeGame.kt, LifeStore.kt, LifeViewModel.kt, LifeActivity.kt, LifeGameTest.kt, build flavors and manifest/resource overlays; baseline files staged in Engineer `.tmp/scratcher-stage/baseline`.
+
+State: **Accepted** independently for the repaired tested local slice in the final runtime checkpoint. Earlier affected-renderer acceptance was superseded and has now been replaced by fresh passing evidence. Broader product/release gates remain open. This is the first local earn/buy/scratch slice, not implementation of the full release plan.
+
+## Findings
+
+1. **Important — pointer updates allocate a new bitmap and boxed mask copies.** `RealScratchCard` remembers its mask using `ticket.cells` as a key and creates a fresh IntArray and Bitmap whenever scratch coverage changes. `TicketRules.stroke` also clones a Set for each update, and the haptic branch computes another full stroke. This conflicts with the plan's explicit avoidance of bitmap allocation per gesture and makes physical scratch performance unproven. Repair the mask update/rendering boundary and avoid duplicate stroke computation, or record a narrow interim disposition excluding scratch-performance acceptance with a bounded follow-up. A physical-device trace remains required before accepting the performance target.
+
+2. **Advisory — load failure uses a transaction-error message.** When initial migration/read fails, `game` is null but `life_save_error` tells the player their committed balance is preserved and offers “Retry saved action.” Use a separate restore/migration-error description when no game has loaded; it should describe retry without implying an inspected wallet. No silent reset was found.
+
+## Source findings
+
+The pure model guards purchased outcomes, duplicate service events by shift ID/step, once-only settlement, stale ticket IDs and checked monetary arithmetic. Outcomes are sampled once for an action closure; retry keeps that sampled value. Journal is capped at 32 and snapshot bytes at 8192. Transactions save before publishing; failed saves retain their prior in-memory committed model. Repository busy/failure guards serialize mutation and actions fold pending scratch drafts into the committed snapshot. Scratch checkpoints are delayed; the latest decorative movements can be lost on process kill, while purchase and rewards use immediate commits.
+
+LifeStore uses AtomicFile, bounded reads and a reopen after legacy migration; the old collection file is retained. Migration is same-installation only: separate edition IDs cannot automatically read the prototype's private directory, consistently with the plan's separately tested future migration boundary. Prototype flavor retains the previous ID and launcher; Classic/Pixel suffixes distinguish installations and replace their launcher with LifeActivity. Main LifeActivity remains unexported in prototype. No network permission or release signing was introduced in the reviewed configuration.
+
+Hidden prize text clears semantics until reveal. Work actions have text labels and large button minimum heights; accessible reveal uses the same settlement model. Native resource labels, resume actions, failures and zero-money earning routes exist. Real TalkBack, font scale, keyboard behavior, contrast and input/scroll arbitration still need runtime evidence. Scratch width is currently normalized to ticket size rather than fixed dp; panel families, sound, event choices, customer/product art, full first-run tutorial, goals/upgrades and complete graphic content remain outside this first slice.
+
+## Evidence limits
+
+LifeGameTest covers pure rules, codec round trips, bounded long sessions, monetary overflow and transaction failure/retry using fake storage. Test presence is not a passing result; build was still running at initial review. No LifeRepository cancellation/input-race regression, actual AtomicFile migration/failure integration test, process-kill test, flavor isolation test or physical-device evidence was available at this checkpoint. Assets were still being generated and are not accepted by this source review. Release readiness, rights approval and distribution are excluded.
+
+Required next checkpoint: repair/dispose Important finding, provide completed build/test evidence, inspect final renderer changes and generated-art integration, then record bounded verification/acceptance separately.
+
+## Staged repair re-review
+
+Inspected the updated Engineer `.tmp/scratcher-stage` LifeActivity, LifeGame, LifeViewModel, strings and new LifeStoreTest/LifeFlowTest sources. The renderer now retains one Bitmap/ImageBitmap per ticket/style and updates erased pixels, while repository scratch returns a fresh-surface Boolean instead of recomputing geometry for haptics. Stroke sets clone only on fresh coverage. This resolves the original per-update bitmap allocation and duplicated haptic computation in staged source. Bounded boxed Set copying, full prior-cell iteration and pixel updates remain physical-device allocation/performance measurement gaps; no performance acceptance is inferred.
+
+The separate initial restore-error copy addresses finding 2, and the renderer converts a 16dp radius into normalized mask units. These additional staged changes were not yet installed or built at this review checkpoint. Newly authored storage migration/corruption and earn/buy/reveal/collect/recreation tests were inspected as test sources only; no passing result is claimed here.
+
+**Important — reusable coating does not follow rollback to fewer cells.** `painted` only adds erased positions, and LaunchedEffect never restores pixels when a failed commit returns the same ticket to its smaller committed coverage. The visible foil remains more erased than the model's restored coverage. Repair the retained bitmap for both added and removed coverage, or rebuild its colors in place when coverage shrinks; verify failed-checkpoint rollback and retry against visible/model parity. This new finding remains open pending repair inspection.
+
+Subsequent staged repair inspected: shrink detection now restores base colors/current coverage in the retained bitmap, clears the rendered-position set and reapplies current coverage. This closes the rollback source finding. A bounded IntArray is allocated on rollback only, not ordinary fresh scratching; rollback/retry rendering still requires a regression or runtime check. Independent XML inspection confirms six LifeGameTest cases passed with zero failures/errors in both Classic and Pixel reports; these results predate the final additional renderer/copy/asset installation and do not verify that final build. No remaining blocking or Important source finding is open; final installation, build/runtime/art evidence and independent bounded acceptance remain pending.
+
+## Final installed source/build/art checkpoint
+
+Independently inspected installed LifeCoating and its Android regression: one retained Bitmap/ImageBitmap, incremental erase, per-pixel restoration when coverage shrinks, same-bitmap assertion and equivalent restored image checks in both styles. LifeActivity uses that helper, a draw revision, dp-derived radius and fresh-surface haptic result. The original allocation and rollback findings and restore-copy advisory are closed in installed source. Boxed masks/full iteration and GPU/gesture behavior still need measurement.
+
+Final build log records BUILD SUCCESSFUL in 3m17s. Fresh unit XML reports contain six LifeGameTest and five ScratchGameTest cases in each Classic, Pixel and Prototype flavor, all zero failures/errors. Author reports new-edition lint zero errors/28 warnings; warnings are not silently described as a clean report. Android regression tests are compiled but runtime results remain pending at this checkpoint.
+
+Read README, PRIVACY, NOTICE and android-checks.yml. Documentation accurately limits the game to a local development slice and records independent saves, virtual money and remaining release/rights scope. CI is non-deploying and configuration-only until hosted execution; no signing/upload step exists. Its public action tags remain a future reproducibility hardening consideration.
+
+Independently opened all four Brand scene masters with view_image: both shop scenes read as welcoming counters with blank packaging, and both room scenes consistently convey a modest cozy home. Classic and Pixel preserve composition and palette relationships without obstructing native text. No obvious text artifacts, real likeness or logos were observed. Pixel is a dense pixel-style illustration rather than a proven small-grid/palette atlas, explicitly disclosed in README. Master/integrated hashes were compared with asset-records.json for all four files and match. Private prototype visual fit is supported; final owner artwork/rights approval and rendered phone QA remain open.
+
+Reviewer independently accepts the bounded installed source, passing local build/unit checks and private four-scene integration after repairs. This acceptance excludes pending Android runtime tests, rendered UI/TalkBack, physical-device scratching/performance, full graphical slice/content, hosted CI, owner milestone approval and release readiness. Broader verification remains pending and must be separately recorded.
+
+## Runtime defect and repair review
+
+Author reports initial API 36.1 execution ran four tests with two failures in flow/coating: the colors-array Bitmap factory produced an immutable bitmap, so incremental pixel erasure failed. This is a real correctness defect missed by source/build review; earlier renderer acceptance is superseded. Initial failures must remain retained, not replaced with future passing claims.
+
+Independently inspected installed repair: LifeCoating now uses the dimensions/config factory and initializes colors through setPixels, retaining the same bitmap for erase and rollback. LifeCoatingTest still exercises actual setPixel erasure/restoration and bitmap identity in both styles, so fresh Android execution is the necessary proof. No remaining source blocker found in this repair.
+
+Inspected test isolation: LifeRepository accepts an injected directory defaulting to app.filesDir; ScratchApplication exposes an internal repository override, and LifeFlowTest installs a UUID-owned cache directory repository using an outer ExternalResource before the Activity rule. Teardown removes the override after Activity closure. No existing app directory is deleted or modified by this flow test. Production still defaults to the application-owned repository.
+
+Flow test now sends an actual drag, waits for nonempty coverage in its isolated persisted snapshot, recreates the Activity and checks nonzero coverage before reveal/collect/recreation. This supports actual input/checkpoint behavior and activity restoration when it passes. Recreation retains the application repository; it does not prove cold process restart or fresh repository disk reload. Store tests and coating reopen tests cover narrower reconstruction contracts; true process-kill proof remains deferred.
+
+Latest repair state: Reviewed pending fresh build and runtime results. No new runtime pass or acceptance is claimed by this checkpoint.
+
+Subsequent evidence: independently read runtime-repair build log (BUILD SUCCESSFUL in 3m11s). Classic rerun reports flow plus two storage cases passing; coating test still fails on its untouched-pixel comparison. Inspected staged test correction: it now captures the original color at (80,10) and compares that same coordinate after reconstruction, instead of comparing with (80,50). The procedural coating varies with coordinate, so the old equality was invalid. The correction preserves erase/rollback/same-bitmap assertions and does not weaken the behavior contract. Installed mutable bitmap factory remains present. Reviewed with no new source finding; corrected test APK build and complete Classic/Pixel reruns remain pending, with no renewed acceptance claimed.
+
+## Final runtime acceptance
+
+Independently read `scratcher-classic-runtime-final.log` and `scratcher-pixel-runtime-final.log`: each records OK (4 tests), respectively 36.179s and 33.864s. Independently inspected installed corrected LifeCoatingTest; same-coordinate original/untouched checks preserve the rollback/reconstruction contract. These results cover the actual drag/checkpoint/activity-recreation flow, once-only settlement, legacy/corruption preservation and retained mutable bitmap erasure/rollback/reconstruction in both styles.
+
+Opened Classic Home, Pixel Home and Pixel Work PNGs independently with view_image. Native headings, wallet, day/energy and navigation are legible; scene artwork is coherently integrated and the Pixel Work instructions/start button fit without overlapping artwork. Home's lower actions require scrolling, consistent with the implemented scroll surface; these captures alone do not establish large-font or TalkBack usability. Pixel art remains a style illustration rather than a verified atlas.
+
+Reviewer independently accepts the repaired bounded local source/build/tests, these named API 36.1 runtime flows and private scene integration. No blocking or Important finding remains within that scope. A separate force-stop/restart check is still pending and is not inferred from these passes. Full content/graphic production, physical-device accessibility/performance, owner enjoyment/rights approval, hosted CI and release readiness remain excluded. Earlier failed build/runtime evidence stays retained.
+
+## Additional process-restart and edition-isolation proof
+
+Independently read staged `check-restart.py`, retained JSON/log, both edition isolation snapshots and Classic isolation UI XML, and opened Pixel ticket-restart PNG. The script drives a Pixel shift and ticket purchase through UI, waits before reading the committed file, force-stops only the task-owned Pixel package, checks process absence, relaunches and requires a changed PID plus identical committed snapshot and nonzero coverage semantics. Evidence records PID 2303 → 4228, wallet 38, and retained partial mask. Pixel snapshot independently shows earned 48, spent 10, one shift and unsettled ticket #2 with fixed prize 10; the capture visibly restores a partial erased stripe. Classic snapshot and its UI remain at zero coins/day 1/no shifts, supporting independent edition state during this Pixel progression.
+
+Bounded acceptance extends to this committed Pixel snapshot restoration after force-stop/new-process launch and this observed Classic/Pixel wallet isolation. It does not prove interruption during AtomicFile replacement, purchase/settlement commit, low-memory kill, crash/disk-full, mid-shift restart, or the equivalent Classic process-restart path. Reset isolation was not exercised. Prototype data was not inspected or altered. These abrupt-boundary and broader release gates remain open.

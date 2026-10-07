@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.rauna.sudoku.data.game.GameMappersTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-04T10:18:26.203Z" hostname="HOME-PC" time="0.011">
+  <properties/>
+  <testcase name="blankGivensAndPlayerStateSurvivePersistenceRoundTrip" classname="com.rauna.sudoku.data.game.GameMappersTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

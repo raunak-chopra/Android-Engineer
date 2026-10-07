@@ -1,0 +1,8 @@
+{
+  "edition": "com.rauna.scratcher.prototype.pixel.debug",
+  "pid_before": "2303",
+  "pid_after": "4228",
+  "identical_committed_snapshot": true,
+  "wallet": 38,
+  "partial_mask_restored": true
+}
