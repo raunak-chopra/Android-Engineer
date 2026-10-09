@@ -1,10 +1,13 @@
-# Engineer implementation plan
+# Engineer implementation plan (ARCHIVED)
+
+> Historical record of the Android-library milestones M0 to M7. Superseded by [../ROADMAP.md](../ROADMAP.md) and the three approval tiers in [../../AGENTS.md](../../AGENTS.md). The approval sequence described below no longer applies.
+
 
 ## Purpose
 
 This plan stages a curated Android engineering workspace without claiming work that has not been demonstrated. It is a control document, not authorization to access external systems, publish artifacts, or change production.
 
-All milestones use the approval sequence defined in [AGENTS.md](../AGENTS.md): Draft → Reviewed → Verified → Accepted → Owner-approved. “Released” applies only to a separately authorized external release.
+All milestones use the approval sequence defined in [AGENTS.md](../../AGENTS.md): Draft â†’ Reviewed â†’ Verified â†’ Accepted â†’ Owner-approved. â€œReleasedâ€ applies only to a separately authorized external release.
 
 ## Program principles
 
@@ -22,23 +25,26 @@ All milestones use the approval sequence defined in [AGENTS.md](../AGENTS.md): D
 | --- | --- |
 | M0 | Verified and root Accepted locally on 2026-09-11; owner approval pending |
 | M1 | Verified and root Accepted locally; three licenses confirmed, fourth source restricted, all four refs unchanged |
-| M2–M3 | Fourteen skills and ranked 20-case routing corpus Verified and root Accepted locally |
+| M2â€“M3 | Fourteen skills and ranked 20-case routing corpus Verified and root Accepted locally |
 | M4 | Three fresh generated profiles Verified on Windows and root Accepted locally; hosted CI proof pending |
 | M5 | State-model reference app, unit tests, debug build, and unsigned R8 release build Verified and root Accepted locally; target scenarios deferred |
 | M6 | CI definition reviewed and root Accepted as configuration; hosted execution and remaining follow-ups deferred |
+| M7 | Draft implemented on 2026-09-15; context, routing, contract, and inspector checks pass locally; independent review pending |
 
-No milestone is owner-approved or released yet. “Deferred” items need a real application or
+The separately authorized local [lazy skill implementation](../LAZY_IMPLEMENTATION.md) is Verified and Accepted after independent review/root acceptance on 2026-10-07. This bounded extension does not change historical M7 milestone acceptance or approve future imports.
+
+No milestone is owner-approved or released yet. â€œDeferredâ€ items need a real application or
 an explicit follow-up package; they are not silently implied by this baseline.
 
 ## Execution allocation and review model
 
-The requested cost-aware implementation allocation uses Terra and Luna at maximum reasoning effort. Assign one as implementer and the other as independent reviewer, then alternate roles across bounded packages. Root acceptance remains a separate decision based on the recorded evidence. The role separation matters more than the model label: no author approves their own work.
+Assign separate implementer and independent-reviewer roles across bounded packages. Model choice is runtime-dependent and does not replace role independence or evidence. Root acceptance remains a separate decision: no author approves their own work.
 
 Each package must identify its acceptance proof before implementation starts. A reviewer may return the work for repair repeatedly; it becomes Verified only after required repairs and checks complete. Do not batch every specialist skill or template into one unreviewable change.
 
 ## Milestones
 
-### M0 — Workspace foundation
+### M0 â€” Workspace foundation
 
 **Outcome:** repository-level instruction, architecture, contribution, standards, change-control, release, incident, and catalog documents establish the governance boundary.
 
@@ -48,7 +54,7 @@ Each package must identify its acceptance proof before implementation starts. A 
 
 **Boundary:** M0 does not create active skills, templates, CI, real applications, releases, or production integrations.
 
-### M1 — Source governance and validation infrastructure
+### M1 â€” Source governance and validation infrastructure
 
 **Outcome:** a local, reviewable record of upstream sources and deterministic checks for the library structure.
 
@@ -61,21 +67,19 @@ assessment. Engineer may synthesize attributed ideas in original prose but may
 not copy source prose or code until a compatible license is independently
 confirmed. Reviewed revisions must remain exact and drift-checkable.
 
-### M2 — Core Android guidance
+### M2 â€” Core Android guidance
 
 **Outcome:** a small routing layer and four core skills: project inspection/bootstrap, architecture, Compose UI, and testing-aware delivery.
 
 **Deliverables:** concise, self-contained `SKILL.md` entrypoints, provenance
-sections, and “when not to use” routing. Add focused local reference files only
-when a skill outgrows its activation budget or needs reusable detail; the current
-44–53-line skills intentionally avoid reference indirection without content to
-justify it.
+sections, and â€œwhen not to useâ€ routing. Add focused references only when a
+skill outgrows its activation budget or has genuinely conditional detail.
 
 **Acceptance evidence:** trigger scopes do not collide; each skill respects brownfield evidence; no stale Android version pin is presented as universal; commands are verified or labelled unverified; structural validation and independent review pass.
 
 **Boundary:** offline-first persistence, multi-module topology, DI framework, navigation library, and network stack remain conditional decisions.
 
-### M3 — Specialist Android guidance
+### M3 â€” Specialist Android guidance
 
 **Outcome:** focused skills for data and sync, networking, concurrency, adaptive navigation, testing, debugging/performance, accessibility/internationalization, security/release, mobile product design, and optional Kotlin Multiplatform.
 
@@ -85,7 +89,7 @@ justify it.
 
 **Boundary:** Kotlin Multiplatform is optional and should not be authored as a mandatory Android baseline without a real target need.
 
-### M4 — Selectable Android templates
+### M4 â€” Selectable Android templates
 
 **Outcome:** minimal, standard, and modular templates that represent increasing complexity without forcing it.
 
@@ -107,7 +111,7 @@ toolchain, CI compiles each profile on Linux, wrapper downloads are checksum
 pinned, generated names are neutral, generator output works under common console
 encodings, and the reference app supplies the deeper debug/release checks.
 
-### M5 — Reference application and evaluations
+### M5 â€” Reference application and evaluations
 
 **Outcome:** a deliberately small reference application and evaluation cases that exercise claimed workflows.
 
@@ -121,9 +125,9 @@ toy application.
 
 **Acceptance evidence:** the application demonstrates rather than merely documents the relevant guidance; failures found by the app or evals result in corrections to the source guidance or an explicit limitation.
 
-### M6 — CI and release controls
+### M6 â€” CI and release controls
 
-**Outcome:** repository checks that protect the curated library and pre-release evidence—not automatic production deployment.
+**Outcome:** repository checks that protect the curated library and pre-release evidenceâ€”not automatic production deployment.
 
 **Baseline deliverables:** skill/link/JSON validation, routing evaluations,
 read-only source drift checks, profile generation and compilation, reference
@@ -132,6 +136,30 @@ dedicated secret scanning, release-evidence packaging, and R8 mapping artifact
 retention remain named CI follow-ups before a real app release workflow exists.
 
 **Acceptance evidence:** checks run from a clean environment; failure messages are actionable; secrets are not emitted; release controls require explicit inputs; no workflow can upload or promote production artifacts by default.
+
+### M7 â€” Measured context efficiency
+
+**Outcome:** reduce always-on instructions, skill-catalog metadata, activated
+skill bodies, inspection output, and successful validation output without
+weakening governance or Android decision quality.
+
+**Deliverables:** versioned context budgets and baselines, deterministic budget
+and skill-contract validators, a bounded Android project inspector, compact
+validation output, 32 routing cases including adjacent-skill collisions, and
+compressed governance and skill entrypoints. Exact UTF-8 bytes and Unicode
+characters are the enforceable measures; byte-based token figures are estimates,
+not billing measurements.
+
+**Acceptance evidence:** `AGENTS.md` is at most 4,800 bytes; the 14 descriptions
+total at most 3,200 characters; every entrypoint and router-plus-specialist set
+meets its recorded ceiling; the library is at least 25% smaller than the recorded
+69,362-byte baseline; routing, contracts, links, and JSON pass; inspector output
+matches the reference and generated fixtures; and independent factual, doctrine,
+and usability review records no unresolved blocking or important finding.
+
+**Boundary:** M7 keeps `.codex/skills`, Android dependencies, templates, target
+apps, production systems, and release behavior unchanged. Model tiering and
+default subagent policy remain outside repository guidance.
 
 ## Cross-milestone quality gates
 
@@ -155,4 +183,4 @@ Before work crosses into production, the owner must explicitly approve the exact
 - **Accepted:** root maintainer accepted the verified package.
 - **Deferred:** intentionally postponed because the target need or evidence is absent.
 
-Use these terms rather than vague phrases such as “mostly done” or “production-ready.”
+Use these terms rather than vague phrases such as â€œmostly doneâ€ or â€œproduction-ready.â€

@@ -1,0 +1,14 @@
+# Synthetic checkout UX/design handoff
+Reviewer-authored original fixture, 2026-10-07. Design artifact only; no actual users, existing product, or implementation claimed.
+
+Brief: a two-item basket currently puts checkout behind an unlabeled overflow menu. Owner fixture goal: proceed to payment while preserving basket editing. No research findings exist. Hypothesis: a visible named action improves discoverability; competing hypothesis: users cannot distinguish basket from saved items.
+
+Research plan: first inspect existing entry points/content and support evidence if authorized. For later consented task tests, ask “You have selected these two items and want to pay; show what you would do next.” Do not mention checkout location. Observe first action, completion, errors, recovery and participant explanations; separate observations from interpretation. Recruit/contact nobody within this fixture. Include keyboard/screen-reader users when authorized and report sample limits rather than inferred success rates.
+
+Flow: product → add to basket → basket summary → review and pay → payment → confirmation. Basket editing updates total before proceeding. Empty basket shows “Browse items” and no payment action. Unavailable item identifies affected item and offers removal. Payment failure retains basket and allows retry without duplicate charge (server implementation requires its own safe-effects contract). Back returns to the basket without losing selections.
+
+Content hierarchy: “Your basket”, item names/quantity/edit controls, subtotal and delivery-cost status, total where known, then primary “Review and pay”; secondary “Continue shopping”. Do not invent fees or claim payment is complete before confirmation.
+
+Visual handoff (synthetic approved values): existing system tokens take precedence in a real target. Fixture tokens: page #FFFFFF, text #111111, primary surface #111111, primary text #FFFFFF, focus outline #005FCC, spacing 8/16/24 px. Heading 24 px/32 px; body and buttons 16 px/24 px. Primary button uses 12 px vertical, 16 px horizontal padding, 4 px radius. Focus outline 3 px with 3 px offset; disabled has explicit unavailable explanation rather than color alone. Below 480 px items/actions stack; wider layout retains reading order. Long labels wrap; totals never truncate. Avoid motion; error content remains adjacent to the relevant item and is announced by target implementation.
+
+Acceptance plan: consented task observation supports/rejects discoverability hypothesis; implementation separately proves keyboard order, accessible names, error announcement, focus visibility, long content and zoom, state preservation, fee accuracy and duplicate-payment prevention. All behavioral/user checks remain unperformed. Contrast calculated below covers fixture color pairs only, not rendered accessibility. No asset generation/import required.

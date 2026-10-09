@@ -22,12 +22,18 @@ jobs:
       - name: Install Android SDK
         shell: pwsh
         run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
-      - name: Validate skill library and source records
+      - name: Validate library, source records, context budget, and skill contracts
         shell: pwsh
-        run: ./scripts/validate-engineer.ps1 -RequireSkills
+        run: ./scripts/validate-engineer.ps1 -RequireSkills -Compact
       - name: Evaluate skill routing
         shell: pwsh
         run: ./scripts/test-skill-triggers.ps1
+      - name: Evaluate full-stack and design routing
+        shell: pwsh
+        run: ./scripts/test-skill-triggers.ps1 -CasesPath evals/fullstack/trigger-cases.json
+      - name: Exercise lazy-load safety regressions
+        shell: pwsh
+        run: ./scripts/test-lazy-load-safety.ps1
       - name: Exercise read-only source drift mode
         shell: pwsh
         run: ./scripts/check-skill-drift.ps1 -SkipRemote

@@ -79,3 +79,56 @@ registered: navigation/restoration, persistence and sync, instrumentation UI and
 accessibility tests, screenshot baselines, benchmarks, dedicated secret scanning,
 release-evidence packaging, R8 mapping retention outside the build workspace,
 signing, store upload, rollout, and production monitoring.
+
+## M7 draft evidence — 2026-09-15
+
+M7 changes are **Draft**. The implementer ran these local checks; they do not
+replace the required independent factual, doctrine, and usability review:
+
+| Check | Result |
+| --- | --- |
+| `scripts/measure-context-budget.ps1 -Enforce -Format Table` | PASS: `AGENTS.md` 4,727 bytes; descriptions 2,122 characters; skill library 34,131 bytes (50.79% below baseline); largest activated set 5,632 bytes |
+| Budget malformed-input case | PASS: a missing budget file reported an actionable error and exited 1 |
+| `scripts/test-skill-contracts.ps1` | PASS: 14/14 skill contracts |
+| `scripts/test-skill-triggers.ps1` | PASS: 32/32 cases; 26 positive and 6 negative |
+| `scripts/validate-engineer.ps1 -RequireSkills -Compact` | PASS: 14 skills, 29 Markdown files, 10 JSON files, context budget, and contracts |
+| Reference-app inspector summary | PASS: 1,279 UTF-8 bytes; wrapper 8.13, modules, SDK 36/23/36, Compose, tests, and absent optional stacks matched inspected files |
+| Generated minimal/standard/modular inspector smoke | PASS: all recognized as Android/Compose projects with expected generated module declarations |
+| Empty and missing-directory inspector cases | PASS: empty directory returned `androidProject=false` with `unknown` fields; missing path exited 1 |
+
+The token figures emitted by the measurement script are explicitly estimates
+(`UTF-8 bytes / 4`), not tokenizer output or billable-token claims. Remote source
+drift, hosted CI, model-based forward testing, and independent review were not
+run for this package. The project-stewardship Python validator was also not run:
+neither `python` nor `py -3` resolves an installed interpreter in this
+environment. This is recorded as unavailable, not as a pass. Until independent
+review occurs, M7 is neither Verified nor Accepted.
+
+## Behavioral evaluation package — 2026-09-17
+
+This bounded package adds ten realistic Android task contracts, an offline
+report validator, and a format-only report example. It is **Reviewed**: the
+independent reviewer found no remaining Blocking or Important findings. Root
+acceptance for this package is not recorded here.
+
+| Check | Result |
+| --- | --- |
+| `scripts/test-behavioral-evals.ps1` | PASS: corpus-only validation; 10 cases |
+| Report-scoring path with a temporary non-example fixture | PASS: `REPORT_PASS`, 10/10 runs |
+| `behavioral-report.example.json` | Expected FAIL: example-only report rejected; `scorable=false`, `passedRuns=0` |
+| `scripts/test-skill-triggers.ps1` | PASS: 32/32 cases |
+| `scripts/test-skill-contracts.ps1` | PASS: 14/14 contracts |
+| `scripts/validate-engineer.ps1 -RequireSkills -Compact` | PASS: context budget, contracts, and behavioral corpus |
+| `git diff --check` | PASS; Git emitted only existing line-ending warnings |
+
+The report protocol requires provenance and distinguishes corpus-only validation
+from report scoring. Report labels remain self-reported unless an independent
+review attestation is supplied. No live Codex run, model call, API key, target
+application, or external service was used; therefore this package improves the
+evaluation harness but does not yet provide measured model-performance results.
+The persistent report-scoring fixture remains an optional follow-up.
+
+## Local toolkit integration — 2026-10-09
+
+The preserved restructure branch is integrated into main with main's cleanup exclusions retained. Repository validation passes for 27 skills. Contracts (27), trigger cases (32), behavioral corpus (10; no model runs), context budget, 15 lazy-load recipes, and nine safety regressions pass. Fresh-context review found no Blocking or Important issues. See [work status](work-status.md) for scope, limitations and next step. Historical archive whitespace warnings remain; remote synchronization and hosted CI are unverified because GitHub DNS resolution failed. This record does not grant release readiness.
+

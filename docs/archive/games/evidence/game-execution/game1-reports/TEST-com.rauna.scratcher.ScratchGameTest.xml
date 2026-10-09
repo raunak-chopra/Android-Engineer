@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.rauna.scratcher.ScratchGameTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-04T10:10:12.622Z" hostname="HOME-PC" time="0.135">
+  <properties/>
+  <testcase name="collectionCompletesWithoutDuplicatesAndSurvivesCodec" classname="com.rauna.scratcher.ScratchGameTest" time="0.124"/>
+  <testcase name="invalidSavedStateIsRejected" classname="com.rauna.scratcher.ScratchGameTest" time="0.004"/>
+  <testcase name="thresholdAwardsOnlyOnceAndNeverSkips" classname="com.rauna.scratcher.ScratchGameTest" time="0.003"/>
+  <testcase name="longDragCoversIntermediateCellsAndStaysBounded" classname="com.rauna.scratcher.ScratchGameTest" time="0.001"/>
+  <testcase name="interruptedScratchRestoresExactly" classname="com.rauna.scratcher.ScratchGameTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

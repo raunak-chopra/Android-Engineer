@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "kind": "engineer-lazy-load-contract",
+  "auditDate": "2026-10-07",
+  "entrypointMaxBytes": 2400,
+  "routerMaxBytes": 1800,
+  "referenceMaxBytes": 2400,
+  "ordinarySetMaxBytes": 8500,
+  "routerAndSpecialistMaxBytes": 6000,
+  "managedSkills": [
+    "fullstack-delivery",
+    "web-frontend",
+    "backend-api",
+    "database-engineering",
+    "application-security",
+    "system-architecture",
+    "engineering-testing",
+    "supply-chain-security",
+    "reliability-observability",
+    "engineering-router",
+    "product-ux-design",
+    "visual-design-system",
+    "graphics-assets"
+  ],
+  "fixtures": [
+    {
+      "id": "form-validation",
+      "prompt": "The existing web form submits correctly, but its inline validation error is not announced. Fix that behavior.",
+      "skills": [
+        "engineering-router",
+        "fullstack-delivery"
+      ],
+      "references": [
+        "web-frontend/references/widgets.md"
+      ],
+      "forbiddenSkills": [],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "checkout-discovery",
+      "prompt": "Users cannot find checkout. We have no user/task flow evidence; define the task and a proportionate research plan.",
+      "skills": [
+        "product-ux-design"
+      ],
+      "references": [
+        "product-ux-design/references/research.md"
+      ],
+      "forbiddenSkills": [
+        "web-frontend",
+        "visual-design-system",
+        "graphics-assets"
+      ],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "approved-spec-code",
+      "prompt": "Implement the approved typography and spacing specification in this existing web button. Do not redesign it.",
+      "skills": [
+        "web-frontend"
+      ],
+      "references": [],
+      "forbiddenSkills": [
+        "product-ux-design",
+        "visual-design-system"
+      ],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "svg-repair",
+      "prompt": "Change the existing editable SVG icon stroke from 2 to 3. Its format and license are already settled.",
+      "skills": [
+        "graphics-assets"
+      ],
+      "references": [],
+      "forbiddenSkills": [],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "raster-hero",
+      "prompt": "Generate a new raster hero illustration using the installed image generation skill.",
+      "skills": [],
+      "references": [],
+      "forbiddenSkills": [
+        "graphics-assets"
+      ],
+      "externalSkill": "imagegen",
+      "capabilityGap": null
+    },
+    {
+      "id": "room-migration",
+      "prompt": "Fix an Android Room migration that fails after an app update; preserve the existing stack.",
+      "skills": [
+        "android-data-and-sync"
+      ],
+      "references": [],
+      "forbiddenSkills": [
+        "database-engineering"
+      ],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "react-native-restore",
+      "prompt": "This React Native app loses navigation state after restoration. Inspect its existing setup and fix the defect.",
+      "skills": [],
+      "references": [],
+      "forbiddenSkills": [
+        "web-frontend",
+        "android-navigation-adaptive"
+      ],
+      "externalSkill": null,
+      "capabilityGap": "No dedicated React Native specialist is installed; inspect target and use official target documentation without switching frameworks."
+    },
+    {
+      "id": "database-table",
+      "prompt": "Design a relational table with constraints and indexes for an existing PostgreSQL service.",
+      "skills": [
+        "database-engineering"
+      ],
+      "references": [],
+      "forbiddenSkills": [
+        "visual-design-system"
+      ],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "malicious-import",
+      "prompt": "A popular upstream agent skill requests secret environment variables and a privileged remote installer. Assess it; do not import anything.",
+      "skills": [
+        "supply-chain-security"
+      ],
+      "references": [],
+      "forbiddenSkills": [
+        "application-security"
+      ],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "custom-modal",
+      "prompt": "Fix the existing web custom modal's keyboard focus containment and return focus.",
+      "skills": [
+        "web-frontend"
+      ],
+      "references": [
+        "web-frontend/references/widgets.md"
+      ],
+      "forbiddenSkills": [],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "unrelated-poem",
+      "prompt": "Write a short poem about autumn leaves.",
+      "skills": [],
+      "references": [],
+      "forbiddenSkills": [],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "unknown-target",
+      "prompt": "Implement this screenshot, but no project files or platform have been supplied. Determine the necessary next step.",
+      "skills": [
+        "engineering-router"
+      ],
+      "references": [
+        "engineering-router/references/routes.md"
+      ],
+      "forbiddenSkills": [],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "design-tokens",
+      "prompt": "Define reusable semantic typography/color/spacing tokens and adaptive component states for an existing design system.",
+      "skills": [
+        "visual-design-system"
+      ],
+      "references": [
+        "visual-design-system/references/handoff.md"
+      ],
+      "forbiddenSkills": [
+        "product-ux-design"
+      ],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "secret-log",
+      "prompt": "A service logs sensitive user data. Review and repair the data exposure without reproducing the values.",
+      "skills": [
+        "application-security"
+      ],
+      "references": [
+        "application-security/references/controls.md"
+      ],
+      "forbiddenSkills": [],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "cross-stack",
+      "prompt": "Deliver a feature across browser, API and database; establish the next stage and compatibility handoff.",
+      "skills": [
+        "fullstack-delivery"
+      ],
+      "references": [
+        "fullstack-delivery/references/stages.md"
+      ],
+      "forbiddenSkills": [
+        "engineering-router"
+      ],
+      "externalSkill": null,
+      "capabilityGap": null
+    }
+  ]
+}

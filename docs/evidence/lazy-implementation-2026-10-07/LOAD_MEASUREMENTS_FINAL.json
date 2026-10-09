@@ -1,0 +1,344 @@
+{
+  "kind": "engineer-lazy-load-measurement",
+  "entrypoints": [
+    {
+      "skill": "fullstack-delivery",
+      "bytes": 1192
+    },
+    {
+      "skill": "web-frontend",
+      "bytes": 1199
+    },
+    {
+      "skill": "backend-api",
+      "bytes": 1152
+    },
+    {
+      "skill": "database-engineering",
+      "bytes": 1105
+    },
+    {
+      "skill": "application-security",
+      "bytes": 1145
+    },
+    {
+      "skill": "system-architecture",
+      "bytes": 1088
+    },
+    {
+      "skill": "engineering-testing",
+      "bytes": 1113
+    },
+    {
+      "skill": "supply-chain-security",
+      "bytes": 1119
+    },
+    {
+      "skill": "reliability-observability",
+      "bytes": 1072
+    },
+    {
+      "skill": "engineering-router",
+      "bytes": 1114
+    },
+    {
+      "skill": "product-ux-design",
+      "bytes": 1132
+    },
+    {
+      "skill": "visual-design-system",
+      "bytes": 1174
+    },
+    {
+      "skill": "graphics-assets",
+      "bytes": 1161
+    }
+  ],
+  "references": [
+    {
+      "path": "fullstack-delivery/references/stages.md",
+      "bytes": 670
+    },
+    {
+      "path": "web-frontend/references/widgets.md",
+      "bytes": 1312
+    },
+    {
+      "path": "backend-api/references/effects.md",
+      "bytes": 792
+    },
+    {
+      "path": "database-engineering/references/evolution.md",
+      "bytes": 805
+    },
+    {
+      "path": "application-security/references/controls.md",
+      "bytes": 879
+    },
+    {
+      "path": "system-architecture/references/decisions.md",
+      "bytes": 677
+    },
+    {
+      "path": "supply-chain-security/references/adoption.md",
+      "bytes": 996
+    },
+    {
+      "path": "reliability-observability/references/operations.md",
+      "bytes": 703
+    },
+    {
+      "path": "engineering-router/references/routes.md",
+      "bytes": 1631
+    },
+    {
+      "path": "product-ux-design/references/research.md",
+      "bytes": 890
+    },
+    {
+      "path": "visual-design-system/references/handoff.md",
+      "bytes": 943
+    },
+    {
+      "path": "graphics-assets/references/exports.md",
+      "bytes": 887
+    }
+  ],
+  "managedStoredBytes": 25951.0,
+  "fixtures": [
+    {
+      "id": "form-validation",
+      "skills": [
+        "web-frontend"
+      ],
+      "files": [
+        {
+          "path": "web-frontend/SKILL.md",
+          "bytes": 1199
+        },
+        {
+          "path": "web-frontend/references/widgets.md",
+          "bytes": 1312
+        }
+      ],
+      "managedBytes": 2511,
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "checkout-discovery",
+      "skills": [
+        "product-ux-design"
+      ],
+      "files": [
+        {
+          "path": "product-ux-design/SKILL.md",
+          "bytes": 1132
+        },
+        {
+          "path": "product-ux-design/references/research.md",
+          "bytes": 890
+        }
+      ],
+      "managedBytes": 2022,
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "approved-spec-code",
+      "skills": [
+        "web-frontend"
+      ],
+      "files": [
+        {
+          "path": "web-frontend/SKILL.md",
+          "bytes": 1199
+        }
+      ],
+      "managedBytes": 1199,
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "svg-repair",
+      "skills": [
+        "graphics-assets"
+      ],
+      "files": [
+        {
+          "path": "graphics-assets/SKILL.md",
+          "bytes": 1161
+        }
+      ],
+      "managedBytes": 1161,
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "raster-hero",
+      "skills": [],
+      "files": [],
+      "managedBytes": 0,
+      "externalSkill": "imagegen",
+      "capabilityGap": null
+    },
+    {
+      "id": "room-migration",
+      "skills": [
+        "android-data-and-sync"
+      ],
+      "files": [
+        {
+          "path": "android-data-and-sync/SKILL.md",
+          "bytes": 2316
+        }
+      ],
+      "managedBytes": 2316,
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "react-native-restore",
+      "skills": [],
+      "files": [],
+      "managedBytes": 0,
+      "externalSkill": null,
+      "capabilityGap": "No dedicated React Native specialist is installed; inspect target and use official target documentation without switching frameworks."
+    },
+    {
+      "id": "database-table",
+      "skills": [
+        "database-engineering"
+      ],
+      "files": [
+        {
+          "path": "database-engineering/SKILL.md",
+          "bytes": 1105
+        }
+      ],
+      "managedBytes": 1105,
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "malicious-import",
+      "skills": [
+        "supply-chain-security"
+      ],
+      "files": [
+        {
+          "path": "supply-chain-security/SKILL.md",
+          "bytes": 1119
+        }
+      ],
+      "managedBytes": 1119,
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "custom-modal",
+      "skills": [
+        "web-frontend"
+      ],
+      "files": [
+        {
+          "path": "web-frontend/SKILL.md",
+          "bytes": 1199
+        },
+        {
+          "path": "web-frontend/references/widgets.md",
+          "bytes": 1312
+        }
+      ],
+      "managedBytes": 2511,
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "unrelated-poem",
+      "skills": [],
+      "files": [],
+      "managedBytes": 0,
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "unknown-target",
+      "skills": [
+        "engineering-router"
+      ],
+      "files": [
+        {
+          "path": "engineering-router/SKILL.md",
+          "bytes": 1114
+        },
+        {
+          "path": "engineering-router/references/routes.md",
+          "bytes": 1631
+        }
+      ],
+      "managedBytes": 2745,
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "design-tokens",
+      "skills": [
+        "visual-design-system"
+      ],
+      "files": [
+        {
+          "path": "visual-design-system/SKILL.md",
+          "bytes": 1174
+        },
+        {
+          "path": "visual-design-system/references/handoff.md",
+          "bytes": 943
+        }
+      ],
+      "managedBytes": 2117,
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "secret-log",
+      "skills": [
+        "application-security"
+      ],
+      "files": [
+        {
+          "path": "application-security/SKILL.md",
+          "bytes": 1145
+        },
+        {
+          "path": "application-security/references/controls.md",
+          "bytes": 879
+        }
+      ],
+      "managedBytes": 2024,
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "cross-stack",
+      "skills": [
+        "fullstack-delivery"
+      ],
+      "files": [
+        {
+          "path": "fullstack-delivery/SKILL.md",
+          "bytes": 1192
+        },
+        {
+          "path": "fullstack-delivery/references/stages.md",
+          "bytes": 670
+        }
+      ],
+      "managedBytes": 1862,
+      "externalSkill": null,
+      "capabilityGap": null
+    }
+  ],
+  "issues": [],
+  "scope": "Declared local load recipes only; external skill/doc cost and host routing are unmeasured."
+}

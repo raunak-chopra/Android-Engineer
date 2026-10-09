@@ -1,7 +1,8 @@
 [CmdletBinding()]
 param(
     [string]$Root,
-    [switch]$RequireSkills
+    [switch]$RequireSkills,
+    [switch]$Compact
 )
 
 $ErrorActionPreference = "Stop"
@@ -277,17 +278,70 @@ foreach ($placeholderRoot in $placeholderRoots) {
     }
 }
 
+$hostExecutable = (Get-Process -Id $PID).Path
+$budgetScript = Join-Path $rootFullPath "scripts\measure-context-budget.ps1"
+$contractScript = Join-Path $rootFullPath "scripts\test-skill-contracts.ps1"
+$behavioralScript = Join-Path $rootFullPath "scripts\test-behavioral-evals.ps1"
+$lazyScript = Join-Path $rootFullPath "scripts\test-lazy-load-contract.ps1"
+if (Test-Path -LiteralPath $lazyScript -PathType Leaf) {
+    $lazyOutput = & $hostExecutable -NoProfile -File $lazyScript -Root $rootFullPath 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        Add-Issue -Severity "Blocking" -Path "evals\lazy\load-contract.json" -Message ("Lazy load contract failed: " + (($lazyOutput | Select-Object -Last 2) -join " "))
+    }
+}
+else {
+    Add-Issue -Severity "Blocking" -Path "scripts\test-lazy-load-contract.ps1" -Message "Lazy load validator is missing."
+}
+if (Test-Path -LiteralPath $budgetScript -PathType Leaf) {
+    $budgetOutput = & $hostExecutable -NoProfile -ExecutionPolicy Bypass -File $budgetScript -Root $rootFullPath -Enforce -Format Table 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        Add-Issue -Severity "Blocking" -Path "evals\context-budget.json" -Message ("Context budget failed: " + (($budgetOutput | Select-Object -Last 2) -join " "))
+    }
+}
+else {
+    Add-Issue -Severity "Blocking" -Path "scripts\measure-context-budget.ps1" -Message "Context budget validator is missing."
+}
+if (Test-Path -LiteralPath $contractScript -PathType Leaf) {
+    $contractOutput = & $hostExecutable -NoProfile -ExecutionPolicy Bypass -File $contractScript -Root $rootFullPath 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        Add-Issue -Severity "Blocking" -Path "evals\android\skill-contracts.json" -Message ("Skill contract validation failed: " + (($contractOutput | Select-Object -Last 2) -join " "))
+    }
+}
+else {
+    Add-Issue -Severity "Blocking" -Path "scripts\test-skill-contracts.ps1" -Message "Skill contract validator is missing."
+}
+if (Test-Path -LiteralPath $behavioralScript -PathType Leaf) {
+    $behavioralOutput = & $hostExecutable -NoProfile -ExecutionPolicy Bypass -File $behavioralScript -Root $rootFullPath -Format Table 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        Add-Issue -Severity "Blocking" -Path "evals\android\behavioral-cases.json" -Message ("Behavioral evaluation corpus failed: " + (($behavioralOutput | Select-Object -Last 2) -join " "))
+    }
+}
+else {
+    Add-Issue -Severity "Blocking" -Path "scripts\test-behavioral-evals.ps1" -Message "Behavioral evaluation validator is missing."
+}
+
+if ($Issues.Count -eq 0) {
+    if ($Compact) {
+        "PASS: $($skillFiles.Count) skills, $($markdownFiles.Count) Markdown, $($jsonFiles.Count) JSON, context budget, contracts, and behavioral corpus verified"
+    }
+    else {
+        "Engineer library validation"
+        "Root: $rootFullPath"
+        "Skills found: $($skillFiles.Count)"
+        "Markdown files checked: $($markdownFiles.Count)"
+        "JSON files checked: $($jsonFiles.Count)"
+        ""
+        "Result: PASS"
+    }
+    exit 0
+}
+
 "Engineer library validation"
 "Root: $rootFullPath"
 "Skills found: $($skillFiles.Count)"
 "Markdown files checked: $($markdownFiles.Count)"
 "JSON files checked: $($jsonFiles.Count)"
 ""
-if ($Issues.Count -eq 0) {
-    "Result: PASS"
-    exit 0
-}
-
 foreach ($issue in $Issues) {
     "[{0}] {1}: {2}" -f $issue.Severity.ToUpperInvariant(), $issue.Path, $issue.Message
 }

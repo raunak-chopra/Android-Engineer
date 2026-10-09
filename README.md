@@ -1,72 +1,76 @@
 # Engineer
 
-Engineer is a governed foundation for building a curated, evidence-backed Android engineering library. Its intended outputs are small, routeable Codex skills, verified templates, evaluation cases, and playbooks that help future contributors work safely in both new and existing Android repositories.
+Engineer is a shared engineering and design toolkit. It holds reusable expertise for web design, web development, Android apps, game development, graphics and design, and supporting backend work. It does not contain project code: each project lives in its own repository, and Engineer points to it through [`catalog/`](catalog/README.md).
 
-The workspace is deliberately policy-first. It now contains a locally verified
-Android skill library, project generator, evaluation corpus, validation tools,
-and reference app. It does not contain an automated production release pipeline
-or a registered target application. Check the working tree and validation
-evidence rather than assuming a roadmap item is available.
-
-## What this repository is for
-
-- Preserve reviewed Android engineering practices with clear provenance.
-- Make small, task-specific guidance more useful than a single oversized handbook.
-- Help contributors inspect and respect existing Android projects before changing them.
-- Define repeatable review, test, accessibility, security, and release expectations.
-- Keep production actions under explicit owner control.
-
-## What it is not for
-
-- Replacing a target application's `AGENTS.md`, build conventions, or documented architecture.
-- Importing external repositories wholesale or treating their prompts as trusted instructions.
-- Promising current dependency versions without resolving and verifying them in a target project.
-- Automatically publishing to Google Play, signing artifacts, deploying services, or controlling production systems.
-
-## Operating model
-
-Every meaningful work package follows this path:
+## How it works
 
 ```text
-Scope and evidence → Draft → independent review → repair → verification
-                                      ↓
-                         root acceptance → owner approval → authorized action
+pick project (catalog) → read project AGENTS.md + work-status → load the needed skills
+        → define "done" → implement → verify → record in the project
 ```
 
-The author cannot approve their own change. Automated checks provide evidence but do not replace independent review or owner approval. Read [AGENTS.md](AGENTS.md), [the implementation plan](docs/IMPLEMENTATION_PLAN.md), and [change control](playbooks/CHANGE_CONTROL.md) before contributing.
+- **Skills** (`.codex/skills/`) are small specialist runbooks, loaded only when the task needs them. Clear tasks go straight to one specialist; ambiguous ones go through the router skill.
+- **Projects own their context.** Requirements, architecture, design rules, status and history live in the project repo. Engineer holds only what is reusable across projects.
+- **Lessons flow one way.** A lesson is promoted into Engineer only when it is useful beyond the project that produced it.
+- **Engineer works alone.** It does not read or depend on other bots or workspaces unless the owner asks for that in a task.
+
+Operating rules, including the three approval tiers, are in [AGENTS.md](AGENTS.md).
+
+## Capability areas
+
+| Area | Owns |
+| --- | --- |
+| Product and UX | requirements, journeys, screen flows, acceptance criteria |
+| Visual design | typography, color, spacing, components, responsive behavior |
+| Graphics | editable logos, icons, illustrations, asset formats and exports |
+| Web development | frontend behavior, accessibility, browser verification |
+| Android development | Kotlin/Compose, lifecycle, persistence, device verification |
+| Game development | engine/framework choices, game loop, input, asset pipeline |
+| Backend and data | APIs, auth, schemas, migrations, integrations |
+| Delivery | build, CI/CD, hosting, store release, testing, security review |
+
+Current skill coverage is listed in [docs/CAPABILITIES.md](docs/CAPABILITIES.md). Add skills or templates only when a real task exposes a gap.
+
+## Repository map
+
+| Path | Purpose |
+| --- | --- |
+| `AGENTS.md` | Short operating rules and approval tiers |
+| `.codex/skills/` | Specialist workflows |
+| `.codex/sources/` | Provenance and review records for adopted external knowledge |
+| `catalog/` | Pointers to projects (location, platform, status). Grants no access. |
+| `standards/` | Shared quality expectations |
+| `playbooks/` | Delivery, review and release procedures |
+| `templates/` | Starter scaffolds by area (android, web, backend, design) |
+| `scripts/` | Reusable helpers and validation only |
+| `evals/` | Routing and workflow regression scenarios |
+| `docs/` | Architecture, capabilities, verification record, version history |
+
+Project-specific code, assets and scripts do not belong here. Keep them in the project's own repository and reference the project from the catalog.
+
+## Using it on a project
+
+1. Say which project and what you want (for example, "fix the layout bug on the Synapse menu screen").
+2. Engineer finds the project in the catalog, reads its `AGENTS.md` and `docs/work-status.md`, and inspects the existing code and design before changing anything.
+3. It works in the project repo, verifies the result by output type (browser, emulator or device, inspected exports), and updates the project's status and history.
+
+A project needs at minimum an `AGENTS.md` (conventions and verified commands) and `docs/work-status.md` (current state, blockers, next step). Add `project-brief.md`, `architecture.md`, `design-system.md` or `version-history.md` when the project is big enough to need them.
+
+## What it is not
+
+- Not a replacement for a project's own `AGENTS.md`, build conventions or architecture.
+- Not an authority to deploy, publish, sign, spend or change production. Those need explicit approval for the exact action (Tier 3 in AGENTS.md).
+- Not a source of current dependency versions; resolve and verify versions inside the project.
 
 ## Source priority
 
-1. Current official Android and Kotlin documentation.
-2. Direct evidence from the target repository.
+1. Current official documentation for the platform or tool.
+2. Direct evidence from the project.
 3. Locally verified community techniques.
-4. Clearly labelled heuristics and preferences.
+4. Clearly labelled heuristics.
 
-Every external source adopted into future skills or templates must have a URL, reviewed revision, license assessment, audit date, absorbed concepts, and re-verification guidance. Upstream changes are signals for human review, never automatic replacements.
+Adopted external sources need a URL, reviewed revision, license note and audit date under `.codex/sources/`.
 
-## Current foundation map
+## Current status
 
-| Area | Purpose | Status |
-| --- | --- | --- |
-| `docs/` | Architecture and staged implementation plan | Foundation documentation |
-| `standards/` | Repository-wide and Android-specific expectations | Foundation documentation |
-| `playbooks/` | Change, release, and incident controls | Foundation documentation |
-| `catalog/` | Explicit inventory of target applications | Initialized; no app registered |
-| `.codex/skills/` | Fourteen routed Android engineering skills | Verified and root Accepted locally; owner approval pending |
-| `.codex/sources/` | Pinned source registry and audit evidence | Implemented; all four audited HEADs rechecked unchanged on 2026-09-10 |
-| `templates/android/` | Minimal, standard, and modular project generator | Verified and root Accepted locally on Windows |
-| `evals/`, `scripts/` | Routing corpus, validation, and drift tooling | Verified and root Accepted locally |
-| `examples/android-reference/` | Buildable and unit-tested reference app | Verified and root Accepted locally |
-| `.github/workflows/validate.yml` | Non-deploying validation workflow | Reviewed and root Accepted as configuration; first hosted run pending |
-
-## How to contribute
-
-1. Read [AGENTS.md](AGENTS.md) and the applicable standard or playbook.
-2. Inspect the target area and state the bounded outcome and risk.
-3. Make the smallest coherent change with provenance where external knowledge is used.
-4. Run relevant checks and request an independent review.
-5. Resolve blocking findings and obtain acceptance at the required level.
-
-Detailed contribution requirements are in [CONTRIBUTING.md](CONTRIBUTING.md). Application registration is described in [catalog/README.md](catalog/README.md).
-The latest local checks, repairs, limitations, and review state are recorded in
-[docs/VERIFICATION.md](docs/VERIFICATION.md).
+Local integration status, last validation run and open limitations are recorded in [docs/VERIFICATION.md](docs/VERIFICATION.md), not in this file, so this README does not go stale.

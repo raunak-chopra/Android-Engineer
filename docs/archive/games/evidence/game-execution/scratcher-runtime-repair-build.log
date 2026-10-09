@@ -1,0 +1,230 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preClassicDebugBuild UP-TO-DATE
+> Task :app:checkClassicDebugAarMetadata UP-TO-DATE
+> Task :app:processClassicDebugNavigationResources UP-TO-DATE
+> Task :app:compileClassicDebugNavigationResources UP-TO-DATE
+> Task :app:generateClassicDebugResValues UP-TO-DATE
+> Task :app:mapClassicDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateClassicDebugResources UP-TO-DATE
+> Task :app:mergeClassicDebugResources UP-TO-DATE
+> Task :app:packageClassicDebugResources UP-TO-DATE
+> Task :app:parseClassicDebugLocalResources UP-TO-DATE
+> Task :app:createClassicDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksClassicDebug UP-TO-DATE
+> Task :app:processClassicDebugMainManifest UP-TO-DATE
+> Task :app:processClassicDebugManifest UP-TO-DATE
+> Task :app:processClassicDebugManifestForPackage UP-TO-DATE
+> Task :app:processClassicDebugResources UP-TO-DATE
+> Task :app:compileClassicDebugKotlin
+> Task :app:javaPreCompileClassicDebug UP-TO-DATE
+> Task :app:compileClassicDebugJavaWithJavac NO-SOURCE
+> Task :app:bundleClassicDebugClassesToRuntimeJar
+> Task :app:bundleClassicDebugClassesToCompileJar
+> Task :app:compileClassicDebugUnitTestKotlin
+> Task :app:preClassicDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileClassicDebugUnitTest UP-TO-DATE
+> Task :app:compileClassicDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processClassicDebugJavaRes UP-TO-DATE
+> Task :app:processClassicDebugUnitTestJavaRes UP-TO-DATE
+> Task :app:testClassicDebugUnitTest
+> Task :app:mergeClassicDebugNativeDebugMetadata NO-SOURCE
+> Task :app:mergeClassicDebugShaders UP-TO-DATE
+> Task :app:compileClassicDebugShaders NO-SOURCE
+> Task :app:generateClassicDebugAssets UP-TO-DATE
+> Task :app:mergeClassicDebugAssets UP-TO-DATE
+> Task :app:compressClassicDebugAssets UP-TO-DATE
+> Task :app:desugarClassicDebugFileDependencies UP-TO-DATE
+> Task :app:dexBuilderClassicDebug
+> Task :app:mergeClassicDebugGlobalSynthetics UP-TO-DATE
+> Task :app:mergeClassicDebugJavaResource UP-TO-DATE
+> Task :app:checkClassicDebugDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexClassicDebug UP-TO-DATE
+> Task :app:mergeLibDexClassicDebug UP-TO-DATE
+> Task :app:mergeProjectDexClassicDebug
+> Task :app:mergeClassicDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeClassicDebugNativeLibs NO-SOURCE
+> Task :app:stripClassicDebugDebugSymbols NO-SOURCE
+> Task :app:validateSigningClassicDebug UP-TO-DATE
+> Task :app:writeClassicDebugAppMetadata UP-TO-DATE
+> Task :app:writeClassicDebugSigningConfigVersions UP-TO-DATE
+> Task :app:packageClassicDebug
+> Task :app:createClassicDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleClassicDebug
+> Task :app:prePixelDebugBuild UP-TO-DATE
+> Task :app:checkPixelDebugAarMetadata UP-TO-DATE
+> Task :app:processPixelDebugNavigationResources UP-TO-DATE
+> Task :app:compilePixelDebugNavigationResources UP-TO-DATE
+> Task :app:generatePixelDebugResValues UP-TO-DATE
+> Task :app:mapPixelDebugSourceSetPaths UP-TO-DATE
+> Task :app:generatePixelDebugResources UP-TO-DATE
+> Task :app:mergePixelDebugResources UP-TO-DATE
+> Task :app:packagePixelDebugResources UP-TO-DATE
+> Task :app:parsePixelDebugLocalResources UP-TO-DATE
+> Task :app:createPixelDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksPixelDebug UP-TO-DATE
+> Task :app:processPixelDebugMainManifest UP-TO-DATE
+> Task :app:processPixelDebugManifest UP-TO-DATE
+> Task :app:processPixelDebugManifestForPackage UP-TO-DATE
+> Task :app:processPixelDebugResources UP-TO-DATE
+> Task :app:compilePixelDebugKotlin
+> Task :app:javaPreCompilePixelDebug UP-TO-DATE
+> Task :app:compilePixelDebugJavaWithJavac NO-SOURCE
+> Task :app:bundlePixelDebugClassesToRuntimeJar
+> Task :app:bundlePixelDebugClassesToCompileJar
+> Task :app:compilePixelDebugUnitTestKotlin
+> Task :app:prePixelDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompilePixelDebugUnitTest UP-TO-DATE
+> Task :app:compilePixelDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processPixelDebugJavaRes UP-TO-DATE
+> Task :app:processPixelDebugUnitTestJavaRes UP-TO-DATE
+> Task :app:testPixelDebugUnitTest
+> Task :app:mergePixelDebugNativeDebugMetadata NO-SOURCE
+> Task :app:mergePixelDebugShaders UP-TO-DATE
+> Task :app:compilePixelDebugShaders NO-SOURCE
+> Task :app:generatePixelDebugAssets UP-TO-DATE
+> Task :app:mergePixelDebugAssets UP-TO-DATE
+> Task :app:compressPixelDebugAssets UP-TO-DATE
+> Task :app:checkPixelDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarPixelDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexPixelDebug UP-TO-DATE
+> Task :app:mergeLibDexPixelDebug UP-TO-DATE
+> Task :app:dexBuilderPixelDebug
+> Task :app:mergePixelDebugGlobalSynthetics UP-TO-DATE
+> Task :app:mergePixelDebugJavaResource UP-TO-DATE
+> Task :app:mergeProjectDexPixelDebug
+> Task :app:mergePixelDebugJniLibFolders UP-TO-DATE
+> Task :app:mergePixelDebugNativeLibs NO-SOURCE
+> Task :app:stripPixelDebugDebugSymbols NO-SOURCE
+> Task :app:validateSigningPixelDebug UP-TO-DATE
+> Task :app:writePixelDebugAppMetadata UP-TO-DATE
+> Task :app:writePixelDebugSigningConfigVersions UP-TO-DATE
+> Task :app:packagePixelDebug
+> Task :app:createPixelDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assemblePixelDebug
+> Task :app:prePrototypeDebugBuild UP-TO-DATE
+> Task :app:checkPrototypeDebugAarMetadata UP-TO-DATE
+> Task :app:processPrototypeDebugNavigationResources UP-TO-DATE
+> Task :app:compilePrototypeDebugNavigationResources UP-TO-DATE
+> Task :app:generatePrototypeDebugResValues UP-TO-DATE
+> Task :app:mapPrototypeDebugSourceSetPaths UP-TO-DATE
+> Task :app:generatePrototypeDebugResources UP-TO-DATE
+> Task :app:mergePrototypeDebugResources UP-TO-DATE
+> Task :app:packagePrototypeDebugResources UP-TO-DATE
+> Task :app:parsePrototypeDebugLocalResources UP-TO-DATE
+> Task :app:createPrototypeDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksPrototypeDebug UP-TO-DATE
+> Task :app:processPrototypeDebugMainManifest UP-TO-DATE
+> Task :app:processPrototypeDebugManifest UP-TO-DATE
+> Task :app:processPrototypeDebugManifestForPackage UP-TO-DATE
+> Task :app:processPrototypeDebugResources UP-TO-DATE
+> Task :app:compilePrototypeDebugKotlin
+> Task :app:javaPreCompilePrototypeDebug UP-TO-DATE
+> Task :app:compilePrototypeDebugJavaWithJavac NO-SOURCE
+> Task :app:bundlePrototypeDebugClassesToRuntimeJar
+> Task :app:bundlePrototypeDebugClassesToCompileJar
+> Task :app:compilePrototypeDebugUnitTestKotlin
+> Task :app:prePrototypeDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompilePrototypeDebugUnitTest UP-TO-DATE
+> Task :app:compilePrototypeDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processPrototypeDebugJavaRes UP-TO-DATE
+> Task :app:processPrototypeDebugUnitTestJavaRes UP-TO-DATE
+> Task :app:testPrototypeDebugUnitTest
+> Task :app:preClassicDebugAndroidTestBuild SKIPPED
+> Task :app:checkClassicDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :app:processClassicDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :app:compileClassicDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :app:generateClassicDebugAndroidTestResValues UP-TO-DATE
+> Task :app:mapClassicDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :app:generateClassicDebugAndroidTestResources UP-TO-DATE
+> Task :app:mergeClassicDebugAndroidTestResources UP-TO-DATE
+> Task :app:processClassicDebugAndroidTestManifest UP-TO-DATE
+> Task :app:processClassicDebugAndroidTestResources UP-TO-DATE
+> Task :app:compileClassicDebugAndroidTestKotlin
+> Task :app:javaPreCompileClassicDebugAndroidTest UP-TO-DATE
+> Task :app:compileClassicDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :app:mergeClassicDebugAndroidTestShaders UP-TO-DATE
+> Task :app:compileClassicDebugAndroidTestShaders NO-SOURCE
+> Task :app:generateClassicDebugAndroidTestAssets UP-TO-DATE
+> Task :app:mergeClassicDebugAndroidTestAssets UP-TO-DATE
+> Task :app:compressClassicDebugAndroidTestAssets UP-TO-DATE
+> Task :app:desugarClassicDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :app:dexBuilderClassicDebugAndroidTest
+> Task :app:mergeClassicDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :app:processClassicDebugAndroidTestJavaRes UP-TO-DATE
+> Task :app:mergeClassicDebugAndroidTestJavaResource UP-TO-DATE
+> Task :app:checkClassicDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexClassicDebugAndroidTest UP-TO-DATE
+> Task :app:mergeLibDexClassicDebugAndroidTest UP-TO-DATE
+> Task :app:mergeProjectDexClassicDebugAndroidTest
+> Task :app:mergeClassicDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :app:mergeClassicDebugAndroidTestNativeLibs NO-SOURCE
+> Task :app:stripClassicDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningClassicDebugAndroidTest UP-TO-DATE
+> Task :app:writeClassicDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :app:packageClassicDebugAndroidTest
+> Task :app:createClassicDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleClassicDebugAndroidTest
+> Task :app:prePixelDebugAndroidTestBuild SKIPPED
+> Task :app:checkPixelDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :app:processPixelDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :app:compilePixelDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :app:generatePixelDebugAndroidTestResValues UP-TO-DATE
+> Task :app:mapPixelDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :app:generatePixelDebugAndroidTestResources UP-TO-DATE
+> Task :app:mergePixelDebugAndroidTestResources UP-TO-DATE
+> Task :app:processPixelDebugAndroidTestManifest UP-TO-DATE
+> Task :app:processPixelDebugAndroidTestResources UP-TO-DATE
+> Task :app:compilePixelDebugAndroidTestKotlin
+> Task :app:javaPreCompilePixelDebugAndroidTest UP-TO-DATE
+> Task :app:compilePixelDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :app:mergePixelDebugAndroidTestShaders UP-TO-DATE
+> Task :app:compilePixelDebugAndroidTestShaders NO-SOURCE
+> Task :app:generatePixelDebugAndroidTestAssets UP-TO-DATE
+> Task :app:mergePixelDebugAndroidTestAssets UP-TO-DATE
+> Task :app:compressPixelDebugAndroidTestAssets UP-TO-DATE
+> Task :app:checkPixelDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :app:desugarPixelDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexPixelDebugAndroidTest UP-TO-DATE
+> Task :app:mergeLibDexPixelDebugAndroidTest UP-TO-DATE
+> Task :app:dexBuilderPixelDebugAndroidTest
+> Task :app:mergePixelDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :app:processPixelDebugAndroidTestJavaRes UP-TO-DATE
+> Task :app:mergePixelDebugAndroidTestJavaResource UP-TO-DATE
+> Task :app:mergeProjectDexPixelDebugAndroidTest
+> Task :app:mergePixelDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :app:mergePixelDebugAndroidTestNativeLibs NO-SOURCE
+> Task :app:stripPixelDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningPixelDebugAndroidTest UP-TO-DATE
+> Task :app:writePixelDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :app:packagePixelDebugAndroidTest
+> Task :app:createPixelDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :app:assemblePixelDebugAndroidTest
+> Task :app:generateClassicDebugAndroidTestLintModel
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:generateClassicDebugLintReportModel
+> Task :app:generateClassicDebugUnitTestLintModel
+> Task :app:lintAnalyzeClassicDebug
+> Task :app:lintAnalyzeClassicDebugAndroidTest
+> Task :app:lintAnalyzeClassicDebugUnitTest
+
+> Task :app:lintReportClassicDebug
+Wrote HTML report to file:///C:/Users/rauna/Desktop/Games/Game1/app/build/reports/lint-results-classicDebug.html
+
+> Task :app:lintClassicDebug
+> Task :app:generatePixelDebugAndroidTestLintModel
+> Task :app:generatePixelDebugLintReportModel
+> Task :app:generatePixelDebugUnitTestLintModel
+> Task :app:lintAnalyzePixelDebug
+> Task :app:lintAnalyzePixelDebugAndroidTest
+> Task :app:lintAnalyzePixelDebugUnitTest
+
+> Task :app:lintReportPixelDebug
+Wrote HTML report to file:///C:/Users/rauna/Desktop/Games/Game1/app/build/reports/lint-results-pixelDebug.html
+
+> Task :app:lintPixelDebug
+
+BUILD SUCCESSFUL in 3m 11s
+179 actionable tasks: 45 executed, 134 up-to-date

@@ -1,0 +1,4 @@
+package: name='com.rauna.sudoku' versionCode='1' versionName='1.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+sdkVersion:'26'
+targetSdkVersion:'36'
+uses-permission: name='com.rauna.sudoku.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'

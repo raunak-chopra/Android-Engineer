@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.rauna.wordfinder.feature.game.domain.SelectionValidatorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-10-04T12:48:11.625Z" hostname="HOME-PC" time="0.008">
+  <properties/>
+  <testcase name="ignoresAlreadyFoundWord" classname="com.rauna.wordfinder.feature.game.domain.SelectionValidatorTest" time="0.003"/>
+  <testcase name="rejectsInvalidSlopeAndSingleCell" classname="com.rauna.wordfinder.feature.game.domain.SelectionValidatorTest" time="0.0"/>
+  <testcase name="snappedPathClampsAtBoardEdge" classname="com.rauna.wordfinder.feature.game.domain.SelectionValidatorTest" time="0.0"/>
+  <testcase name="acceptsForwardAndReverseSelection" classname="com.rauna.wordfinder.feature.game.domain.SelectionValidatorTest" time="0.001"/>
+  <testcase name="snapsImpreciseDragToNearestLegalDirection" classname="com.rauna.wordfinder.feature.game.domain.SelectionValidatorTest" time="0.0"/>
+  <testcase name="acceptsAllEightDirectionsAndReverseAtEdges" classname="com.rauna.wordfinder.feature.game.domain.SelectionValidatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,11 @@
+# Expansion planning evidence
+
+Date: 2026-10-07. Author: root implementation agent. Classification: planning/curated guidance. Scope: [proposal](../../ENGINEERING_EXPANSION_PROPOSAL.md) and this evidence directory only. No changes to active skills, budgets, scripts, dependencies or prior package records were made in this turn.
+
+Method: searched Reddit and GitHub through the web tool; read public GitHub search/API metadata with authorized network access; inspected selected project pages as inert content. Candidate counts and hashes are documented in the proposal. Twenty named candidate pins match 40-hex-character SHA syntax. This syntax check does not establish commit safety. Two popular design-agent packs had unavailable metadata pin retrieval and remain on hold. No upstream content was copied into active instructions; no installer, package lifecycle hook, binary or service was run.
+
+Validation: `./scripts/validate-engineer.ps1 -RequireSkills -Compact` checked 23 skills, 77 Markdown files and 32 JSON files. Result: FAIL with exactly five pre-existing unrelated evidence-link findings in game-execution/EXECUTION_STATUS.md and kalo-habits-before/README.md. No proposal issue was reported. `git diff --check` found no whitespace errors in tracked changes, with a CRLF-normalization warning for the prior contract change. It does not validate untracked files. Proposal pin regex counted 20 complete SHA entries.
+
+Limitations: GitHub query results are a dated sample, not exhaustive rankings; license labels are metadata, not legal clearance; third-party pages and Reddit are mutable; Apple/Material entrypoints rendered minimal content; candidate source pages were only partially inspected; no whole-tree malware audit, actual import clearance, target UI/product validation, routing behavior benchmark or new implementation test occurred. Plan recommendations are explicitly local synthesis. Independent review is recorded separately.
+
+Reversal, if requested: remove only the proposal and this evidence directory after confirming exact paths and preserving unrelated work. No reversal was performed. Implementation and all actual imports remain pending owner selection/approval as defined in the proposal.

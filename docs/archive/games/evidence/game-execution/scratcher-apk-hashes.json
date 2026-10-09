@@ -1,0 +1,12 @@
+[
+  {
+    "Algorithm": "SHA256",
+    "Hash": "31745D89A824AA83F3794682A869A89BF05772198646822C1D4042830D6F56AE",
+    "Path": "C:\\Users\\rauna\\Desktop\\Games\\Game1\\app\\build\\outputs\\apk\\classic\\debug\\app-classic-debug.apk"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "B627F8AB4D8AD89364AC455F604F21F1CF2A435CB39963C1CF26D907C9ADB41B",
+    "Path": "C:\\Users\\rauna\\Desktop\\Games\\Game1\\app\\build\\outputs\\apk\\pixel\\debug\\app-pixel-debug.apk"
+  }
+]

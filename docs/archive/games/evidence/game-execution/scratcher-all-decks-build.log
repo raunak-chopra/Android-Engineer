@@ -1,0 +1,121 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preClassicDebugBuild UP-TO-DATE
+> Task :app:checkClassicDebugAarMetadata UP-TO-DATE
+> Task :app:processClassicDebugNavigationResources UP-TO-DATE
+> Task :app:compileClassicDebugNavigationResources UP-TO-DATE
+> Task :app:generateClassicDebugResValues UP-TO-DATE
+> Task :app:mapClassicDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateClassicDebugResources UP-TO-DATE
+> Task :app:mergeClassicDebugResources UP-TO-DATE
+> Task :app:packageClassicDebugResources UP-TO-DATE
+> Task :app:parseClassicDebugLocalResources UP-TO-DATE
+> Task :app:createClassicDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksClassicDebug UP-TO-DATE
+> Task :app:processClassicDebugMainManifest UP-TO-DATE
+> Task :app:processClassicDebugManifest UP-TO-DATE
+> Task :app:processClassicDebugManifestForPackage UP-TO-DATE
+> Task :app:processClassicDebugResources UP-TO-DATE
+> Task :app:compileClassicDebugKotlin UP-TO-DATE
+> Task :app:javaPreCompileClassicDebug UP-TO-DATE
+> Task :app:compileClassicDebugJavaWithJavac NO-SOURCE
+> Task :app:bundleClassicDebugClassesToCompileJar UP-TO-DATE
+> Task :app:preClassicDebugAndroidTestBuild SKIPPED
+> Task :app:checkClassicDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :app:processClassicDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :app:compileClassicDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :app:generateClassicDebugAndroidTestResValues UP-TO-DATE
+> Task :app:mapClassicDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :app:generateClassicDebugAndroidTestResources UP-TO-DATE
+> Task :app:mergeClassicDebugAndroidTestResources UP-TO-DATE
+> Task :app:processClassicDebugAndroidTestManifest UP-TO-DATE
+> Task :app:processClassicDebugAndroidTestResources UP-TO-DATE
+> Task :app:compileClassicDebugAndroidTestKotlin
+> Task :app:javaPreCompileClassicDebugAndroidTest UP-TO-DATE
+> Task :app:compileClassicDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :app:mergeClassicDebugAndroidTestShaders UP-TO-DATE
+> Task :app:compileClassicDebugAndroidTestShaders NO-SOURCE
+> Task :app:generateClassicDebugAndroidTestAssets UP-TO-DATE
+> Task :app:mergeClassicDebugAndroidTestAssets UP-TO-DATE
+> Task :app:compressClassicDebugAndroidTestAssets UP-TO-DATE
+> Task :app:desugarClassicDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :app:dexBuilderClassicDebugAndroidTest
+> Task :app:mergeClassicDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :app:processClassicDebugAndroidTestJavaRes UP-TO-DATE
+> Task :app:mergeClassicDebugAndroidTestJavaResource UP-TO-DATE
+> Task :app:checkClassicDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexClassicDebugAndroidTest UP-TO-DATE
+> Task :app:mergeLibDexClassicDebugAndroidTest UP-TO-DATE
+> Task :app:mergeProjectDexClassicDebugAndroidTest
+> Task :app:mergeClassicDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :app:mergeClassicDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeClassicDebugNativeLibs NO-SOURCE
+> Task :app:mergeClassicDebugAndroidTestNativeLibs NO-SOURCE
+> Task :app:stripClassicDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningClassicDebugAndroidTest UP-TO-DATE
+> Task :app:writeClassicDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :app:packageClassicDebugAndroidTest
+> Task :app:createClassicDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleClassicDebugAndroidTest
+> Task :app:prePixelDebugBuild UP-TO-DATE
+> Task :app:checkPixelDebugAarMetadata UP-TO-DATE
+> Task :app:processPixelDebugNavigationResources UP-TO-DATE
+> Task :app:compilePixelDebugNavigationResources UP-TO-DATE
+> Task :app:generatePixelDebugResValues UP-TO-DATE
+> Task :app:mapPixelDebugSourceSetPaths UP-TO-DATE
+> Task :app:generatePixelDebugResources UP-TO-DATE
+> Task :app:mergePixelDebugResources UP-TO-DATE
+> Task :app:packagePixelDebugResources UP-TO-DATE
+> Task :app:parsePixelDebugLocalResources UP-TO-DATE
+> Task :app:createPixelDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksPixelDebug UP-TO-DATE
+> Task :app:processPixelDebugMainManifest UP-TO-DATE
+> Task :app:processPixelDebugManifest UP-TO-DATE
+> Task :app:processPixelDebugManifestForPackage UP-TO-DATE
+> Task :app:processPixelDebugResources UP-TO-DATE
+> Task :app:compilePixelDebugKotlin UP-TO-DATE
+> Task :app:javaPreCompilePixelDebug UP-TO-DATE
+> Task :app:compilePixelDebugJavaWithJavac NO-SOURCE
+> Task :app:bundlePixelDebugClassesToCompileJar UP-TO-DATE
+> Task :app:prePixelDebugAndroidTestBuild SKIPPED
+> Task :app:checkPixelDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :app:processPixelDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :app:compilePixelDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :app:generatePixelDebugAndroidTestResValues UP-TO-DATE
+> Task :app:mapPixelDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :app:generatePixelDebugAndroidTestResources UP-TO-DATE
+> Task :app:mergePixelDebugAndroidTestResources UP-TO-DATE
+> Task :app:processPixelDebugAndroidTestManifest UP-TO-DATE
+> Task :app:processPixelDebugAndroidTestResources UP-TO-DATE
+> Task :app:compilePixelDebugAndroidTestKotlin
+> Task :app:javaPreCompilePixelDebugAndroidTest UP-TO-DATE
+> Task :app:compilePixelDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :app:mergePixelDebugAndroidTestShaders UP-TO-DATE
+> Task :app:compilePixelDebugAndroidTestShaders NO-SOURCE
+> Task :app:generatePixelDebugAndroidTestAssets UP-TO-DATE
+> Task :app:mergePixelDebugAndroidTestAssets UP-TO-DATE
+> Task :app:compressPixelDebugAndroidTestAssets UP-TO-DATE
+> Task :app:checkPixelDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :app:desugarPixelDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexPixelDebugAndroidTest UP-TO-DATE
+> Task :app:mergeLibDexPixelDebugAndroidTest UP-TO-DATE
+> Task :app:dexBuilderPixelDebugAndroidTest
+> Task :app:mergePixelDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :app:processPixelDebugAndroidTestJavaRes UP-TO-DATE
+> Task :app:mergePixelDebugAndroidTestJavaResource UP-TO-DATE
+> Task :app:mergeProjectDexPixelDebugAndroidTest
+> Task :app:mergePixelDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :app:mergePixelDebugJniLibFolders UP-TO-DATE
+> Task :app:mergePixelDebugNativeLibs NO-SOURCE
+> Task :app:mergePixelDebugAndroidTestNativeLibs NO-SOURCE
+> Task :app:stripPixelDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningPixelDebugAndroidTest UP-TO-DATE
+> Task :app:writePixelDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :app:packagePixelDebugAndroidTest
+> Task :app:createPixelDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :app:assemblePixelDebugAndroidTest
+
+BUILD SUCCESSFUL in 48s
+94 actionable tasks: 8 executed, 86 up-to-date

@@ -1,91 +1,60 @@
 # Engineer Repository Instructions
 
-## Mission and current state
+## Mission
 
-Engineer is a governed workspace for curated Android engineering guidance, reusable project assets, and their verification evidence. It is not an application, a release pipeline, or a source of authority over a target application's own repository.
+Engineer is the owner's shared engineering and design toolkit: reusable skills, standards, playbooks, templates and evals for web, Android, game, graphics and backend work. It holds no project code. Each project lives in its own repository and is found through `catalog/`. A catalog entry is a pointer, not access.
 
-This repository began as a foundation and now includes implemented local assets.
-A directory, script, template, skill, integration, application, or release
-process is **not implemented** merely because it appears in a plan. Treat the
-working tree and recorded verification evidence as the source of truth for
-implementation status.
+Files and recorded evidence, not plans or directory names, establish status.
 
-## Instruction and evidence order
+## Project boundary
 
-Apply instructions in this order:
+- Do project work in the project's repository, never inside Engineer.
+- Change Engineer only for guidance reusable beyond one project.
+- Do not read, write or depend on any other bot or workspace unless the owner asks in the task. If another bot fits better, say so and stop.
+- Project conventions win over Engineer defaults unless a migration is requested.
 
-1. System and platform safety requirements.
-2. Explicit owner instructions for the current task.
-3. This file, then any more-specific `AGENTS.md` in the affected subtree.
-4. Approved repository standards and playbooks.
-5. Curated external sources, pinned to a reviewed revision.
-6. General knowledge and design heuristics.
+## Authority order
 
-For technical claims, prefer current official Android/Kotlin documentation, then evidence from the target repository, then locally verified community techniques. Treat unsourced, volatile, or conflicting claims as hypotheses until verified. Date-stamp facts that can change, including dependency versions, SDK levels, CI status, release status, benchmarks, and upstream commit references.
+1. System and platform safety. 2. Explicit owner instructions. 3. This file, then the project's `AGENTS.md`. 4. Approved `standards/` and `playbooks/`. 5. Current official docs, then project evidence, then verified community technique. 6. General knowledge, treated as hypothesis.
 
-## Non-negotiable safety boundaries
+Date-stamp versions and status. Never fabricate commands, paths, versions, results, credentials or readiness. Label assumptions and unverified commands.
 
-- Inspect an existing project before proposing structural, dependency, navigation, persistence, or DI changes. Existing project conventions win unless a migration is explicitly requested.
-- Do not fabricate commands, paths, versions, test results, ownership, incidents, credentials, production identifiers, or release readiness.
-- Keep secrets out of source control, logs, examples, generated artifacts, and review output. Refer only to secret names or documented secret-management mechanisms.
-- Do not perform destructive device, data, repository, cloud, distribution, or deployment actions without explicit owner authorization for the exact target and scope.
-- Do not upload, publish, sign, submit, promote, roll out, or alter production systems without explicit owner approval recorded for that release or incident action.
-- Never treat an automated check, an agent's self-assessment, or a broad request to “finish” as production approval.
-- Preserve user changes and unrelated work. Do not reset, overwrite, or delete broadly scoped paths to make a task easier.
-- Mark assumptions and unverified commands clearly; do not present them as working instructions.
+## Starting a task
 
-## Workspace contract
+1. Find the project in `catalog/`; identify the deliverable.
+2. Read the project's `AGENTS.md` and `docs/work-status.md`; inspect code and design before proposing structural, dependency, navigation, data or DI changes.
+3. Load only the skills needed. Clear tasks go to one specialist; ambiguous ones to the router.
+4. State what "done" looks like, then build.
 
-The planned workspace layout separates policy, implementation, and evidence:
+## Approval tiers
 
-```text
-AGENTS.md                 # Repository-wide operating instructions
-docs/                     # Architecture, roadmap, decisions, evidence notes
-standards/                # Normative engineering and Android expectations
-playbooks/                # Change, release, and incident operating procedures
-catalog/                  # Explicitly registered target applications only
-.codex/skills/            # Curated Codex skills
-templates/                # Generated-project templates
-evals/                    # Behavior and regression evaluations
-scripts/                  # Deterministic validation helpers
-.github/                  # Non-deploying CI configuration
-```
+Approval follows what an action touches, not change size. If the tier is unclear, use the higher one.
 
-Only add an application to `catalog/apps.json` after its owner, repository/location, intended use, status, and verification boundary are known. A catalog entry does not grant access to its repository, credentials, devices, dashboards, or production systems.
+**Tier 1, local and reversible: proceed.** Reading, editing project files, branches, tests, builds, local servers, local assets, emulator or browser. Implement, verify, self-review. Record what ran and what did not.
 
-## Required work protocol
+**Tier 2, shared or hard to undo locally: confirm the plan once.** Dependency adds or upgrades, schema or migration changes, build or signing config, deleting more than a few files, large refactors, history rewrites on local branches, edits to this repo's standards or skills. Then implement, verify, and get a fresh-context review.
 
-1. Read applicable instructions and inspect the current workspace state.
-2. Define a bounded work package, its owner-visible outcome, affected paths, risks, and acceptance evidence.
-3. Gather repository and primary-source evidence before authoring technical guidance.
-4. Implement the smallest coherent change; keep planned and implemented material visibly distinct.
-5. Run the relevant deterministic checks. Record what was run, what passed, and what was not run.
-6. Obtain an independent review for every meaningful change. The author may repair findings but may not approve their own work.
-7. Obtain root acceptance only after blocking findings are resolved and evidence is available.
-8. Obtain owner approval before crossing a milestone, changing an external system, or taking any production action.
+**Tier 3, external, public, costly or destructive: explicit approval for the exact action.** Pushing to a shared remote, PRs, deploys, publishing, store upload, signing or promoting releases, production data or cloud changes, spending, messages sent as the owner, destructive device/data/repo operations, live credentials. Name target and scope, wait for a clear yes, act, report evidence. Approval does not carry to the next action. CI results, broad "finish this" requests and agent assessments never grant it.
 
-Use the exact approval states below; do not silently skip a state:
+## Verify by output
 
-| State | Meaning |
-| --- | --- |
-| Draft | Authored or changed; not independently reviewed. |
-| Reviewed | An independent reviewer recorded findings and severity. |
-| Verified | Required checks and repairs have completed with evidence. |
-| Accepted | A root maintainer confirmed scope, evidence, and safety. |
-| Owner-approved | The owner authorized the named milestone or external action. |
-| Released | A separately authorized release completed and its evidence was recorded. |
+- Web: render at mobile and desktop widths, exercise main flows, check keyboard access and console errors.
+- Android: build, run tests, exercise the flow on an emulator or device; say which.
+- Graphics: keep editable source; inspect each export at real size.
+- Backend: test realistic data, auth and error paths.
 
-## Roles
+A passing build does not prove design quality, behavior, accessibility, security or release readiness.
 
-- **Implementer:** owns a bounded change and its initial verification evidence.
-- **Independent reviewer:** evaluates factual grounding, safety, correctness, usability, and alignment with this repository. This role must not be performed by the change author.
-- **Root maintainer:** accepts or returns verified work based on evidence and unresolved risk.
-- **Owner:** decides priorities, accepts milestones, and provides explicit authorization for external or production actions.
+## Safety
 
-For the current implementation program, lower-cost implementation and review models may alternate author and reviewer roles. The review obligation is role-based, not model-based: no model, person, or agent approves its own authored change.
+Keep secrets and sensitive data out of source, logs and output. Preserve the owner's uncommitted work; never reset, overwrite or broadly delete for convenience.
 
-## Definition of done
+## Recording
 
-A change is done only when its intended outcome is present, its affected guidance is internally consistent, relevant validation has been run, high-severity review findings are resolved, known limitations are documented, and the appropriate acceptance state has been recorded. A successful syntax check alone is never sufficient evidence for factual, behavioral, accessibility, security, or release claims.
+In the project, not here: update `docs/work-status.md` (state, blockers, next step), and `docs/version-history.md` when behavior changed (what, why, files, rollback). State unverified items plainly.
 
-Read `docs/IMPLEMENTATION_PLAN.md`, `docs/ARCHITECTURE.md`, `standards/`, and the relevant `playbooks/` before work that touches those topics.
+## Map and done
+
+Policy `AGENTS.md`; docs `docs/`; requirements `standards/`; procedures `playbooks/`; projects `catalog/`; skills `.codex/skills/`; sources `.codex/sources/`; scaffolds `templates/`; scenarios `evals/`; helpers `scripts/`. One home per fact; link elsewhere.
+
+Done means: the outcome works; affected docs agree; checks fitting the output ran; high-severity issues are fixed or disclosed; limitations are written down; required Tier 2 and 3 approvals were obtained. See `standards/ENGINEERING_STANDARDS.md` and `playbooks/CHANGE_CONTROL.md`.

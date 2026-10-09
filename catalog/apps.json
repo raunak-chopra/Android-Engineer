@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "updatedAt": "2026-09-10",
-  "catalogStatus": "initialized",
+  "schemaVersion": 2,
+  "updatedAt": "2026-10-07",
+  "catalogStatus": "active",
   "apps": []
 }

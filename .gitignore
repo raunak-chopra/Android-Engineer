@@ -11,8 +11,9 @@ local.properties
 .env*
 !.env.example
 
-
 # Local scratch and tool leftovers (never committed)
 .codex-remote-attachments/
 .tmp/
 scratch/
+/ashfall_prototype/
+/synapse_zero_hour/

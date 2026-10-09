@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "kind": "android-behavioral-evals",
+  "auditDate": "2026-09-17",
+  "reportSchemaVersion": 1,
+  "cases": [
+    {
+      "id": "inspect-existing-android-repository",
+      "prompt": "Inspect this existing Android repository before changing code. Identify the UI stack, module topology, build conventions, local instructions, and the smallest safe scope.",
+      "expectedPrimarySkill": "android-router",
+      "expectedSkills": ["android-router"],
+      "requiredChecks": ["repository-inspection"],
+      "requiredEvidence": ["local-instructions", "ui-stack", "module-topology", "scope-before-change"],
+      "changePolicy": "none"
+    },
+    {
+      "id": "build-compose-state-screen",
+      "prompt": "Build a Material 3 Compose screen with loading, empty, success, and error states, previews, and accessible semantics.",
+      "expectedPrimarySkill": "android-compose-ui",
+      "expectedSkills": ["android-compose-ui"],
+      "requiredChecks": ["compose-preview", "ui-state-test"],
+      "requiredEvidence": ["state-branches", "semantic-labels", "preview-or-test"],
+      "changePolicy": "bounded"
+    },
+    {
+      "id": "add-room-offline-sync",
+      "prompt": "Add Room persistence and offline synchronization with repository mapping, cache invalidation, idempotent writes, and bounded retry.",
+      "expectedPrimarySkill": "android-data-and-sync",
+      "expectedSkills": ["android-data-and-sync", "android-networking"],
+      "allowedAdjacentSkills": ["android-networking"],
+      "requiredChecks": ["repository-test", "sync-retry-test"],
+      "requiredEvidence": ["cache-policy", "mapping-boundary", "idempotent-retry"],
+      "changePolicy": "bounded"
+    },
+    {
+      "id": "repair-flow-cancellation",
+      "prompt": "Fix a lifecycle coroutine and Flow cancellation bug without changing the app architecture. Verify dispatcher ownership and cancellation propagation.",
+      "expectedPrimarySkill": "android-concurrency",
+      "expectedSkills": ["android-concurrency"],
+      "requiredChecks": ["cancellation-test"],
+      "requiredEvidence": ["scope-ownership", "cancellation-propagation", "no-unrequested-architecture-change"],
+      "changePolicy": "bounded"
+    },
+    {
+      "id": "audit-talkback-rtl-font-scale",
+      "prompt": "Audit an Android Compose flow for TalkBack focus, touch targets, contrast, RTL, plurals, and large font scale.",
+      "expectedPrimarySkill": "android-accessibility-i18n",
+      "expectedSkills": ["android-accessibility-i18n", "android-compose-ui"],
+      "allowedAdjacentSkills": ["android-compose-ui"],
+      "requiredChecks": ["semantics-test", "rtl-or-font-scale-check"],
+      "requiredEvidence": ["talkback-semantics", "touch-targets", "rtl-and-plurals"],
+      "changePolicy": "bounded"
+    },
+    {
+      "id": "prepare-safe-android-release",
+      "prompt": "Prepare an Android security release with R8 mapping retention, secret handling, crash-reporting PII review, and explicit signing approval.",
+      "expectedPrimarySkill": "android-security-release",
+      "expectedSkills": ["android-security-release", "android-testing"],
+      "allowedAdjacentSkills": ["android-testing"],
+      "requiredChecks": ["release-build", "mapping-retention-check", "security-review"],
+      "requiredEvidence": ["secret-handling", "pii-review", "owner-approval-gate"],
+      "changePolicy": "bounded"
+    },
+    {
+      "id": "design-product-flow-before-code",
+      "prompt": "Define the mobile onboarding task, primary action, loading and empty states, error recovery, and micro-interactions before any implementation.",
+      "expectedPrimarySkill": "mobile-product-design",
+      "expectedSkills": ["mobile-product-design"],
+      "requiredChecks": ["state-inventory"],
+      "requiredEvidence": ["primary-task", "loading-empty-error-states", "implementation-handoff"],
+      "changePolicy": "none"
+    },
+    {
+      "id": "configure-kotlin-multiplatform-boundary",
+      "prompt": "Configure Kotlin Multiplatform source sets and target tests for Android and iOS while keeping platform UI and dependencies explicit.",
+      "expectedPrimarySkill": "kotlin-multiplatform",
+      "expectedSkills": ["kotlin-multiplatform", "android-project-bootstrap"],
+      "allowedAdjacentSkills": ["android-project-bootstrap"],
+      "requiredChecks": ["target-test", "gradle-configuration-check"],
+      "requiredEvidence": ["source-set-boundary", "platform-ui-boundary", "target-coverage"],
+      "changePolicy": "bounded"
+    },
+    {
+      "id": "diagnose-startup-jank",
+      "prompt": "Diagnose Android startup jank caused by a coroutine race using a trace, reproducible experiment, and performance regression test.",
+      "expectedPrimarySkill": "android-debugging-performance",
+      "expectedSkills": ["android-debugging-performance", "android-concurrency", "android-testing"],
+      "allowedAdjacentSkills": ["android-concurrency", "android-testing"],
+      "requiredChecks": ["trace-or-profile", "performance-regression-test"],
+      "requiredEvidence": ["reproduction", "root-cause", "before-after-measurement"],
+      "changePolicy": "bounded"
+    },
+    {
+      "id": "reject-unrelated-backend-request",
+      "prompt": "Draft a Python FastAPI endpoint and SQL query for a server-side analytics service.",
+      "expectedSkills": [],
+      "forbidAllPlanned": true,
+      "requiredChecks": ["scope-check"],
+      "requiredEvidence": ["out-of-scope"],
+      "changePolicy": "none"
+    }
+  ]
+}

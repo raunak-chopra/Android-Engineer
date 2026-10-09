@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.rauna.wordfinder.feature.game.domain.PuzzleGeneratorTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-10-04T12:48:05.259Z" hostname="HOME-PC" time="6.232">
+  <properties/>
+  <testcase name="dailySpecIsStableAndPlayable" classname="com.rauna.wordfinder.feature.game.domain.PuzzleGeneratorTest" time="0.19"/>
+  <testcase name="mediumPuzzleCanHideWordsInEveryDirection" classname="com.rauna.wordfinder.feature.game.domain.PuzzleGeneratorTest" time="0.001"/>
+  <testcase name="sameSeedProducesIdenticalPuzzle" classname="com.rauna.wordfinder.feature.game.domain.PuzzleGeneratorTest" time="0.102"/>
+  <testcase name="targetWordsHaveOnePhysicalOccurrenceAcrossEveryThemeAndDifficulty" classname="com.rauna.wordfinder.feature.game.domain.PuzzleGeneratorTest" time="1.334"/>
+  <testcase name="everyThemeHasAValidPuzzleForEveryDifficulty" classname="com.rauna.wordfinder.feature.game.domain.PuzzleGeneratorTest" time="0.525"/>
+  <testcase name="randomThemeAlwaysResolvesToAPlayableTheme" classname="com.rauna.wordfinder.feature.game.domain.PuzzleGeneratorTest" time="0.001"/>
+  <testcase name="invalidPoolReturnsTypedFailure" classname="com.rauna.wordfinder.feature.game.domain.PuzzleGeneratorTest" time="0.003"/>
+  <testcase name="everyDifficultyGeneratesValidPuzzlesAcrossKnownSeeds" classname="com.rauna.wordfinder.feature.game.domain.PuzzleGeneratorTest" time="4.065"/>
+  <testcase name="customWordSetGeneratesWithoutCatalogWords" classname="com.rauna.wordfinder.feature.game.domain.PuzzleGeneratorTest" time="0.003"/>
+  <testcase name="generatedPuzzleUsesAHealthyMixOfWordLengthsAndLetters" classname="com.rauna.wordfinder.feature.game.domain.PuzzleGeneratorTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -50,10 +50,9 @@ The terms **MUST**, **MUST NOT**, **SHOULD**, and **MAY** are deliberate. A MUST
 
 ## Review and approval
 
-- Every meaningful change MUST receive independent review before acceptance.
-- The author MUST NOT approve their own change.
-- Automated checks are necessary evidence when applicable, but they MUST NOT be treated as a replacement for review.
-- High-severity correctness, safety, security, privacy, accessibility, or production-risk findings MUST be resolved before acceptance.
-- Owner approval is required for milestone transition and all external or production actions defined in the playbooks.
+- Review and approval follow the three tiers in [AGENTS.md](../AGENTS.md). Tier 1 work is verified and self-reviewed. Tier 2 work MUST receive a fresh-context review after verification. Tier 3 actions MUST have explicit owner approval for the exact action.
+- A reviewer MUST NOT be the author of the change under review.
+- Automated checks are necessary evidence when applicable, but they MUST NOT be treated as a replacement for review or owner approval.
+- High-severity correctness, safety, security, privacy, accessibility, or production-risk findings MUST be resolved or disclosed before work is called done.
 
 See [change control](../playbooks/CHANGE_CONTROL.md) for risk classification and [releases](../playbooks/RELEASES.md) for the release boundary.

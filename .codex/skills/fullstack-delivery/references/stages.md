@@ -1,0 +1,3 @@
+# Stage selection
+
+Read only for a cross-layer feature whose next stage is unclear. Load web-frontend for browser behavior, backend-api for server behavior, database-engineering for schema/query work. Add application-security only for changed trust, system-architecture for ownership decisions, engineering-testing for test design, supply-chain-security for dependency/CI adoption, or reliability-observability for diagnosis. This is a selection map, not a preload list. Focused tasks bypass the coordinator. Carry only a compact contract and evidence handoff to the next stage. Earlier reads remain in conversation until host compaction; do not pretend to unload them.

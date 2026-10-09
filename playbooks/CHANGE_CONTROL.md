@@ -2,73 +2,59 @@
 
 ## Purpose
 
-This playbook prevents a useful implementation plan from becoming implicit authority to make high-impact changes. It applies to documentation, skills, scripts, templates, evaluations, target-app integrations, and operational actions performed through Engineer.
+Match the amount of control to the risk of an action. Routine local work moves fast; anything shared, external, costly or destructive needs a human yes. The three tiers are defined in [AGENTS.md](../AGENTS.md); this playbook gives the detail.
 
-## Classify the change before implementation
+## Classify before acting
 
-| Class | Typical examples | Minimum gate |
+Classify by what the action touches, not by how many lines change. If a change fits more than one tier, use the higher. If unsure, use the higher.
+
+| Tier | Typical examples | Gate |
 | --- | --- | --- |
-| Documentation-only | Clarifying a non-volatile policy or cross-link | Independent review and link/consistency checks |
-| Curated guidance | Skill, standard, source interpretation, template documentation | Provenance review, independent review, relevant validation |
-| Executable local asset | Script, generator, template, evaluation, CI check | Security/safety review and deterministic execution evidence |
-| Target-project change | App code, Gradle, architecture, migrations | Target inspection, project tests/builds, independent review |
-| Sensitive or external change | Credentials, data, devices, paid service, telemetry, cloud/Play Console | Explicit owner authorization before access or action |
-| Production change | Publish, deploy, submit, promote, rollout, rollback, delete/alter live data | Release/incident playbook and explicit owner approval for exact action |
+| 1: Local and reversible | Editing project files, adding tests, local builds and servers, local assets, emulator or browser runs, new local branches | None. Implement, verify, self-review. |
+| 2: Shared or hard to undo locally | Dependency adds or upgrades, schema or migration changes, build or signing config, deleting more than a few files, large refactors, history rewrites on local branches, edits to Engineer's standards or skills | Confirm the plan once with the owner, then a fresh-context review after verification. |
+| 3: External, public, costly or destructive | Push to a shared remote, PRs, deploys, publishing, store upload, signing, promoting or rolling out a release, production data or cloud changes, paid services, messages sent as the owner, destructive device/data/repo operations, live credentials | Explicit owner approval for the exact action (see below). |
 
-If a change fits more than one class, use the stricter gate.
+## Tier 1 sequence
 
-## Required sequence
+1. Inspect the existing code, design and instructions.
+2. Define what done looks like.
+3. Implement.
+4. Verify by output type (see AGENTS.md "Verify by output").
+5. Self-review the diff; record what ran and what did not.
 
-```text
-1. Scope and evidence
-2. Risk classification and acceptance criteria
-3. Draft implementation
-4. Independent review
-5. Repair and re-review as needed
-6. Verification evidence
-7. Root acceptance
-8. Owner approval, if the milestone or action requires it
-9. Authorized external or production action, if any
-10. Record outcome and follow-up
-```
+## Tier 2 sequence
 
-Do not reorder the sequence to make an urgent or convenient change appear lower risk. An owner may authorize a documented exception, but the exception must name the target, scope, risk accepted, expiration, and rollback/containment owner.
+1. State in a short message: outcome, affected paths, risk, rollback path.
+2. Wait for the owner's yes.
+3. Implement and verify.
+4. Get a review from a fresh context (another session or agent that did not author the change). Record findings by severity:
+   - **Blocking:** unsafe, incorrect, ungrounded, security/privacy/accessibility harmful, or outside scope. Fix before finishing.
+   - **Important:** substantial maintainability, usability or evidence concern. Fix, or record the rationale and a follow-up.
+   - **Advisory:** non-blocking improvement. Do not hide a blocking concern here.
+5. Record the outcome.
 
-## Evidence required for review
+## Tier 3: production and external approval
 
-The implementer provides:
+No Tier 3 action happens without explicit owner approval in chat. The approval must identify:
 
-- stated outcome, scope, and affected paths/systems;
-- source and target-project evidence;
-- risks and mitigations;
-- exact validation performed and result;
-- known gaps, deferred work, and rollback path where relevant;
-- proposed acceptance state.
-
-The reviewer records findings by severity:
-
-- **Blocking:** unsafe, incorrect, ungrounded, incompatible, security/privacy/accessibility harmful, or outside authorized scope. Must be repaired before acceptance.
-- **Important:** substantial maintainability, usability, evidence, or future-risk concern. Must be repaired or accepted with a recorded rationale and follow-up.
-- **Advisory:** non-blocking improvement. Record when useful; do not hide a blocking concern as advisory.
-
-## Brownfield assessment
-
-For an existing app, the work package must state what was inspected and how the proposed change preserves or intentionally migrates its conventions. Required investigation is proportional to scope, but changes affecting Gradle, manifests, DI, navigation, data, CI, release, or permissions must inspect the directly relevant existing implementation before authoring the change.
-
-## Production approval policy
-
-No production action is permitted without explicit owner approval. The approval must identify:
-
-- application and environment;
-- artifact, version, commit, or operation;
+- project and environment;
+- artifact, version, commit or operation;
 - destination or distribution channel;
 - rollout scope and timing;
 - validation evidence reviewed;
-- rollback or containment owner;
+- rollback or containment plan;
 - any accepted risk.
 
-General ownership, a prior milestone approval, a passing CI run, a scheduled workflow, or an agent instruction does not satisfy this policy. If the approval is ambiguous, stop and request clarification.
+A prior approval, a passing CI run, a scheduled workflow, a broad request to "finish" or an agent instruction does not satisfy this. If the approval is ambiguous, stop and ask. Approval for one action does not extend to the next.
+
+## Existing projects
+
+Before changing build logic, manifests, dependency injection, navigation, data, CI, release or permissions, read the directly relevant existing implementation and state how the change preserves or deliberately migrates the project's conventions. A migration needs an explicit request, a compatibility and rollback plan, and project-specific verification.
+
+## Exceptions
+
+The owner may waive a gate for one named task. Record the target, scope, risk accepted and who handles rollback.
 
 ## Change record
 
-Until an automated change ledger is implemented, include the work-package evidence in the review or task record. Do not claim that a future ledger, CI check, or approval bot has run. Future automation must preserve the same evidence fields and cannot bypass human owner approval.
+Record the outcome in the project's `docs/work-status.md`, and in `docs/version-history.md` when behavior changed. Include the checks run, the checks not run, known gaps and the rollback path. Do not claim a check ran if it did not.

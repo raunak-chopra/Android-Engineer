@@ -1,0 +1,30 @@
+[
+  {
+    "file": "tap_card.ogg",
+    "channels": 2,
+    "sample_rate": 44100,
+    "duration_seconds": 0.689,
+    "unchanged_cc0_source": true
+  },
+  {
+    "file": "coin_reward.ogg",
+    "channels": 2,
+    "sample_rate": 44100,
+    "duration_seconds": 0.287,
+    "unchanged_cc0_source": true
+  },
+  {
+    "file": "ticket_pack.ogg",
+    "channels": 2,
+    "sample_rate": 44100,
+    "duration_seconds": 0.937,
+    "unchanged_cc0_source": true
+  },
+  {
+    "file": "scratch_card.ogg",
+    "channels": 2,
+    "sample_rate": 44100,
+    "duration_seconds": 0.601,
+    "unchanged_cc0_source": true
+  }
+]
