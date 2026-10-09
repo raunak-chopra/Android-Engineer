@@ -131,4 +131,3 @@ The persistent report-scoring fixture remains an optional follow-up.
 ## Local toolkit integration — 2026-10-09
 
 The preserved restructure branch is integrated into main with main's cleanup exclusions retained. Repository validation passes for 27 skills. Contracts (27), trigger cases (32), behavioral corpus (10; no model runs), context budget, 15 lazy-load recipes, and nine safety regressions pass. Fresh-context review found no Blocking or Important issues. See [work status](work-status.md) for scope, limitations and next step. Historical archive whitespace warnings remain; remote synchronization and hosted CI are unverified because GitHub DNS resolution failed. This record does not grant release readiness.
-
