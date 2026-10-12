@@ -20,7 +20,9 @@
     "engineering-router",
     "product-ux-design",
     "visual-design-system",
-    "graphics-assets"
+    "graphics-assets",
+    "mobile-game-ux",
+    "android-game-engineering"
   ],
   "fixtures": [
     {
@@ -215,6 +217,24 @@
       "forbiddenSkills": [
         "engineering-router"
       ],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "game-feel-hud",
+      "prompt": "Specify the HUD, touch controls and hit feedback for our mobile game, with reduced-motion settings.",
+      "skills": ["mobile-game-ux"],
+      "references": ["mobile-game-ux/references/feel-and-touch.md"],
+      "forbiddenSkills": ["web-frontend", "mobile-product-design"],
+      "externalSkill": null,
+      "capabilityGap": null
+    },
+    {
+      "id": "game-engine-release",
+      "prompt": "Plan Play Asset Delivery and large-screen support for our existing Godot Android game.",
+      "skills": ["android-game-engineering"],
+      "references": ["android-game-engineering/references/engines-and-release.md"],
+      "forbiddenSkills": ["android-router", "engineering-router"],
       "externalSkill": null,
       "capabilityGap": null
     }

@@ -107,6 +107,16 @@
       {"id": "demonstrated-sharing", "anyOf": ["demonstrated multi-target", "actual targets"]},
       {"id": "platform-boundary", "anyOf": ["platform-specific"]},
       {"id": "target-verification", "anyOf": ["each supported target", "target matrix"]}
+    ]},
+    {"skill": "mobile-game-ux", "requiredConcepts": [
+      {"id": "core-loop", "anyOf": ["core loop"]},
+      {"id": "reduced-motion", "anyOf": ["reduced shake"]},
+      {"id": "no-invented-data", "anyOf": ["Do not invent player data"]}
+    ]},
+    {"skill": "android-game-engineering", "requiredConcepts": [
+      {"id": "measure", "anyOf": ["Measure before tuning"]},
+      {"id": "device-run", "anyOf": ["device or emulator"]},
+      {"id": "explicit-approval", "anyOf": ["explicit approval"]}
     ]}
   ]
 }

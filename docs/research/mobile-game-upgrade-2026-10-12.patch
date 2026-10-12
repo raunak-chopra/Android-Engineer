@@ -1,0 +1,196 @@
+diff --git a/.codex/skills/mobile-game-ux/SKILL.md b/.codex/skills/mobile-game-ux/SKILL.md
+--- a/.codex/skills/mobile-game-ux/SKILL.md
++++ b/.codex/skills/mobile-game-ux/SKILL.md
+@@ -5,30 +5,30 @@
+ 
+ ## When to use
+ 
+-- Use when a game's loop, onboarding, HUD, menus, controls, feedback, progression screens or design document need defining or review.
++- Game loops, onboarding, HUD, menus, controls, feel or visual critique.
+ 
+ ## When not to use
+ 
+-- Non-game app flows: mobile-product-design. Engine code, input plumbing, performance, Play delivery: android-game-engineering. Compose widgets: android-compose-ui. Art and sound creation: installed tools; vectors: graphics-assets.
++- Non-game flows: mobile-product-design. Engine/input code: android-game-engineering. Compose: android-compose-ui. Vectors: graphics-assets; art creation: available tools.
+ - Do not invent player data, benchmarks or store claims.
+ 
+ ## Workflow
+ 
+-1. Inspect the existing game, design docs, build and analytics; name genre, target devices, session length and the core loop.
+-2. Brainstorm, then converge: cross-examine the loop for dead ends, exploits, economy sinks and missing failure/recovery before screen work. Diagram loops and state machines as text.
+-3. Plan the first-time experience: one mechanic at a time, action over text, skip/replay, measurable steps. Treat benchmarks as hypotheses.
+-4. Specify screens: thumb-reach actions, 48dp or larger targets, HUD clear of fingers and cutouts, pause and interruption states.
+-5. Layer feedback by event importance, return to rest, and keep it off input latency. Read [feel and touch UI](references/feel-and-touch.md) before specifying motion, haptics, HUD or controls.
+-6. Offer settings for reduced shake and flashing, text size, colour-independent cues, remapping and mute. Keep copy honest, localisable.
+-7. Verify on a real or emulated device at small and large widths in both orientations. Hand off screen contract, assets and evidence.
++1. Inspect the game and docs; identify player, genre, camera, devices, session and core loop.
++2. Explore ideas, preserve the selected promise and verbs, then examine dead ends, exploits and failure/recovery. Prototype one round and retry before expanding.
++3. Teach one mechanic through action and visible outcomes; define skip/replay and applicable interruption paths.
++4. For visual direction or HUD critique read [visual guidance](references/visual-direction-and-playtest.md); for assets or screen systems read [contracts](references/assets-and-screen-contracts.md). Preserve established style and connect information to decisions.
++5. For controls or feedback read [feel and touch](references/feel-and-touch.md); diagnose input/response before adding effects. Keep HUD clear of fingers and safe insets.
++6. Specify reduced shake/flashing, readable text, color-independent cues and applicable control/audio options. Verify access in the actual renderer.
++7. Read [playtest evidence](references/playtest-evidence.md) for verification. Inspect actual output and exercise first action, retry, menus and pause on a device or emulator; label missing checks.
+ 
+ ## Acceptance criteria
+ 
+-- Loop, first-time path and every screen state are explicit; assumptions are labelled as hypotheses.
+-- Touch, safe-area, accessibility and reduced-motion behaviour are specified and verified on a device or emulator.
+-- Preserve target conventions and permission boundaries; no pasted asset or code without licence and owner approval.
+-- Record checks and omissions; get fresh-context review for Tier 2 changes (AGENTS.md).
++- Selected loop, visual direction and applicable states are explicit; assumptions are hypotheses.
++- Touch, access and safe areas have evidence or disclosed gaps; screenshots alone do not prove feel or enjoyment.
++- Preserve project conventions and asset licenses; imports follow owner authorization.
++- Record checks and omissions; Tier 2 needs fresh-context review (AGENTS.md).
+ 
+ ## Provenance and maintenance
+ 
+-Local synthesis, 2026-10-12. Re-verify: inspect the target and current primary guidance; [sources](../../sources/mobile-games-2026-10-12.md). Open sources only for provenance.
++Original synthesis, revised 2026-10-12; [sources](../../sources/mobile-games-2026-10-12.md). Re-verify: target evidence and primary guidance at use time.
+diff --git a/.codex/skills/android-game-engineering/SKILL.md b/.codex/skills/android-game-engineering/SKILL.md
+--- a/.codex/skills/android-game-engineering/SKILL.md
++++ b/.codex/skills/android-game-engineering/SKILL.md
+@@ -5,30 +5,30 @@
+ 
+ ## When to use
+ 
+-- Use for Android game code, engine selection, input, lifecycle, rendering, performance, packaging, Play Games features or store readiness.
++- Android game engine, input, lifecycle, rendering, performance or delivery work.
+ 
+ ## When not to use
+ 
+-- Loop, onboarding, HUD and feel design: mobile-game-ux. Non-game Android: android-router. Release signing and rollout: android-security-release. iOS-only or console work: inspect the target.
++- Loop/HUD/feel design: mobile-game-ux. Non-game Android: android-router. Signing/rollout: android-security-release.
+ - Do not migrate engines without owner request.
+ 
+ ## Workflow
+ 
+-1. Inspect the engine, build files, manifest, input, save and ad/billing code; keep the existing engine unless evidence shows a blocker.
+-2. For a new game, compare engines on the owner's needs (team skills, 2D or 3D, size, build time, plugins, licence) and test a small prototype on a low-end device before committing.
+-3. Handle input and lifecycle: pointer-indexed multi-touch, pause on interruption, save on pause, audio focus, back and gesture navigation, cutouts and insets.
+-4. Support resizing and large screens: apps targeting API 36 have orientation and aspect locks ignored at 600dp or wider; test portrait, landscape, split and foldable windows.
+-5. Measure before tuning: frame time, memory, battery, thermal and install size on target hardware. Read [engine and release notes](references/engines-and-release.md) for engine, delivery or Play features.
+-6. Keep secrets, ads, billing and analytics behind consent and policy review; add no engine, plugin or MCP bridge without approval.
+-7. Verify with a build, tests and a run on a device or emulator; state which. Release and upload need explicit approval for the exact action.
++1. Inspect engine, build, manifest, input, saves and services; preserve project conventions.
++2. For new games compare team skills, 2D/3D, size, tooling and license; measure a small prototype on target hardware. Inspect version-matched official demos when useful.
++3. Native Android pointer IDs persist while indices change; resolve each event's index from its ID. Respect engine touch APIs. Clear held actions on cancel/pause/menu; prevent UI taps reaching gameplay. Handle saves, audio focus, back and insets.
++4. Verify SDK, category and actual windows against current Android guidance: API 36 overrides at sw600dp have a game-category exception. Test applicable rotation, resize, split and foldable states; recheck future SDK rules.
++5. Measure before tuning: frame time, memory, thermal, battery and size on target hardware. Read [engine and release notes](references/engines-and-release.md) for platform/tooling sources.
++6. Services, assets and editor bridges follow consent, policy and owner authorization. Install no engine/plugin/MCP bridge without approval.
++7. Build, run applicable tests and exercise the flow on a device or emulator; name it. Release/upload need explicit approval for the exact action.
+ 
+ ## Acceptance criteria
+ 
+-- Engine, versions and commands are verified from the project or dated docs.
+-- Interruption, resize, orientation and low-memory paths were exercised, not assumed.
+-- Performance and size claims cite measurements and the device used.
+-- Record checks and omissions; Tier 2 changes get fresh-context review; Tier 3 needs explicit approval (AGENTS.md).
++- Versions and commands come from the project or dated primary docs.
++- Input cancellation, interruption and applicable window paths have runtime evidence or disclosed gaps.
++- Performance/size claims cite measurements and device.
++- Record checks and omissions; Tier 2 needs fresh-context review, Tier 3 exact approval (AGENTS.md).
+ 
+ ## Provenance and maintenance
+ 
+-Local synthesis, 2026-10-12. Re-verify: inspect the target and current primary guidance; [sources](../../sources/mobile-games-2026-10-12.md). Open sources only for provenance.
++Original synthesis, revised 2026-10-12; [sources](../../sources/mobile-games-2026-10-12.md). Re-verify: primary guidance and project evidence at use time.
+diff --git a/.codex/skills/mobile-game-ux/references/feel-and-touch.md b/.codex/skills/mobile-game-ux/references/feel-and-touch.md
+--- a/.codex/skills/mobile-game-ux/references/feel-and-touch.md
++++ b/.codex/skills/mobile-game-ux/references/feel-and-touch.md
+@@ -1,2 +1,17 @@
+ # Feel and touch UI
+-Read when specifying motion, haptics, HUD, controls or menus. Feedback: one event may use sound, particles, flash, number pop, small camera or UI shake and brief hit-stop; start with two or three channels and add until it reads. Scale to importance tiers (small, medium, large), ease motion (overshoot for pop, ease-out for settle), return to rest, never shake the simulated body, and never block input or hold hit-stop on repeats. Always offer reduced shake and flashing. Touch: a finger covers roughly 50 to 100px, so keep HUD out of the thumb path; hit targets 48dp or more with spacing; destructive actions away from frequent taps; reject palm edge touches; no hover; track each finger by pointer index for dual sticks; haptics are optional and user-controllable. Layout: anchors and containers, reference scale plus an aspect policy, safe-area insets, event-driven HUD, screen stack for menus, focus order for controllers and keyboards, text that survives translation and large fonts. Community claims are hypotheses until checked on a device. Provenance: community skills in [gamedev-skills](https://github.com/gamedev-skills/awesome-gamedev-agent-skills) (Apache-2.0) read 2026-10-12, original wording.
++
++Read for controls, feedback, motion or HUD placement. Original synthesis, revised 2026-10-12. Parameters are hypotheses until exercised in the target game.
++
++Diagnose input recognition, gameplay response, motion/collision, camera and presentation separately. Larger particles do not fix missed taps. Tune one cause and compare the same action. Buffering, dead zones, acceleration and wind-up depend on genre; precise board games need different choices from platformers.
++
++Specify immediate acknowledgement, outcome feedback and return to rest. Distinguish routine, reward and danger through a restrained mix of sound, motion, particles or haptics. Provide alternatives to color/sound alone and reduced shake/flashing. Do not let repeated hit-stop hold indefinitely, shake physics bodies, or block input with effects.
++
++Use density-aware targets: Android's 48dp baseline is not 48 physical pixels. Expanded hit regions must not overlap ambiguously; verify engine units. Inspect real finger occlusion instead of assuming a universal pixel size. Keep predictions and action information visible; consider control placement/size options for intended players.
++
++Specify applicable tap/hold/drag/release and preview/commit/cancel behavior. Teach finger-down and release; a mouse demonstration does not prove touch usability. Native Android tracks stable pointer IDs and resolves indices per event; engine identifiers have their own contracts. Test one finger lifting while another remains, cancellation and pause for stuck actions.
++
++Assign each gesture to gameplay, camera or UI. Menu state must gate polling as well as consumed events. Dismissal must not replay into gameplay. Test simultaneous controls and pause. Do not reject all edge touches without target evidence.
++
++Use anchors, aspect policy and safe insets. Test long translations, large text, color alternatives and reduced effects. Engine widgets need explicit accessibility support; visible labels do not prove TalkBack access.
++
++Primary sources: [targets](https://developer.android.com/develop/ui/compose/accessibility/api-defaults), [multi-touch](https://developer.android.com/develop/ui/views/touch-and-input/gestures/multi). Community provenance and evidence limits: [research record](../../../sources/mobile-games-2026-10-12.md).
+diff --git a/.codex/skills/mobile-game-ux/references/visual-direction-and-playtest.md b/.codex/skills/mobile-game-ux/references/visual-direction-and-playtest.md
+new file mode 100644
+--- /dev/null
++++ b/.codex/skills/mobile-game-ux/references/visual-direction-and-playtest.md
+@@ -0,0 +1,17 @@
++# Visual direction and HUD critique
++
++Read for visual design or HUD critique. Original synthesis, 2026-10-12. Apply to the selected genre and preserve existing direction.
++
++Define the player promise, camera, verbs, session context and production limits. Preserve selected ideas separately from alternatives so later agents do not replace the design. Build a slice with a learning action, round, failure/retry and pause/resume. Whitebox rules and a representative art pass answer different questions.
++
++Use a few relevant references or existing screens; explain transferable decisions in silhouette, value contrast, material, typography, palette and motion. References do not permit copying proprietary art. Compare materially different options only when direction is unresolved.
++
++Map each visible element to a player decision and urgency. Action games need immediate recognition and a clear aim/camera region; strategy/card interfaces may be the play space. Do not impose one density percentage or minimalism across genres. Reveal occasional detail in menus while keeping needed action information visible. Apply consistent warning, resource, selection and icon meanings.
++
++Inspect separation against busy gameplay, not only a quiet mockup. Use backing, shape and placement to maintain legibility. Frames, textures and animation should reinforce the setting; effects cannot compensate for ambiguous actions.
++
++For every critique identify observed problem, player consequence, correction and a check that could disprove it. Fix unreadable critical information and task blockers before decoration. Screenshots assess composition; a playable build assesses input and feel.
++
++For asset/screen handoff read [contracts](assets-and-screen-contracts.md); for runtime/usability verification read [evidence](playtest-evidence.md).
++
++Primary authored inspiration: [Roblox UI/UX](https://github.com/Roblox/creator-docs/blob/main/content/en-us/production/game-design/ui-ux-design.md), [OpenAI browser UI](https://github.com/openai/plugins/blob/main/plugins/game-studio/skills/game-ui-frontend/SKILL.md). Browser DOM/CSS rules are not native Android requirements. Broader [research assessment](../../../../docs/research/mobile-game-upgrade-plan-2026-10-12.md).
+diff --git a/CLAUDE.md b/CLAUDE.md
+--- a/CLAUDE.md
++++ b/CLAUDE.md
+@@ -4,4 +4,8 @@
+ 
+ Skills live in `.codex/skills/<name>/SKILL.md` (same format Claude Code uses). Claude Code does not scan that folder automatically: when a task matches a skill listed in AGENTS.md or `.codex/skills/`, open its `SKILL.md` and follow it, loading its `references/` files only when the skill says to. Start from `engineering-router` or `android-router` when the specialist is unclear.
+ 
++For mobile game design, HUD, onboarding and feel, open `.codex/skills/mobile-game-ux/SKILL.md`; for Android engine, lifecycle, input and performance, open `.codex/skills/android-game-engineering/SKILL.md`. Load only the references relevant to the task. Codex uses the same canonical files.
++
++Research that needs no Reddit fetch: [local Reddit digest](docs/research/reddit-game-design-digest-2026-10-12.md) and [resource assessment](docs/research/mobile-game-upgrade-plan-2026-10-12.md), read 2026-10-12. Research is context, not policy or proof of skill effectiveness.
++
+ Do not duplicate policy here; one home per fact.
+diff --git a/.codex/skills/mobile-game-ux/references/assets-and-screen-contracts.md b/.codex/skills/mobile-game-ux/references/assets-and-screen-contracts.md
+new file mode 100644
+--- /dev/null
++++ b/.codex/skills/mobile-game-ux/references/assets-and-screen-contracts.md
+@@ -0,0 +1,19 @@
++# Asset and screen contracts
++
++Read for asset integration or multi-screen handoff. Original synthesis, 2026-10-12. Use existing project documentation; do not create a second source of truth.
++
++## Assets
++
++Keep editable sources, export settings and provenance. For 2D specify intended display scale, atlas/padding, pivots and animation states. For 3D specify scale/orientation, silhouette, materials/textures, rig/clips and measured mobile budgets. The camera and device determine limits; do not invent universal polygon/texture budgets.
++
++Choose cohesive licensed packs or compatible assets when useful. Inspect one asset in engine at representative lighting and camera distance before expanding. Label placeholders and missing states. Generated assets need the same inspection/integration as other assets; this guidance does not install an art pipeline.
++
++## Screens and input
++
++For each applicable screen record entry, player goal, primary action, state owner, data, transitions, back/cancel, focus, interruptions and return to gameplay. Include only relevant loading/error, locked/disabled, preview/commit, result and pause states. Avoid inventing shops or social flows for games that do not need them.
++
++UI observes authoritative game state; it does not become a second health, inventory or save system. Specify whether menus pause simulation, consume gestures and gate gameplay/camera input. Trace launch -> meaningful action -> result -> retry/next round plus interruption recovery. Teach through visible actions and consequences; let needed instructions remain readable without covering the task.
++
++Keep selected direction, contracts, feel parameters and evidence/gaps in the game's docs for Codex/Claude handoffs. Load only relevant references and keep engine-specific commands verified.
++
++Implementation examples: [Godot demos](https://github.com/godotengine/godot-demo-projects) (choose matching stable branch; master tracks development). Material/import fixtures: [Khronos assets](https://github.com/KhronosGroup/glTF-Sample-Assets) (per-model license). State-owner inspiration: [AgentSkills game UI](https://github.com/jeremylongworth-source/AgentSkills/blob/main/skills/game-ui-design/SKILL.md). None were run in this research.
+diff --git a/.codex/skills/mobile-game-ux/references/playtest-evidence.md b/.codex/skills/mobile-game-ux/references/playtest-evidence.md
+new file mode 100644
+--- /dev/null
++++ b/.codex/skills/mobile-game-ux/references/playtest-evidence.md
+@@ -0,0 +1,15 @@
++# Playtest evidence
++
++Read when verifying a playable slice or reporting design quality. Original synthesis, 2026-10-12. Source anecdotes are hypotheses, not benchmarks.
++
++Capture actual output at named device/window sizes: learning, representative busy play, failure/result and pause/menu. Compare the same scene/seed, camera, assets and settings before/after where possible. Record evidence paths in the target project. Inspect at real display size for hierarchy, text fit, cutouts, finger occlusion and consistency.
++
++Exercise primary action, preview/commit/cancel where applicable, retry, back and pause/resume on the playable build. A screenshot cannot prove responsiveness, gesture ownership or enjoyment. State precisely which device/emulator, build and input were checked; emulated pointer input does not prove real thumb comfort or hardware performance.
++
++When a new player is available, give a goal and observe before coaching. Separate usability (understood goal, predicted action, errors, recovery) from enjoyment/feel (choices, frustration, desire to retry). Record actual observations, sample limits and agreed timings. Do not invent retention targets or infer long-term engagement from a few testers. Without players, label expert review; without a run, label static review.
++
++For each finding record problem, consequence, proposed change and verification. Recheck affected states after changes. Do not add more features when the selected slice needs clearer evidence.
++
++Evaluate the guidance itself with the same realistic task, assets, engine and target before/after. Skill contracts and routing checks validate structure, not design effectiveness. A reproducible gameplay artifact and observed behavior are stronger evidence than agent count or document length.
++
++Community cases and their limitations: [local Reddit digest](../../../../docs/research/reddit-game-design-digest-2026-10-12.md). Accessibility review reference: [basic guidelines](https://gameaccessibilityguidelines.com/basic/). Actual game/device evaluation remains project work, not something established by this source review.
