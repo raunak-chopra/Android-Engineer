@@ -64,8 +64,14 @@ The final proposal was checked in `.tmp/mobile-game-upgrade-preview-v2-2026-10-1
 | `scripts/test-lazy-load-safety.ps1` | PASS, nine safety regressions in isolated preview |
 | `scripts/test-behavioral-evals.ps1` | CORPUS_PASS, ten cases; zero model runs |
 | Local Markdown link inspection | PASS, 21 links across ten research/proposed guidance files |
-| `git apply --check docs/research/mobile-game-upgrade-2026-10-12.patch` | PASS, patch applies to current checkout contents; not applied |
+| `git apply --check docs/research/mobile-game-upgrade-2026-10-12.patch` | Historical preview PASS before application. Applied patch is retained for history; do not apply again. Later review edits mean reverse-checking this original patch is not a reliable status check. |
 
 Initial drafts failed the context/lazy-load limits; the final draft was shortened and split into conditional references. A required provenance marker was restored, and the affected contract/budget checks reran successfully. These mechanical checks are not independent behavioral evaluations.
 
-Not run: full repository validator, game builds, installed engine demos, physical-device or emulator game flows, live agent comparison, hosted CI and fresh-context adoption review. Unrelated owner changes remain preserved. The research is ready for Claude; active skill adoption and subsequent review are awaiting approval under [Engineer change control](../../playbooks/CHANGE_CONTROL.md).
+## Applied checkout and status correction — 2026-10-12
+
+The upgrade is applied and locally committed as `b37be0c` (`Add mobile game UX and Android game engineering skills`). Approval and fresh-context review are recorded in [work status](../work-status.md); neither is pending. This section supersedes the preview's adoption status.
+
+The latest direct checkout checks passed: 29 skill contracts, 35 routing cases, 17 lazy-load recipes and enforced context budgets (55,043 skill-entrypoint bytes; 20.64% reduction; 3,545 description characters). Prior applied-checkout records report nine safety regressions, corpus validation and a full validator pass on a copy excluding scratch files. The live validator's ten reported broken links belong to preserved `.tmp` preview copies; a clean live full-validator result is not established.
+
+Game builds, gameplay on devices, a controlled before/after agent evaluation and hosted CI were not part of this toolkit upgrade. Research and local adoption are complete; effectiveness claims remain unverified. Historical results above retain their original scope. See [Engineer change control](../../playbooks/CHANGE_CONTROL.md) for any subsequent changes.

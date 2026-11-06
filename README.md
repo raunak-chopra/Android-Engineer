@@ -31,6 +31,10 @@ Operating rules, including the three approval tiers, are in [AGENTS.md](AGENTS.m
 
 Current skill coverage is listed in [docs/CAPABILITIES.md](docs/CAPABILITIES.md). Add skills or templates only when a real task exposes a gap.
 
+The detailed Codex + Engineer PowerPoint guide (local evidence not shipped) explains capabilities, task briefs, prompt examples and operating boundaries. Its maintenance record (local evidence not shipped) describes the owner's requested ongoing updates. When a verified capability or usage workflow changes, refresh the affected guide content as part of that change.
+
+Downloaded source collections, component examples, icons and game UI assets are indexed in [the local resource library guide](docs/RESOURCE_LIBRARY.md). Use that entry point to find existing material to adapt for a project.
+
 ## Repository map
 
 | Path | Purpose |

@@ -12,3 +12,7 @@ Primary pages re-read during implementation:
 - [NN/g task scenarios](https://www.nngroup.com/articles/task-scenarios-usability-testing/): realistic task-based usability assessment.
 
 These are mutable official/first-party web pages, not pinned code imports. Re-check current relevant guidance at use time. The runbooks synthesize ideas in original language; they do not copy example implementations or certify licenses for future asset use. Platform-specific behavior still requires target documentation and real verification. Lazy-loading mechanics follow the installed skill-creator instructions: short metadata, selected entrypoint, conditionally read references. Host discovery/selection is not controlled by repository scripts.
+
+## 2026-10-21 pinned design-resource expansion
+
+Expanded with source-level inspection of 10 pinned GitHub repositories, 2 discovery feeds, 9 Kenney CC0 packs, 61 Godot demos, official Android Compose samples and 19 owner game asset archives. Follow-up corrections to validation timing, input sizing, reduced motion, Back handling and evidence scope are recorded in Section 11.1 of the report. See the [deep-dive report](../../docs/research/design-resources-deep-dive-2026-10-21.md), [download record](../../docs/research/reuse-library-downloads-2026-10-21.md), [resource library guide](../../docs/RESOURCE_LIBRARY.md) and [owner game asset inventory](../../docs/OWNER_GAME_ASSETS.md).
