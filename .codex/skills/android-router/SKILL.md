@@ -10,7 +10,7 @@ description: Route unfamiliar or cross-cutting Android work after repository ins
 
 ## When not to use
 
-- Route Gradle/modules to `android-project-bootstrap`; boundaries to `android-architecture`; Compose to `android-compose-ui`; unresolved flows to `mobile-product-design`.
+- Route Gradle/modules to `android-project-bootstrap`; boundaries to `android-architecture`; Compose to `android-compose-ui`; unresolved flows to `mobile-product-design`; game design to `mobile-game-ux`; game engines, input and Play delivery to `android-game-engineering`.
 - Route storage/sync to `android-data-and-sync`; HTTP/TLS to `android-networking`; coroutines/Flow to `android-concurrency`; routes/windows to `android-navigation-adaptive`.
 - Route tests to `android-testing`; crashes/performance to `android-debugging-performance`; TalkBack/locales to `android-accessibility-i18n`; permissions/signing/releases to `android-security-release`; shared targets to `kotlin-multiplatform`.
 - Route compiled APK/AAB analysis to an installed `android-reverse-engineering` skill when available; otherwise report that compiled-artifact analysis is unsupported by this library.

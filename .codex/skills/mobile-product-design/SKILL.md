@@ -10,6 +10,7 @@ description: Define mobile product flows, primary actions, screen states, conten
 ## When not to use
 
 - Route approved Compose work to `android-compose-ui`, routes to `android-navigation-adaptive`, accessibility/i18n validation to `android-accessibility-i18n`, and state ownership to `android-architecture`.
+- Games (loop, HUD, onboarding, feel): `mobile-game-ux`.
 - Do not redesign unrelated screens, treat visual heuristics as laws, or use for web/desktop marketing artwork.
 
 ## Workflow

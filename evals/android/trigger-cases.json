@@ -16,7 +16,9 @@
     "android-accessibility-i18n",
     "android-security-release",
     "mobile-product-design",
-    "kotlin-multiplatform"
+    "kotlin-multiplatform",
+    "mobile-game-ux",
+    "android-game-engineering"
   ],
   "cases": [
     {
@@ -238,6 +240,28 @@
       "prompt": "Create a Windows PowerShell backup job for CSV files.",
       "expectedSkills": [],
       "forbidAllPlanned": true
+    },
+    {
+      "id": "design-game-onboarding-hud",
+      "prompt": "Design the first-time experience, thumb-reach HUD and game feel for our Android puzzle game, and cross-examine the core loop for holes.",
+      "primarySkill": "mobile-game-ux",
+      "expectedSkills": ["mobile-game-ux"],
+      "signals": ["game", "HUD"]
+    },
+    {
+      "id": "android-game-engine-lifecycle",
+      "prompt": "Our Android libGDX game loses state on interruption and crashes on resize; fix the lifecycle and engine code and check frame time and thermal behaviour.",
+      "primarySkill": "android-game-engineering",
+      "expectedSkills": ["android-game-engineering"],
+      "signals": ["game", "lifecycle"]
+    },
+    {
+      "id": "banking-onboarding-not-game",
+      "prompt": "Define the onboarding flow, primary action and error states for a mobile banking app.",
+      "primarySkill": "mobile-product-design",
+      "expectedSkills": ["mobile-product-design"],
+      "forbiddenSkills": ["mobile-game-ux", "android-game-engineering"],
+      "signals": ["onboarding", "primary action"]
     },
     {
       "id": "negative-restaurant-comparison",

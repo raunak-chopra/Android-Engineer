@@ -1,6 +1,6 @@
 # Engineer capabilities
 
-Inventory checked 2026-10-09. These are available workflows; their presence does not establish project or release readiness.
+Inventory checked 2026-10-22: 29 repository workflows. These are available workflows; their presence does not establish project or release readiness. The maintained PowerPoint guide (local evidence not shipped) covers these workflows and the current Codex chat tools. Guide maintenance (local evidence not shipped) records how to refresh it.
 
 | Skill | Scope |
 | --- | --- |
@@ -10,6 +10,7 @@ Inventory checked 2026-10-09. These are available workflows; their presence does
 | [android-concurrency](../.codex/skills/android-concurrency/SKILL.md) | Design or debug Android Kotlin coroutine and Flow scopes, cancellation, dispatchers, sharing, backpressure, and async tests. Exclude general architecture. |
 | [android-data-and-sync](../.codex/skills/android-data-and-sync/SKILL.md) | Build Android Room, DataStore, repository, paging, cache, migration, or WorkManager sync behavior. Use for durable data; exclude ephemeral UI state. |
 | [android-debugging-performance](../.codex/skills/android-debugging-performance/SKILL.md) | Diagnose Android build failures, crashes, ANRs, jank, startup, memory, battery, or network performance with traces and Macrobenchmark evidence. |
+| [android-game-engineering](../.codex/skills/android-game-engineering/SKILL.md) | Build or review Android games: engine choice, touch input, lifecycle, safe areas, large screens, performance and thermal limits, Play delivery and Level Up. |
 | [android-navigation-adaptive](../.codex/skills/android-navigation-adaptive/SKILL.md) | Build adaptive Android navigation, route contracts, deep links, back stack, restoration, tablets, foldables, and multi-window. Exclude incidental library migration. |
 | [android-networking](../.codex/skills/android-networking/SKILL.md) | Build Android HTTP clients, Retrofit or Ktor serialization, auth transport, timeout, retry, TLS, and redacted observability. Exclude cache policy. |
 | [android-project-bootstrap](../.codex/skills/android-project-bootstrap/SKILL.md) | Create or change an Android Gradle project or template, modules, dependencies, convention plugins, JDK, AGP, or Kotlin setup. Exclude feature code. |
@@ -25,6 +26,7 @@ Inventory checked 2026-10-09. These are available workflows; their presence does
 | [graphics-assets](../.codex/skills/graphics-assets/SKILL.md) | Create editable vectors, icons and logos; choose asset formats and export specs. |
 | [kotlin-multiplatform](../.codex/skills/kotlin-multiplatform/SKILL.md) | Evaluate or build Kotlin Multiplatform shared code, source sets, platform APIs, Gradle integration, interop, and target tests when multi-target value exists. |
 | [mobile-product-design](../.codex/skills/mobile-product-design/SKILL.md) | Define mobile product flows, primary actions, screen states, content, micro-interactions, adaptive behavior, and accessible implementation handoff. |
+| [mobile-game-ux](../.codex/skills/mobile-game-ux/SKILL.md) | Design mobile game UX: core loop, first-time experience, HUD and menus, thumb-reach controls, game feel, design docs and accessibility. |
 | [product-ux-design](../.codex/skills/product-ux-design/SKILL.md) | Define user needs, task flows and information hierarchy before visual design. |
 | [reliability-observability](../.codex/skills/reliability-observability/SKILL.md) | Diagnose service failures and latency; design telemetry and recovery evidence. |
 | [supply-chain-security](../.codex/skills/supply-chain-security/SKILL.md) | Review third-party code, agent skills, dependencies, build scripts and CI trust. |

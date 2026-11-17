@@ -9,7 +9,7 @@ Use for the stated scope.
 
 ## When not to use
 
-Known raster generation/edit: installed imagegen directly. UI tokens: visual-design-system. Games/3D need their own target workflow.
+Known raster generation/edit: installed imagegen directly. UI tokens: visual-design-system. Mobile game UX: mobile-game-ux; Android game code: android-game-engineering; other games/3D need their own target workflow.
 
 ## Workflow
 
